@@ -1,0 +1,26 @@
+# typescript compiled
+*.js
+
+# dependencies
+/node_modules
+
+# production
+/dist
+/build
+
+# misc
+.DS_Store
+*.pem
+docker-compose.yml
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local

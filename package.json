@@ -1,0 +1,17 @@
+{
+    "name": "blueprints",
+    "author": "junjou",
+    "version": "1.0.0",
+    "description": "blueprints for twinpicks",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "devDependencies": {
+        "@types/node": "^20.4.5",
+        "prettier": "^3.0.0",
+        "typescript": "^5.1.6"
+    },
+    "dependencies": {
+        "geojson": "^0.5.0"
+    }
+}
