@@ -6,4 +6,4 @@
 1. Then use this command `npx tsc` to transpile the code
 1. cd to `/dist/src/[USECASE_TYPE]`
 1. Use this command `node ./index.js` to generate the final blueprint
-  -   The json output is what you need to update the entity's blueprint property
+1. Find the json output of final blueprint in `/src/[USECASE_TYPE]/blueprint.md` file

@@ -4,7 +4,7 @@
     "version": "1.0.0",
     "description": "blueprints for twinpicks",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "tsc": "tsc"
     },
     "devDependencies": {
         "@types/node": "^20.4.5",
