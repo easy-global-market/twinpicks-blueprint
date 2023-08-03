@@ -3,6 +3,17 @@ import { StellioTemplate } from 'interfaces';
 export const DeviceTemplate: StellioTemplate = {
     id: 'urn:ngsi-ld:Device:Template',
     type: 'Template',
+    name: {
+        type: 'Property',
+        value: 'Placeholder',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'string',
+                title: 'Give a name to this building',
+            },
+        },
+    },
     lorasnr: {
         type: 'Property',
         value: 0,

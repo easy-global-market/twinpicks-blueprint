@@ -32,6 +32,7 @@ export const BuildingTemplate: StellioTemplate = {
         type: 'Property',
         value: {
             schemaType: 'Building',
+            schemaTypeDisplayName: 'Bâtiment',
             title: 'Entity number limit',
             required: ['name', 'location'],
             minimum: 1,
