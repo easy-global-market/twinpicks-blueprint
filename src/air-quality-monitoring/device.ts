@@ -66,17 +66,12 @@ export const DeviceTemplate: StellioTemplate = {
     },
     status: {
         type: 'Property',
-        value: 'Placeholder',
-        observedAt: new Date().toISOString(),
+        value: true,
         jsonSchema: {
             type: 'Property',
-            value: true,
-            jsonSchema: {
-                type: 'Property',
-                value: {
-                    title: 'Statut',
-                    schemaType: 'boolean',
-                },
+            value: {
+                title: 'Statut',
+                schemaType: 'boolean',
             },
         },
     },
