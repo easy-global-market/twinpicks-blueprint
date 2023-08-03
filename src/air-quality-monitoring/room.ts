@@ -48,18 +48,19 @@ export const RoomTemplate: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'array',
-                title: 'List of temperature datasets',
+                title: 'Jeux de données de température',
                 minItems: 1,
                 items: {
                     schemaType: 'integer',
-                    title: 'Temperature value',
+                    title: 'Température',
+                    canSelfInit: true,
                 },
             },
         },
     },
     humidity: {
         type: 'Property',
-        value: 50,
+        value: 1,
         unitCode: 'P1',
         observedAt: new Date().toISOString(),
         description: {
@@ -88,11 +89,12 @@ export const RoomTemplate: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'array',
-                title: 'List of humidity datasets',
+                title: "Jeux de données d'humidité",
                 minItems: 1,
                 items: {
                     schemaType: 'integer',
-                    title: 'Humidity value',
+                    title: 'Humidité',
+                    canSelfInit: true,
                 },
             },
         },

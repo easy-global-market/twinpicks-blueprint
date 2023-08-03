@@ -133,20 +133,18 @@ export interface JsonSchema {
     not?: JsonSchema;
 
     /////////////////////////////////////////////////
-    // Twin Picks Only
+    // Twin Picks Specificity
     /////////////////////////////////////////////////
     /**
      * Used by twin picks only to not mess with the \@type of NGSI-LD
      */
     schemaType: string;
     /**
-     * Use it to display a prettier type name on the UI
-     */
-    schemaTypeDisplayName?: string;
-    /**
-     * If true, the prop won't appear in the online form of
-     * guided provisioning, but twinpicks will still
+     * If true, the prop won't appear in the
+     * guided provisioning form, but Twinpicks will still
      * create the property with init values
+     * If false or undefined, the prop will have
+     * To be set manually on Twinpicks
      */
     canSelfInit?: boolean;
 }

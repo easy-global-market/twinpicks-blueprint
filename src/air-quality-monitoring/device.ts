@@ -10,44 +10,28 @@ export const DeviceTemplate: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'string',
-                title: 'Give a name to this building',
+                title: 'Nom du capteur',
             },
         },
     },
     lorasnr: {
         type: 'Property',
-        value: 0,
+        value: 1,
         unitCode: '2N',
         observedAt: new Date().toISOString(),
-        description: {
-            type: 'Property',
-            value: 'Placeholder',
-            jsonSchema: {
-                type: 'Property',
-                value: { schemaType: 'string', title: 'Measure of loraSNR' },
-            },
-        },
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'Lora SNR' },
+            value: { schemaType: 'integer', title: 'Lora SNR', canSelfInit: true },
         },
     },
     rssi: {
         type: 'Property',
-        value: 0,
+        value: 1,
         unitCode: 'DBM',
         observedAt: new Date().toISOString(),
-        description: {
-            type: 'Property',
-            value: 'Placeholder',
-            jsonSchema: {
-                type: 'Property',
-                value: { schemaType: 'string', title: 'Measure of rssi' },
-            },
-        },
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'RSSI' },
+            value: { schemaType: 'integer', title: 'RSSI', canSelfInit: true },
         },
     },
     temperature: {
@@ -55,17 +39,9 @@ export const DeviceTemplate: StellioTemplate = {
         value: 1,
         unitCode: 'CEL',
         observedAt: new Date().toISOString(),
-        description: {
-            type: 'Property',
-            value: 'Placeholder',
-            jsonSchema: {
-                type: 'Property',
-                value: { schemaType: 'string', title: 'Measure of temperature' },
-            },
-        },
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'Temperature' },
+            value: { schemaType: 'integer', title: 'Temperature', canSelfInit: true },
         },
     },
     humidity: {
@@ -73,67 +49,33 @@ export const DeviceTemplate: StellioTemplate = {
         value: 50,
         unitCode: 'P1',
         observedAt: new Date().toISOString(),
-        description: {
-            type: 'Property',
-            value: 'Placeholder',
-            jsonSchema: {
-                type: 'Property',
-                value: { schemaType: 'string', title: 'Measure of humidity' },
-            },
-        },
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'Humidity' },
+            value: { schemaType: 'integer', title: 'Humidité', canSelfInit: true },
         },
     },
     batteryLevel: {
         type: 'Property',
-        value: 100,
+        value: 1,
         unitCode: 'P1',
         observedAt: new Date().toISOString(),
-        description: {
-            type: 'Property',
-            value: 'Placeholder',
-            jsonSchema: {
-                type: 'Property',
-                value: { schemaType: 'string', title: 'Measure of Battery level' },
-            },
-        },
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'Battery level' },
+            value: { schemaType: 'integer', title: 'Niveau de batterie', canSelfInit: true },
         },
     },
     status: {
         type: 'Property',
         value: 'Placeholder',
         observedAt: new Date().toISOString(),
-        description: {
-            type: 'Property',
-            value: 'Placeholder',
-            jsonSchema: {
-                type: 'Property',
-                value: { schemaType: 'string', title: 'Status of device on/off' },
-            },
-        },
         jsonSchema: {
             type: 'Property',
             value: true,
             jsonSchema: {
                 type: 'Property',
                 value: {
-                    title: 'Toggle status',
+                    title: 'Statut',
                     schemaType: 'boolean',
-                    oneOf: [
-                        {
-                            title: 'On',
-                            const: true,
-                        },
-                        {
-                            title: 'Off',
-                            const: false,
-                        },
-                    ],
                 },
             },
         },
@@ -142,8 +84,8 @@ export const DeviceTemplate: StellioTemplate = {
         type: 'Property',
         value: {
             schemaType: 'Device',
-            title: 'Entity number limit',
-            required: ['lorasnr', 'rssi', 'batteryLevel'],
+            title: 'Capteur',
+            required: ['name'],
             minimum: 1,
         },
     },
