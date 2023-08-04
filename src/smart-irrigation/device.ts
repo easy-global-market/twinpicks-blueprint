@@ -24,17 +24,9 @@ export const DeviceTemplate: StellioTemplate = {
         value: 0,
         unitCode: '2N',
         observedAt: new Date().toISOString(),
-        description: {
-            type: 'Property',
-            value: 'Placeholder',
-            jsonSchema: {
-                type: 'Property',
-                value: { schemaType: 'string', title: 'Mesure de loraSNR' },
-            },
-        },
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'Lora SNR' },
+            value: { schemaType: 'integer', title: 'Lora SNR', canSelfInit: true },
         },
     },
     rssi: {
@@ -42,17 +34,9 @@ export const DeviceTemplate: StellioTemplate = {
         value: 0,
         unitCode: 'DBM',
         observedAt: new Date().toISOString(),
-        description: {
-            type: 'Property',
-            value: 'Placeholder',
-            jsonSchema: {
-                type: 'Property',
-                value: { schemaType: 'integer', title: 'Mesure de rssi' },
-            },
-        },
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'RSSI' },
+            value: { schemaType: 'integer', title: 'RSSI', canSelfInit: true },
         },
     },
     batteryVoltage: {
@@ -61,7 +45,7 @@ export const DeviceTemplate: StellioTemplate = {
         unitCode: 'V',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'Niveau de batterie' },
+            value: { schemaType: 'integer', title: 'Niveau de batterie', canSelfInit: true },
         },
     },
     internalTemperature: {
@@ -104,9 +88,11 @@ export const DeviceTemplate: StellioTemplate = {
         type: 'Property',
         value: {
             schemaType: 'Device',
-            title: 'Entity number limit',
-            required: ['name', 'description', 'lorasnr', 'rssi', 'batteryVoltage'],
+            title: 'Capteur ou Espion',
+            required: ['name', 'description'],
             minimum: 1,
+            description:
+                "Jumeau numérique du capteur qui récupère les données d'humidité. Ou l'objet espion qui observe l'état (ouvert/fermé) des vannes",
         },
     },
 };

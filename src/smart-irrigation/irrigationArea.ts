@@ -7,10 +7,11 @@ export const IrrigationAreaTemplate: StellioTemplate = {
         type: 'Property',
         value: {
             schemaType: 'IrrigationArea',
-            title: 'Entity number limit',
+            title: "Zone d'irrigation",
             minimum: 1,
-            maximum: 1,
-            required: ['name', 'belongsTo', 'hasPart', 'location', 'hasActiveAnomaly'],
+            required: ['name', 'belongsTo', 'hasPart', 'location', 'hasActiveAnomaly', 'hasWeatherForecasted'],
+            description:
+                'Représentation géographique de taille intermédiaire qui regroupe en générale plusieurs petites zones controllées (ou zones en gestion)',
         },
     },
     name: {
@@ -18,12 +19,12 @@ export const IrrigationAreaTemplate: StellioTemplate = {
         value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Nom de IrrigationArea' },
+            value: { schemaType: 'string', title: "Nom de la zone d'irrigation" },
         },
     },
     zoomLevel: {
         type: 'Property',
-        value: 16,
+        value: 18,
         jsonSchema: {
             type: 'Property',
             value: { schemaType: 'integer', title: "Niveau de zoom sur la zone d'irrigation depuis la carte" },
@@ -37,7 +38,7 @@ export const IrrigationAreaTemplate: StellioTemplate = {
             value: {
                 schemaType: 'string',
                 format: 'uri',
-                title: 'Relation vers un Field',
+                title: "Cette zone d'irrigation appartient à quel champ d'opération ?",
                 minimum: 1,
                 maximum: 1,
             },
@@ -51,7 +52,7 @@ export const IrrigationAreaTemplate: StellioTemplate = {
             value: {
                 schemaType: 'string',
                 format: 'uri',
-                title: 'Relation vers une ManagedZone',
+                title: "Cette zone d'irrigation comprend quelle(s) zone(s) de gestion ?",
                 minimum: 1,
             },
         },
@@ -64,7 +65,7 @@ export const IrrigationAreaTemplate: StellioTemplate = {
             value: {
                 schemaType: 'string',
                 format: 'uri',
-                title: 'Relation vers une WeatherInformation',
+                title: "Quelle est la Météo de référence pour cette zone d'irrigation ?",
                 minimum: 1,
                 maximum: 1,
             },

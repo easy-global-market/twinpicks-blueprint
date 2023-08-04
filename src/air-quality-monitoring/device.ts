@@ -82,6 +82,7 @@ export const DeviceTemplate: StellioTemplate = {
             title: 'Capteur',
             required: ['name'],
             minimum: 1,
+            description: "Jumeau numérique de l'objet physique, ou capteur, qui récupère des données",
         },
     },
 };

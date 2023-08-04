@@ -103,9 +103,10 @@ export const RoomTemplate: StellioTemplate = {
         type: 'Property',
         value: {
             schemaType: 'Room',
-            title: 'Entity number limit',
+            title: 'Pièce',
             minimum: 1,
             required: ['isContainedIn', 'temperature', 'humidity'],
+            description: 'Jumeau numérique de la pièce au sein du bâtiment, et où se situe le capteur',
         },
     },
 };

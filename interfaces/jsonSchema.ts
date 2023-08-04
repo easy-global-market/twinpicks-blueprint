@@ -147,4 +147,12 @@ export interface JsonSchema {
      * To be set manually on Twinpicks
      */
     canSelfInit?: boolean;
+    /**
+     * Decides if an entity can be created in TwinPicks
+     * - Put this at the root schema level
+     * - Does not have any effect at the property level
+     * - Default "undefined" value type is considered as "true"
+     * - If "false", user will be forced to pick an existing entity
+     */
+    canEntityBeCreated?: boolean;
 }

@@ -35,6 +35,7 @@ export const BuildingTemplate: StellioTemplate = {
             title: 'Bâtiment',
             required: ['name', 'location'],
             minimum: 1,
+            description: "Jumeau numérique du bâtiment d'où proviennent les données",
         },
     },
 };
