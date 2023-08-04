@@ -8,7 +8,7 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
         value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Soil Area name' },
+            value: { schemaType: 'string', title: 'Nom du sol de référence où se situe le capteur' },
         },
     },
     location: {
@@ -21,7 +21,7 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'object',
-                title: 'Where is located the ReferenceSoilArea ?',
+                title: 'Où se situe le capteur et sol de référence ?',
             },
         },
     },
@@ -50,7 +50,7 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
                 value: {
                     schemaType: 'string',
                     format: 'uri',
-                    title: 'Relation vers un Device',
+                    title: "Le capteur de données pour l'humidité",
                     minimum: 1,
                     maximum: 1,
                 },
@@ -94,7 +94,7 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
                 value: {
                     schemaType: 'string',
                     format: 'uri',
-                    title: 'Relation vers un Device',
+                    title: 'Le capteur de données pour la température',
                     minimum: 1,
                     maximum: 1,
                 },
@@ -117,9 +117,11 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
         type: 'Property',
         value: {
             schemaType: 'ReferenceSoilArea',
-            title: 'Entity number limit',
+            title: 'Sol de référence pour le capteur',
             minimum: 1,
             required: ['name', 'location', 'soilTemperature', 'volumetricMoisture'],
+            description:
+                'Représentation de la zone de sol à proximité du capteur. Sert de référence pour les données des zones de gestion alentours',
         },
     },
 };

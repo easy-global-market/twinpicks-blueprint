@@ -8,16 +8,18 @@ export const FieldTemplate: StellioTemplate = {
         value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Field name' },
+            value: { schemaType: 'string', title: "Nom du champ d'opération" },
         },
     },
     jsonSchema: {
         type: 'Property',
         value: {
             schemaType: 'Field',
-            title: 'Entity number limits',
+            title: "Champ d'opération",
             minimum: 1,
             required: ['name'],
+            description:
+                "Représentation très haut niveau de la zone d'opération (peut regrouper plusieurs grandes zones d'irrigation)",
         },
     },
 };

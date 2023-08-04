@@ -32,13 +32,8 @@ export const ControlNodeTemplate: StellioTemplate = {
         jsonSchema: {
             type: 'Property',
             value: {
-                schemaType: 'array',
+                schemaType: 'integer',
                 title: 'Etat observé',
-                maxItems: 1,
-                items: {
-                    schemaType: 'integer',
-                    title: 'Valeur de etat observé',
-                },
             },
         },
     },
@@ -49,24 +44,6 @@ export const ControlNodeTemplate: StellioTemplate = {
         jsonSchema: {
             type: 'Property',
             value: { schemaType: 'integer', title: 'Etat demandé' },
-        },
-    },
-    valveObservedStatus: {
-        type: 'Property',
-        value: 'closed',
-        unitCode: 'E50',
-        jsonSchema: {
-            type: 'Property',
-            value: { schemaType: 'string', title: 'Etat de la vanne observé', enum: ['open', 'closed'] },
-        },
-    },
-    valveRequestedStatus: {
-        type: 'Property',
-        value: 'closed',
-        unitCode: 'E50',
-        jsonSchema: {
-            type: 'Property',
-            value: { schemaType: 'string', title: 'Etat de la vanne demandé', enum: ['open', 'closed'] },
         },
     },
     location: {
@@ -87,9 +64,10 @@ export const ControlNodeTemplate: StellioTemplate = {
         type: 'Property',
         value: {
             schemaType: 'ControlNode',
-            title: 'Entity number limit',
+            title: 'Noeud de controle',
             minimum: 0,
             required: ['name', 'observedState', 'requestedState', 'location'],
+            description: "Jumeau numérique d'un noeud de controle, il peut servir à ouvrir/fermer une vanne",
         },
     },
 };

@@ -8,7 +8,7 @@ export const ManagedZoneTemplate: StellioTemplate = {
         value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Nom de la Managed Zone' },
+            value: { schemaType: 'string', title: 'Nom de la Zone de gestion' },
         },
     },
     description: {
@@ -16,7 +16,7 @@ export const ManagedZoneTemplate: StellioTemplate = {
         value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Description de la Managed Zone' },
+            value: { schemaType: 'string', title: 'Description de la Zone de gestion' },
         },
     },
     waterConsumption: {
@@ -25,7 +25,7 @@ export const ManagedZoneTemplate: StellioTemplate = {
         unitCode: 'L',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: "Consommation d'eau de la Managed Zone" },
+            value: { schemaType: 'integer', title: "Consommation d'eau de la Managed Zone", canSelfInit: true },
         },
     },
     belongsTo: {
@@ -36,7 +36,7 @@ export const ManagedZoneTemplate: StellioTemplate = {
             value: {
                 schemaType: 'string',
                 format: 'uri',
-                title: 'Relation vers une IrrigationArea',
+                title: "Zone d'irrigation à laquelle appartient la zone de gestion",
                 minimum: 1,
                 maximum: 1,
             },
@@ -50,7 +50,7 @@ export const ManagedZoneTemplate: StellioTemplate = {
             value: {
                 schemaType: 'string',
                 format: 'uri',
-                title: 'Relation vers un noeud de controle',
+                title: 'Noeud de controle de la Zone de gestion',
                 minimum: 0,
                 maximum: 1,
             },
@@ -62,7 +62,7 @@ export const ManagedZoneTemplate: StellioTemplate = {
         unitCode: 'MTK',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'Surface de la Managed Zone' },
+            value: { schemaType: 'integer', title: 'Surface de la Zone de gestion' },
         },
     },
     hasReferenceSoilArea: {
@@ -73,7 +73,7 @@ export const ManagedZoneTemplate: StellioTemplate = {
             value: {
                 schemaType: 'string',
                 format: 'uri',
-                title: 'Relation vers une ReferenceSoilArea',
+                title: 'Capteur et sol de référence pour la zone de gestion',
                 minimum: 1,
                 maximum: 1,
             },
@@ -87,7 +87,7 @@ export const ManagedZoneTemplate: StellioTemplate = {
         },
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'object', title: 'Dessiner la ManagedZone sur la carte' },
+            value: { schemaType: 'object', title: 'Dessiner la Zone de gestion sur la carte' },
         },
     },
     hasActiveAnomay: {
@@ -102,9 +102,11 @@ export const ManagedZoneTemplate: StellioTemplate = {
         type: 'Property',
         value: {
             schemaType: 'ManagedZone',
-            title: 'Entity number limit',
+            title: 'Zone de gestion',
             minimum: 1,
-            required: ['name', 'hasReferenceSoilArea', 'location'],
+            required: ['name', 'hasReferenceSoilArea', 'location', 'belongsTo'],
+            description:
+                "Représentation géographique la plus petite, généralement de la taille d'un bout de jardin, précisément délimitée par un polygone",
         },
     },
 };

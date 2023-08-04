@@ -10,7 +10,7 @@ export const BuildingTemplate: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'string',
-                title: 'Give a name to this building',
+                title: 'Nom du bâtiment',
             },
         },
     },
@@ -24,7 +24,7 @@ export const BuildingTemplate: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'object',
-                title: 'Where is the building located',
+                title: 'Où se situe le bâtiment',
             },
         },
     },
@@ -32,9 +32,10 @@ export const BuildingTemplate: StellioTemplate = {
         type: 'Property',
         value: {
             schemaType: 'Building',
-            title: 'Entity number limit',
+            title: 'Bâtiment',
             required: ['name', 'location'],
             minimum: 1,
+            description: "Jumeau numérique du bâtiment d'où proviennent les données",
         },
     },
 };
