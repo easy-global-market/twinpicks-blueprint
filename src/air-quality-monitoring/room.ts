@@ -3,6 +3,17 @@ import { StellioTemplate } from 'interfaces';
 export const RoomTemplate: StellioTemplate = {
     id: 'urn:ngsi-ld:Room:Template',
     type: 'Template',
+    name: {
+        type: 'Property',
+        value: 'Placeholder',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'string',
+                title: 'Nom de la pièce',
+            },
+        },
+    },
     isContainedIn: {
         type: 'Relationship',
         object: 'urn:ngsi-ld:Building:Template',
