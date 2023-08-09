@@ -1,13 +1,15 @@
 {
     "name": "blueprints",
     "author": "junjou",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "blueprints for twinpicks",
     "scripts": {
-        "tsc": "tsc"
+        "tsc": "tsc",
+        "commit": "git cz && npm version patch"
     },
     "devDependencies": {
         "@types/node": "^20.4.5",
+        "git-cz": "^4.9.0",
         "prettier": "^3.0.0",
         "typescript": "^5.1.6"
     },
