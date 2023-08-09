@@ -116,7 +116,7 @@ export const RoomTemplate: StellioTemplate = {
             schemaType: 'Room',
             title: 'Pièce',
             minimum: 1,
-            required: ['isContainedIn', 'temperature', 'humidity'],
+            required: ['name', 'isContainedIn', 'temperature', 'humidity'],
             description: 'Jumeau numérique de la pièce au sein du bâtiment, et où se situe le capteur',
         },
     },

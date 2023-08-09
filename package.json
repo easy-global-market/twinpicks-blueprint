@@ -5,7 +5,8 @@
     "description": "blueprints for twinpicks",
     "scripts": {
         "tsc": "tsc",
-        "commit": "git cz && npm version patch"
+        "commit": "git cz && npm version patch",
+        "qai": "npx tsc && cd ./dist/src/air-quality-monitoring && node index.js && cd ../../.."
     },
     "devDependencies": {
         "@types/node": "^20.4.5",
