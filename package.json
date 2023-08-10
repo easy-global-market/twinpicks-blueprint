@@ -1,12 +1,14 @@
 {
     "name": "blueprints",
     "author": "junjou",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "blueprints for twinpicks",
     "scripts": {
         "tsc": "tsc",
         "commit": "git cz && npm version patch",
-        "qai": "npx tsc && cd ./dist/src/air-quality-monitoring && node index.js && cd ../../.."
+        "qai": "npx tsc && cd ./dist/src/air-quality-monitoring && node index.js && cd ../../..",
+        "irrig": "npx tsc && cd ./dist/src/smart-irrigation && node index.js && cd ../../..",
+        "lotus": "npx tsc && cd ./dist/src/lotus && node index.js && cd ../../.."
     },
     "devDependencies": {
         "@types/node": "^20.4.5",
