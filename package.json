@@ -6,7 +6,9 @@
     "scripts": {
         "tsc": "tsc",
         "commit": "git cz && npm version patch",
-        "qai": "npx tsc && cd ./dist/src/air-quality-monitoring && node index.js && cd ../../.."
+        "qai": "npx tsc && cd ./dist/src/air-quality-monitoring && node index.js && cd ../../..",
+        "irrig": "npx tsc && cd ./dist/src/smart-irrigation && node index.js && cd ../../..",
+        "lotus": "npx tsc && cd ./dist/src/lotus && node index.js && cd ../../.."
     },
     "devDependencies": {
         "@types/node": "^20.4.5",
