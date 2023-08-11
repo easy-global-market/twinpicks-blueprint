@@ -32,7 +32,7 @@ export const Bypass: StellioTemplate = {
             title: 'Bypass',
             required: ['name'],
             minimum: 1,
-            description: 'Digital twin of the Bypass',
+            description: 'Digital twin of the bypass structure',
         },
     },
 };

@@ -30,7 +30,7 @@ export const PressureGauge: StellioTemplate = {
             title: 'Pressure Gauge',
             required: ['name'],
             minimum: 1,
-            description: 'Digital twin of the Pressure Gauge sensor',
+            description: 'Pressure gauge entity dedicated to the pressure within the pipes',
         },
     },
 };

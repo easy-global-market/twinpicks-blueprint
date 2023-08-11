@@ -30,7 +30,7 @@ export const FlowMeter: StellioTemplate = {
             title: 'Flow Meter',
             required: ['name'],
             minimum: 1,
-            description: 'Digital twin of the Flow Meter',
+            description: 'Flow meter entity which is dedicated to the flow rate',
         },
     },
 };

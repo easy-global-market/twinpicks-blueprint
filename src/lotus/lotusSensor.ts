@@ -254,7 +254,8 @@ export const LotusSensor: StellioTemplate = {
             title: 'Lotus Sensor',
             required: ['name'],
             minimum: 1,
-            description: 'Digital twin of the Lotus Sensor',
+            description:
+                'Digital twin of the Lotus sensor which is composed of 25 micro sensors measuring the conductivity and the temperature of the water',
         },
     },
 };

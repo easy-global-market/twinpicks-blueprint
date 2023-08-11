@@ -52,7 +52,7 @@ export const UltraSonicFlowMeter: StellioTemplate = {
             title: 'Ultra Sonic Flow Meter',
             required: ['name'],
             minimum: 1,
-            description: 'Digital twin of the Ultra Sonic Flow Meter',
+            description: 'Ultrasonic flow meter entity which provides accurate data about the water flow',
         },
     },
 };
