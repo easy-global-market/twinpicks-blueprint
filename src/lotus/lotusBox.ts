@@ -133,7 +133,7 @@ export const LotusBox: StellioTemplate = {
         value: {
             schemaType: 'LotusBox',
             title: 'Lotus Box',
-            required: ['name'],
+            required: ['name', 'hasSensor', 'hasUltrasonicFlowMeter', 'hasFlowMeter', 'hasBypass', 'hasPressureGauge'],
             minimum: 1,
             description: 'Digital twin of the main Lotus Box which contains all other components',
         },
