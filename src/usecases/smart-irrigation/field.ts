@@ -1,4 +1,4 @@
-import { StellioTemplate } from 'interfaces';
+import { StellioTemplate } from 'src/interfaces';
 
 export const FieldTemplate: StellioTemplate = {
     id: 'urn:ngsi-ld:Field:Template',

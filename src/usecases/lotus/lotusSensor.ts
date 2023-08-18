@@ -1,4 +1,4 @@
-import { StellioTemplate } from 'interfaces';
+import { StellioTemplate } from 'src/interfaces';
 
 export const LotusSensor: StellioTemplate = {
     id: 'urn:ngsi-ld:LotusSensor:Template',
