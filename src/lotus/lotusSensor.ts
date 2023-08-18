@@ -14,6 +14,18 @@ export const LotusSensor: StellioTemplate = {
             },
         },
     },
+    description: {
+        type: 'Property',
+        value: 'Digital twin of the Lotus sensor which is composed of 25 micro sensors measuring the conductivity and the temperature of the water',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'string',
+                title: 'Short description',
+                canSelfInit: true,
+            },
+        },
+    },
     chipId: {
         type: 'Property',
         value: 'Placeholder',

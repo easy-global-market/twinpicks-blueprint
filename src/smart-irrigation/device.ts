@@ -80,6 +80,7 @@ export const DeviceTemplate: StellioTemplate = {
                 items: {
                     schemaType: 'integer',
                     title: 'Temps/durée (en minutes)',
+                    canSelfInit: true,
                 },
             },
         },
