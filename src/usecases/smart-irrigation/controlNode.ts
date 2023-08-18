@@ -1,4 +1,4 @@
-import { StellioTemplate } from 'interfaces';
+import { StellioTemplate } from 'src/interfaces';
 
 export const ControlNodeTemplate: StellioTemplate = {
     id: 'urn:ngsi-ld:ControlNode:Template',

@@ -15,15 +15,15 @@ ${stringifiedBlueprint}
 `;
 };
 
-const moveBlueprintFile = (from, to) => {
-    fse.move(from, to, { overwrite: true }, (err) => {
+const moveBlueprintFile = (from: any, to: any) => {
+    fse.move(from, to, { overwrite: true }, (err: any) => {
         if (err) return console.error(err);
         console.log('Blueprint moved to: ', to);
     });
 };
 
-const generateBlueprintFile = (stringifiedBlueprint: string, from, to) => {
-    fse.writeFile(config.blueprintFileName, getBlueprintFileContent(stringifiedBlueprint), function (err) {
+const generateBlueprintFile = (stringifiedBlueprint: string, from: string, to: string) => {
+    fse.writeFile(config.blueprintFileName, getBlueprintFileContent(stringifiedBlueprint), function (err: any) {
         if (err) throw err;
         console.log('Blueprint Saved');
         moveBlueprintFile(from, to);

@@ -1,92 +1,44 @@
-import { StellioTemplate } from 'interfaces';
+import { StellioTemplate } from 'src/interfaces';
 
-export const ReferenceSoilAreaTemplate: StellioTemplate = {
-    id: 'urn:ngsi-ld:ReferenceSoilArea:Template',
+export const RoomTemplate: StellioTemplate = {
+    id: 'urn:ngsi-ld:Room:Template',
     type: 'Template',
     name: {
         type: 'Property',
         value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Nom du sol de référence où se situe le capteur' },
+            value: {
+                schemaType: 'string',
+                title: 'Nom de la pièce',
+            },
         },
     },
-    location: {
-        type: 'GeoProperty',
-        value: {
-            type: 'Point',
-            coordinates: [],
-        },
+    isContainedIn: {
+        type: 'Relationship',
+        object: 'urn:ngsi-ld:Building:Template',
         jsonSchema: {
             type: 'Property',
             value: {
-                schemaType: 'object',
-                title: 'Où se situe le capteur et sol de référence ?',
+                schemaType: 'string',
+                format: 'uri',
+                title: 'Relationship to a Building',
+                minimum: 1,
+                maximum: 1,
             },
         },
     },
-    volumetricMoisture: {
-        type: 'Property',
-        value: 0,
-        unitCode: 'P1',
-        observedAt: new Date().toISOString(),
-        depth: {
-            type: 'Property',
-            value: 15,
-            unitCode: 'CM',
-            jsonSchema: {
-                type: 'Property',
-                value: {
-                    schemaType: 'integer',
-                    title: 'Profondeur de la mesure',
-                    canSelfInit: true,
-                },
-            },
-        },
-        observedBy: {
-            type: 'Relationship',
-            object: 'urn:ngsi-ld:Device:Template',
-            jsonSchema: {
-                type: 'Property',
-                value: {
-                    schemaType: 'string',
-                    format: 'uri',
-                    title: "Le capteur de données pour l'humidité",
-                    minimum: 1,
-                    maximum: 1,
-                },
-            },
-        },
-        jsonSchema: {
-            type: 'Property',
-            value: {
-                schemaType: 'array',
-                title: 'Liste de jeux de données humidité',
-                minItems: 1,
-                items: {
-                    schemaType: 'integer',
-                    title: 'Valeur humidité',
-                    canSelfInit: true,
-                },
-            },
-        },
-    },
-    soilTemperature: {
+    temperature: {
         type: 'Property',
         value: 0,
         unitCode: 'CEL',
         observedAt: new Date().toISOString(),
-        depth: {
+        description: {
             type: 'Property',
-            value: 30,
-            unitCode: 'CM',
+            value: 'Placeholder',
             jsonSchema: {
                 type: 'Property',
-                value: {
-                    schemaType: 'integer',
-                    title: 'Profondeur de la mesure',
-                    canSelfInit: true,
-                },
+                value: { schemaType: 'string', title: 'Description' },
             },
         },
         observedBy: {
@@ -97,7 +49,7 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
                 value: {
                     schemaType: 'string',
                     format: 'uri',
-                    title: 'Le capteur de données pour la température',
+                    title: 'Relationship to a Device',
                     minimum: 1,
                     maximum: 1,
                 },
@@ -107,11 +59,52 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'array',
-                title: 'Liste de jeux de données de température',
+                title: 'Jeux de données de température',
                 minItems: 1,
                 items: {
                     schemaType: 'integer',
-                    title: 'Valeur de température',
+                    title: 'Température',
+                    canSelfInit: true,
+                },
+            },
+        },
+    },
+    humidity: {
+        type: 'Property',
+        value: 1,
+        unitCode: 'P1',
+        observedAt: new Date().toISOString(),
+        description: {
+            type: 'Property',
+            value: 'Placeholder',
+            jsonSchema: {
+                type: 'Property',
+                value: { schemaType: 'string', title: 'Description' },
+            },
+        },
+        observedBy: {
+            type: 'Relationship',
+            object: 'urn:ngsi-ld:Device:Template',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    schemaType: 'string',
+                    format: 'uri',
+                    title: 'Relationship to a Device',
+                    minimum: 1,
+                    maximum: 1,
+                },
+            },
+        },
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'array',
+                title: "Jeux de données d'humidité",
+                minItems: 1,
+                items: {
+                    schemaType: 'integer',
+                    title: 'Humidité',
                     canSelfInit: true,
                 },
             },
@@ -120,12 +113,11 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
     jsonSchema: {
         type: 'Property',
         value: {
-            schemaType: 'ReferenceSoilArea',
-            title: 'Sol de référence pour le capteur',
+            schemaType: 'Room',
+            title: 'Pièce',
             minimum: 1,
-            required: ['name', 'location', 'soilTemperature', 'volumetricMoisture'],
-            description:
-                'Représentation de la zone de sol à proximité du capteur. Sert de référence pour les données des zones de gestion alentours',
+            required: ['name', 'isContainedIn', 'temperature', 'humidity'],
+            description: 'Jumeau numérique de la pièce au sein du bâtiment, et où se situe le capteur',
         },
     },
 };

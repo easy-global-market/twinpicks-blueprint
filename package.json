@@ -6,11 +6,12 @@
     "scripts": {
         "tsc": "tsc",
         "commit": "git cz && npm version patch",
-        "qai": "npx tsc && cd ./dist/src/air-quality-monitoring && node index.js && cd ../../..",
-        "irrig": "npx tsc && cd ./dist/src/smart-irrigation && node index.js && cd ../../..",
-        "lotus": "npx tsc && cd ./dist/src/lotus && node index.js && cd ../../.."
+        "qai": "npx tsc && cd ./dist/usecases/air-quality-monitoring && node index.js && cd ../../..",
+        "irrig": "npx tsc && cd ./dist/usecases/smart-irrigation && node index.js && cd ../../..",
+        "lotus": "npx tsc && cd ./dist/usecases/lotus && node index.js && cd ../../.."
     },
     "devDependencies": {
+        "@types/geojson": "^7946.0.10",
         "@types/node": "^20.4.5",
         "git-cz": "^4.9.0",
         "prettier": "^3.0.0",

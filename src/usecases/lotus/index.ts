@@ -1,10 +1,13 @@
-import { BuildingTemplate } from './building';
-import { DeviceTemplate } from './device';
-import { RoomTemplate } from './room';
+import { LotusSensor } from './lotusSensor';
+import { UltraSonicFlowMeter } from './ultraSonicFlowMeter';
+import { FlowMeter } from './flowMeter';
+import { Bypass } from './bypass';
+import { PressureGauge } from './pressureGauge';
+import { LotusBox } from './lotusBox';
 
 const fse = require('fs-extra');
 
-const blueprint = [BuildingTemplate, DeviceTemplate, RoomTemplate];
+const blueprint = [LotusSensor, UltraSonicFlowMeter, FlowMeter, Bypass, PressureGauge, LotusBox];
 const stringifiedBlueprint = JSON.stringify(blueprint);
 const FILE_NAME = 'blueprint.md';
 
@@ -20,14 +23,14 @@ fse.writeFile(
 
 ${stringifiedBlueprint}
 `,
-    function (err) {
+    function (err: any) {
         if (err) throw err;
         console.log('Blueprint Saved');
 
         const SPECIFIC_USECASE_PATH = __dirname.split('dist\\')[1];
         const from = `./${FILE_NAME}`;
-        const to = `../../../${SPECIFIC_USECASE_PATH}/${FILE_NAME}`;
-        fse.move(from, to, { overwrite: true }, (err) => {
+        const to = `../../../src/${SPECIFIC_USECASE_PATH}/${FILE_NAME}`;
+        fse.move(from, to, { overwrite: true }, (err: any) => {
             if (err) return console.error(err);
             console.log('Blueprint moved to: ', to);
         });
