@@ -39,6 +39,7 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
                 value: {
                     schemaType: 'integer',
                     title: 'Profondeur de la mesure',
+                    canSelfInit: true,
                 },
             },
         },
@@ -65,6 +66,7 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
                 items: {
                     schemaType: 'integer',
                     title: 'Valeur humidité',
+                    canSelfInit: true,
                 },
             },
         },
@@ -83,6 +85,7 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
                 value: {
                     schemaType: 'integer',
                     title: 'Profondeur de la mesure',
+                    canSelfInit: true,
                 },
             },
         },
@@ -109,6 +112,7 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
                 items: {
                     schemaType: 'integer',
                     title: 'Valeur de température',
+                    canSelfInit: true,
                 },
             },
         },
