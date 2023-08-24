@@ -37,7 +37,7 @@ export const LotusSensor: StellioTemplate = {
             },
         },
     },
-    afeID: {
+    afeId: {
         type: 'Property',
         value: 'Placeholder',
         jsonSchema: {
