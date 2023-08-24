@@ -14,6 +14,17 @@ export const LotusBox: StellioTemplate = {
             },
         },
     },
+    edgeSpotId: {
+        type: 'Property',
+        value: 'Placeholder',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'string',
+                title: 'Edgespot Identifier',
+            },
+        },
+    },
     temperature: {
         type: 'Property',
         value: 10,
