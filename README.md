@@ -7,3 +7,6 @@
 1. cd to `/dist/usecases/[USECASE_TYPE]`
 1. Use this command `node ./index.js` to generate the final blueprint
 1. Find the json output of final blueprint in `/src/usecases/[USECASE_TYPE]/blueprint.md` file
+1. Update the corresponding UseCaseConfig Entity blueprint attributes with the json output
+1. Commit your changes
+
