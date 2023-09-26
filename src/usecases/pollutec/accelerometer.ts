@@ -25,7 +25,7 @@ export const AccelerometerTemplate: StellioTemplate = {
     },
     angleX: {
         type: 'Property',
-        value: 1,
+        value: 0,
         jsonSchema: {
             type: 'Property',
             value: { schemaType: 'integer', title: '', canSelfInit: true },
@@ -33,7 +33,7 @@ export const AccelerometerTemplate: StellioTemplate = {
     },
     angleY: {
         type: 'Property',
-        value: 1,
+        value: 0,
         jsonSchema: {
             type: 'Property',
             value: { schemaType: 'integer', title: '', canSelfInit: true },
@@ -41,7 +41,7 @@ export const AccelerometerTemplate: StellioTemplate = {
     },
     angleZ: {
         type: 'Property',
-        value: 1,
+        value: 0,
         jsonSchema: {
             type: 'Property',
             value: { schemaType: 'integer', title: '', canSelfInit: true },
@@ -49,7 +49,7 @@ export const AccelerometerTemplate: StellioTemplate = {
     },
     thresholdX: {
         type: 'Property',
-        value: 'init',
+        value: 'normal',
         jsonSchema: {
             type: 'Property',
             value: { schemaType: 'string', title: '', canSelfInit: true },
@@ -57,7 +57,7 @@ export const AccelerometerTemplate: StellioTemplate = {
     },
     thresholdY: {
         type: 'Property',
-        value: 'init',
+        value: 'normal',
         jsonSchema: {
             type: 'Property',
             value: { schemaType: 'string', title: '', canSelfInit: true },
@@ -65,10 +65,58 @@ export const AccelerometerTemplate: StellioTemplate = {
     },
     thresholdZ: {
         type: 'Property',
-        value: 'init',
+        value: 'normal',
         jsonSchema: {
             type: 'Property',
             value: { schemaType: 'string', title: '', canSelfInit: true },
+        },
+    },
+    protocolVersion: {
+        type: 'Property',
+        value: 1,
+        jsonSchema: {
+            type: 'Property',
+            value: { schemaType: 'integer', title: '', canSelfInit: true },
+        },
+    },
+    hardwareVersion: {
+        type: 'Property',
+        value: '',
+        jsonSchema: {
+            type: 'Property',
+            value: { schemaType: 'string', title: '', canSelfInit: false },
+        },
+    },
+    softwareVersion: {
+        type: 'Property',
+        value: '',
+        jsonSchema: {
+            type: 'Property',
+            value: { schemaType: 'string', title: '', canSelfInit: false },
+        },
+    },
+    state: {
+        type: 'Property',
+        value: 'off',
+        jsonSchema: {
+            type: 'Property',
+            value: { schemaType: 'string', title: '', canSelfInit: true },
+        },
+    },
+    classType: {
+        type: 'Property',
+        value: '',
+        jsonSchema: {
+            type: 'Property',
+            value: { schemaType: 'string', title: '', canSelfInit: false },
+        },
+    },
+    serialNumber: {
+        type: 'Property',
+        value: '',
+        jsonSchema: {
+            type: 'Property',
+            value: { schemaType: 'string', title: '', canSelfInit: false },
         },
     },
     jsonSchema: {
