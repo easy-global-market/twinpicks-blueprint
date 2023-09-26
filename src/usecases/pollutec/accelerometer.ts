@@ -28,7 +28,7 @@ export const AccelerometerTemplate: StellioTemplate = {
         value: 0,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: '', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'Angle X', canSelfInit: true },
         },
     },
     angleY: {
@@ -36,7 +36,7 @@ export const AccelerometerTemplate: StellioTemplate = {
         value: 0,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: '', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'Angle Y', canSelfInit: true },
         },
     },
     angleZ: {
@@ -44,7 +44,7 @@ export const AccelerometerTemplate: StellioTemplate = {
         value: 0,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: '', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'Angle Z', canSelfInit: true },
         },
     },
     thresholdX: {
@@ -52,7 +52,7 @@ export const AccelerometerTemplate: StellioTemplate = {
         value: 'normal',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: '', canSelfInit: true },
+            value: { schemaType: 'string', title: 'Seuil X', canSelfInit: true },
         },
     },
     thresholdY: {
@@ -60,7 +60,7 @@ export const AccelerometerTemplate: StellioTemplate = {
         value: 'normal',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: '', canSelfInit: true },
+            value: { schemaType: 'string', title: 'Seuil Y', canSelfInit: true },
         },
     },
     thresholdZ: {
@@ -68,7 +68,7 @@ export const AccelerometerTemplate: StellioTemplate = {
         value: 'normal',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: '', canSelfInit: true },
+            value: { schemaType: 'string', title: 'Seuil Z', canSelfInit: true },
         },
     },
     protocolVersion: {
@@ -76,7 +76,7 @@ export const AccelerometerTemplate: StellioTemplate = {
         value: 1,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: '', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'Version du protocole', canSelfInit: true },
         },
     },
     hardwareVersion: {
@@ -84,7 +84,7 @@ export const AccelerometerTemplate: StellioTemplate = {
         value: '',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: '', canSelfInit: false },
+            value: { schemaType: 'string', title: 'Version du materiel', canSelfInit: false },
         },
     },
     softwareVersion: {
@@ -92,7 +92,7 @@ export const AccelerometerTemplate: StellioTemplate = {
         value: '',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: '', canSelfInit: false },
+            value: { schemaType: 'string', title: 'Version du logiciel', canSelfInit: false },
         },
     },
     state: {
@@ -100,7 +100,7 @@ export const AccelerometerTemplate: StellioTemplate = {
         value: 'off',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: '', canSelfInit: true },
+            value: { schemaType: 'string', title: 'Etat', canSelfInit: true },
         },
     },
     classType: {
@@ -108,7 +108,7 @@ export const AccelerometerTemplate: StellioTemplate = {
         value: '',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: '', canSelfInit: false },
+            value: { schemaType: 'string', title: 'Type de classe', canSelfInit: false },
         },
     },
     serialNumber: {
@@ -116,7 +116,7 @@ export const AccelerometerTemplate: StellioTemplate = {
         value: '',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: '', canSelfInit: false },
+            value: { schemaType: 'string', title: 'Numéro de série', canSelfInit: false },
         },
     },
     jsonSchema: {
