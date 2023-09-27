@@ -126,7 +126,8 @@ export const AccelerometerTemplate: StellioTemplate = {
             title: 'Accéléromètre',
             required: ['name'],
             minimum: 1,
-            description: "Jumeau numérique de l'accélèromètre (EM310-TILT)",
+            description:
+                "Capteur d'inclinaison pour la mesure d'angle et le mouvement d'actifs basé sur un accéléromètre 3 axes.",
         },
     },
 };

@@ -117,7 +117,8 @@ export const IndoorAmbienceSensorTemplate: StellioTemplate = {
             title: "Capteur de Surveillance d'Ambiance Intérieure",
             required: ['name'],
             minimum: 1,
-            description: "Jumeau numérique du capteur de surveillance d'ambiance intérieure (AM307)",
+            description:
+                "Capteur de surveillance d'ambiance intérieure pour la mesure de la température, de l'humidité, de la lumière, de la concentration de CO2 et de la pression barométrique.",
         },
     },
 };
