@@ -1,7 +1,7 @@
 import { StellioTemplate } from 'src/interfaces';
 
 export const AIVisionSensorTemplate: StellioTemplate = {
-    id: 'urn:ngsi-ld:Device:Template',
+    id: 'urn:ngsi-ld:AIVisionSensor:Template',
     type: 'Template',
     name: {
         type: 'Property',
@@ -19,7 +19,7 @@ export const AIVisionSensorTemplate: StellioTemplate = {
         value: 0,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'Nombre total de personnes', canSelfInit: false },
+            value: { schemaType: 'integer', title: 'Nombre total de personnes', canSelfInit: true },
         },
     },
     peopleCountMax: {
@@ -27,7 +27,7 @@ export const AIVisionSensorTemplate: StellioTemplate = {
         value: 0,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'Nombre maximal de personnes', canSelfInit: false },
+            value: { schemaType: 'integer', title: 'Nombre maximal de personnes' },
         },
     },
     regionCount: {
@@ -35,7 +35,7 @@ export const AIVisionSensorTemplate: StellioTemplate = {
         value: 0,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'Nombre de régions', canSelfInit: false },
+            value: { schemaType: 'integer', title: 'Nombre de régions' },
         },
     },
     protocolVersion: {
@@ -48,26 +48,26 @@ export const AIVisionSensorTemplate: StellioTemplate = {
     },
     hardwareVersion: {
         type: 'Property',
-        value: '',
+        value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Version du matériel', canSelfInit: false },
+            value: { schemaType: 'string', title: 'Version du matériel' },
         },
     },
     softwareVersion: {
         type: 'Property',
-        value: '',
+        value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Version du logiciel', canSelfInit: false },
+            value: { schemaType: 'string', title: 'Version du logiciel' },
         },
     },
     serialNumber: {
         type: 'Property',
-        value: '',
+        value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Numéro de série', canSelfInit: false },
+            value: { schemaType: 'string', title: 'Numéro de série' },
         },
     },
     jsonSchema: {

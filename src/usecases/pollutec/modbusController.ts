@@ -1,7 +1,7 @@
 import { StellioTemplate } from 'src/interfaces';
 
 export const ModbusControllerTemplate: StellioTemplate = {
-    id: 'urn:ngsi-ld:Device:ModbusController',
+    id: 'urn:ngsi-ld:ModbusController:Template',
     type: 'Template',
     name: {
         type: 'Property',
@@ -56,18 +56,18 @@ export const ModbusControllerTemplate: StellioTemplate = {
     },
     hardwareVersion: {
         type: 'Property',
-        value: '',
+        value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Version du matériel', canSelfInit: false },
+            value: { schemaType: 'string', title: 'Version du matériel' },
         },
     },
     softwareVersion: {
         type: 'Property',
-        value: '',
+        value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Version du logiciel', canSelfInit: false },
+            value: { schemaType: 'string', title: 'Version du logiciel' },
         },
     },
     state: {
@@ -80,34 +80,34 @@ export const ModbusControllerTemplate: StellioTemplate = {
     },
     classType: {
         type: 'Property',
-        value: '',
+        value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Type de classe', canSelfInit: false },
+            value: { schemaType: 'string', title: 'Type de classe' },
         },
     },
     serialNumber: {
         type: 'Property',
-        value: '',
+        value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Numéro de série', canSelfInit: false },
+            value: { schemaType: 'string', title: 'Numéro de série' },
         },
     },
     analog1: {
         type: 'Property',
-        value: '',
+        value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Analogique 1', canSelfInit: false },
+            value: { schemaType: 'string', title: 'Analogique 1' },
         },
     },
     analog2: {
         type: 'Property',
-        value: '',
+        value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Analogique 2', canSelfInit: false },
+            value: { schemaType: 'string', title: 'Analogique 2' },
         },
     },
     jsonSchema: {
@@ -117,7 +117,7 @@ export const ModbusControllerTemplate: StellioTemplate = {
             title: 'Contrôleur Modbus',
             required: ['name'],
             description:
-                'Contrôleur multi-interface pour l’acquisition de données de divers capteurs tels que le capteur d’humidité et de température du sol.',
+                "Contrôleur multi-interface pour l'acquisition de données de divers capteurs tels que le capteur d'humidité et de température du sol.",
         },
     },
 };

@@ -1,7 +1,7 @@
 import { StellioTemplate } from 'src/interfaces';
 
 export const AccelerometerTemplate: StellioTemplate = {
-    id: 'urn:ngsi-ld:Device:Template',
+    id: 'urn:ngsi-ld:Accelerometer:Template',
     type: 'Template',
     name: {
         type: 'Property',
@@ -81,18 +81,18 @@ export const AccelerometerTemplate: StellioTemplate = {
     },
     hardwareVersion: {
         type: 'Property',
-        value: '',
+        value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Version du materiel', canSelfInit: false },
+            value: { schemaType: 'string', title: 'Version du materiel' },
         },
     },
     softwareVersion: {
         type: 'Property',
-        value: '',
+        value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Version du logiciel', canSelfInit: false },
+            value: { schemaType: 'string', title: 'Version du logiciel' },
         },
     },
     state: {
@@ -105,18 +105,18 @@ export const AccelerometerTemplate: StellioTemplate = {
     },
     classType: {
         type: 'Property',
-        value: '',
+        value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Type de classe', canSelfInit: false },
+            value: { schemaType: 'string', title: 'Type de classe' },
         },
     },
     serialNumber: {
         type: 'Property',
-        value: '',
+        value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Numéro de série', canSelfInit: false },
+            value: { schemaType: 'string', title: 'Numéro de série' },
         },
     },
     jsonSchema: {

@@ -1,7 +1,7 @@
 import { StellioTemplate } from 'src/interfaces';
 
 export const PowerSocketTemplate: StellioTemplate = {
-    id: 'urn:ngsi-ld:Device:Template',
+    id: 'urn:ngsi-ld:PowerSocket:Template',
     type: 'Template',
     name: {
         type: 'Property',
@@ -64,18 +64,18 @@ export const PowerSocketTemplate: StellioTemplate = {
     },
     hardwareVersion: {
         type: 'Property',
-        value: '',
+        value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Version du matériel', canSelfInit: false },
+            value: { schemaType: 'string', title: 'Version du matériel' },
         },
     },
     softwareVersion: {
         type: 'Property',
-        value: '',
+        value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Version du logiciel', canSelfInit: false },
+            value: { schemaType: 'string', title: 'Version du logiciel' },
         },
     },
     state: {
@@ -88,18 +88,18 @@ export const PowerSocketTemplate: StellioTemplate = {
     },
     classType: {
         type: 'Property',
-        value: '',
+        value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Type de classe', canSelfInit: false },
+            value: { schemaType: 'string', title: 'Type de classe' },
         },
     },
     serialNumber: {
         type: 'Property',
-        value: '',
+        value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Numéro de série', canSelfInit: false },
+            value: { schemaType: 'string', title: 'Numéro de série' },
         },
     },
     jsonSchema: {

@@ -1,8 +1,26 @@
 import { AccelerometerTemplate } from './accelerometer';
+import { AIVisionSensorTemplate } from './aiVisionSensor';
+import { IndoorAmbienceSensorTemplate } from './indoorAmbienceSensor';
+import { LoRaControllerTemplate } from './loraController';
+import { ModbusControllerTemplate } from './modbusController';
+import { PowerSocketTemplate } from './powerSocket';
+import { SmartLightControllerTemplate } from './smartLightController';
+import { SoundLevelSensorTemplate } from './soundLevelSensor';
+import { UltrasonicDistanceSensorTemplate } from './ultrasonicDistanceSensor';
 
 const fse = require('fs-extra');
 
-const blueprint = [AccelerometerTemplate];
+const blueprint = [
+    AccelerometerTemplate,
+    AIVisionSensorTemplate,
+    IndoorAmbienceSensorTemplate,
+    LoRaControllerTemplate,
+    ModbusControllerTemplate,
+    PowerSocketTemplate,
+    SmartLightControllerTemplate,
+    SoundLevelSensorTemplate,
+    UltrasonicDistanceSensorTemplate,
+];
 const stringifiedBlueprint = JSON.stringify(blueprint);
 const FILE_NAME = 'blueprint.md';
 
