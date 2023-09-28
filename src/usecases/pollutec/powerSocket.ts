@@ -106,9 +106,9 @@ export const PowerSocketTemplate: StellioTemplate = {
         type: 'Property',
         value: {
             schemaType: 'PowerSocket',
-            title: 'Prise électrique intelligente',
+            title: 'Prise électrique',
             required: ['name'],
-            description: 'Prise portable intelligente pour la surveillance et le contrôle des appareils électroniques.',
+            description: "Prise pour la mesure de consommation et le contrôle d'appareils électriques.",
         },
     },
 };

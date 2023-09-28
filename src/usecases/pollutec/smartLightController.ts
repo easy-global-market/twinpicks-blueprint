@@ -130,10 +130,10 @@ export const SmartLightControllerTemplate: StellioTemplate = {
         type: 'Property',
         value: {
             schemaType: 'SmartLightController',
-            title: 'Contrôleur de lumière intelligent',
+            title: 'Contrôleur de lumière',
             required: ['name'],
             description:
-                'Contrôleur de lumière intelligent pour la surveillance et le contrôle des lumières localement ou à distance.',
+                "Contrôleur pour armoire d'éclairage permettant la surveillance et le contrôle des éclairages localement ou à distance.",
         },
     },
 };
