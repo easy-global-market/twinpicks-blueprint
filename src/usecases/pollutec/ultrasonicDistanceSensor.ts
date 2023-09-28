@@ -77,7 +77,7 @@ export const UltrasonicDistanceSensorTemplate: StellioTemplate = {
             title: 'Capteur ultrasonique de distance',
             required: ['name'],
             description:
-                'Capteur ultrasonique de distance pour la détection de la distance ou du niveau des objets dans un environnement difficile.',
+                "Capteur ultrasonique de distance pour la mesure de distance ou d'un niveau de remplissage. Compatible environnements difficiles.",
         },
     },
 };

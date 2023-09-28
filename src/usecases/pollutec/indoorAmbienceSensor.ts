@@ -118,7 +118,7 @@ export const IndoorAmbienceSensorTemplate: StellioTemplate = {
             required: ['name'],
             minimum: 1,
             description:
-                "Capteur de surveillance d'ambiance intérieure pour la mesure de la température, de l'humidité, de la lumière, de la concentration de CO2 et de la pression barométrique.",
+                "Capteur d'ambiance intérieure avec affichage. Mesure de Niveau d'activité (PIR), Humidité, Température, Luminosité, composés organiques volatils, pression atmosphérique et CO2.",
         },
     },
 };

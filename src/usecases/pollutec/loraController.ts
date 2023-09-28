@@ -98,7 +98,7 @@ export const LoRaControllerTemplate: StellioTemplate = {
         type: 'Property',
         value: {
             schemaType: 'LoRaController',
-            title: 'Contrôleur LoRa',
+            title: "Contrôleur de vannes d'irrigation piloté par LoRaWAN",
             required: ['name'],
             minimum: 1,
             description: 'Contrôleur LoRa dédié à la commande des électro-aimants de verrouillage DC de la vanne',

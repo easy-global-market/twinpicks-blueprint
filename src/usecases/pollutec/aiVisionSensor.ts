@@ -77,7 +77,7 @@ export const AIVisionSensorTemplate: StellioTemplate = {
             title: 'Capteur de Vision AI',
             required: ['name'],
             minimum: 1,
-            description: "Capteur de vision IA pour la surveillance de l'occupation et de l'utilisation de l'espace.",
+            description: "Capteur de taux d'occupation et d'utilisation de l'espace par analyse vidéo assistée par IA.",
         },
     },
 };
