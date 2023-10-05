@@ -126,6 +126,46 @@ export const SmartLightControllerTemplate: StellioTemplate = {
             value: { schemaType: 'string', title: 'Numéro de série' },
         },
     },
+    totalCurrent: {
+        type: 'Property',
+        value: 0,
+        jsonSchema: {
+            type: 'Property',
+            value: { schemaType: 'integer', title: 'Puissance total', canSelfInit: true },
+        },
+    },
+    powerFactor: {
+        type: 'Property',
+        value: 0,
+        jsonSchema: {
+            type: 'Property',
+            value: { schemaType: 'integer', title: "Facteur d'énergie", canSelfInit: true },
+        },
+    },
+    activePower: {
+        type: 'Property',
+        value: 0,
+        jsonSchema: {
+            type: 'Property',
+            value: { schemaType: 'integer', title: 'Energie active', canSelfInit: true },
+        },
+    },
+    powerConsumption: {
+        type: 'Property',
+        value: 0,
+        jsonSchema: {
+            type: 'Property',
+            value: { schemaType: 'integer', title: "Consommation d'énergie", canSelfInit: true },
+        },
+    },
+    voltage: {
+        type: 'Property',
+        value: 0,
+        jsonSchema: {
+            type: 'Property',
+            value: { schemaType: 'integer', title: 'Voltage', canSelfInit: true },
+        },
+    },
     jsonSchema: {
         type: 'Property',
         value: {

@@ -8,7 +8,11 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
         value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Nom du sol de référence où se situe le capteur' },
+            value: {
+                schemaType: 'string',
+                title: 'Nom du sol de référence où se situe le capteur',
+                friendlyAttributeName: 'Nom',
+            },
         },
     },
     location: {
@@ -22,6 +26,7 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             value: {
                 schemaType: 'object',
                 title: 'Où se situe le capteur et sol de référence ?',
+                friendlyAttributeName: 'Géolocalisation',
             },
         },
     },
@@ -61,7 +66,8 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'array',
-                title: 'Liste de jeux de données humidité',
+                title: "Sources de données d'humidité",
+                friendlyAttributeName: "Sources de données d'humidité",
                 minItems: 1,
                 items: {
                     schemaType: 'integer',
@@ -107,7 +113,8 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'array',
-                title: 'Liste de jeux de données de température',
+                title: 'Sources de données de température',
+                friendlyAttributeName: 'Sources de données de température',
                 minItems: 1,
                 items: {
                     schemaType: 'integer',

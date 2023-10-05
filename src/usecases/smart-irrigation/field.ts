@@ -8,18 +8,18 @@ export const FieldTemplate: StellioTemplate = {
         value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: "Nom du champ d'opération" },
+            value: { schemaType: 'string', title: "Nom de la zone d'opération", friendlyAttributeName: 'Nom' },
         },
     },
     jsonSchema: {
         type: 'Property',
         value: {
             schemaType: 'Field',
-            title: "Champ d'opération",
+            title: "Zone d'opération",
             minimum: 1,
             required: ['name'],
             description:
-                "Représentation très haut niveau de la zone d'opération (peut regrouper plusieurs grandes zones d'irrigation)",
+                "Une zone de plus haut niveau dans la gestion de l'irrigation. Peut-être typiquement le niveau de la ville, d'un service ou d'un quartier. La hiérarchie des zones est : Zone d'opération > Zone d'irrigation > Zone de gestion",
         },
     },
 };

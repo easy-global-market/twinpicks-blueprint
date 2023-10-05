@@ -133,12 +133,16 @@ export interface JsonSchema {
     not?: JsonSchema;
 
     /////////////////////////////////////////////////
-    // Twin Picks Specificity
+    // Twin Picks Specificities
     /////////////////////////////////////////////////
     /**
      * Used by twin picks only to not mess with the \@type of NGSI-LD
      */
     schemaType: string;
+    /**
+     * Show a different attribute name than raw NGSI-LD
+     */
+    friendlyAttributeName?: string;
     /**
      * If true, the prop won't appear in the
      * guided provisioning form, but Twinpicks will still
