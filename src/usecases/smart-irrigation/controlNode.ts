@@ -8,12 +8,12 @@ export const ControlNodeTemplate: StellioTemplate = {
         value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Nom du noeud de controle' },
+            value: { schemaType: 'string', title: 'Nom du noeud de controle', friendlyAttributeName: 'Nom' },
         },
     },
     observedState: {
         type: 'Property',
-        value: 1.0,
+        value: 0,
         unitCode: 'E50',
         observedBy: {
             type: 'Relationship',
@@ -34,16 +34,23 @@ export const ControlNodeTemplate: StellioTemplate = {
             value: {
                 schemaType: 'integer',
                 title: 'Etat observé',
+                friendlyAttributeName: 'Etat observé',
+                canSelfInit: true,
             },
         },
     },
     requestedState: {
         type: 'Property',
-        value: 1,
+        value: 0,
         unitCode: 'E50',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'Etat demandé' },
+            value: {
+                schemaType: 'integer',
+                title: 'Etat demandé',
+                friendlyAttributeName: 'Etat demandé',
+                canSelfInit: true,
+            },
         },
     },
     location: {
@@ -57,6 +64,7 @@ export const ControlNodeTemplate: StellioTemplate = {
             value: {
                 schemaType: 'object',
                 title: 'Où se trouve la vanne de controle ?',
+                friendlyAttributeName: 'Géolocalisation',
             },
         },
     },

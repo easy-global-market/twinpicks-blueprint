@@ -31,7 +31,7 @@ fse.writeFile(
 
 # Info
 - See the README.md to know how to generate a new blueprint
-- Copy the json below to update the blueprint attribute in the relevant UsecaseConfig entity
+- Copy the json below to update the blueprint attribute in the relevant UseCaseConfig entity
 ---
 
 ${stringifiedBlueprint}

@@ -8,7 +8,7 @@ export const WeatherInformationTemplate: StellioTemplate = {
         value: {
             schemaType: 'WeatherInformation',
             title: 'Information Météo',
-            description: "Rassemble les informations météo d'un champ d'opération",
+            description: "Rassemble les informations météo d'une zone d'opération",
             minimum: 1,
             canEntityBeCreated: false,
         },

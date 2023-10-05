@@ -19,7 +19,7 @@ export const IrrigationAreaTemplate: StellioTemplate = {
         value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: "Nom de la zone d'irrigation" },
+            value: { schemaType: 'string', title: "Nom de la zone d'irrigation", friendlyAttributeName: 'Nom' },
         },
     },
     zoomLevel: {
@@ -27,7 +27,11 @@ export const IrrigationAreaTemplate: StellioTemplate = {
         value: 18,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: "Niveau de zoom sur la zone d'irrigation depuis la carte" },
+            value: {
+                schemaType: 'integer',
+                title: "Niveau de zoom sur la zone d'irrigation depuis la carte",
+                friendlyAttributeName: 'Niveau de zoom',
+            },
         },
     },
     belongsTo: {
@@ -39,6 +43,7 @@ export const IrrigationAreaTemplate: StellioTemplate = {
                 schemaType: 'string',
                 format: 'uri',
                 title: "Cette zone d'irrigation appartient à quel champ d'opération ?",
+                friendlyAttributeName: 'Appartient à',
                 minimum: 1,
                 maximum: 1,
             },
@@ -53,6 +58,7 @@ export const IrrigationAreaTemplate: StellioTemplate = {
                 schemaType: 'string',
                 format: 'uri',
                 title: "Cette zone d'irrigation comprend quelle(s) zone(s) de gestion ?",
+                friendlyAttributeName: 'Contient',
                 minimum: 1,
             },
         },
@@ -66,6 +72,7 @@ export const IrrigationAreaTemplate: StellioTemplate = {
                 schemaType: 'string',
                 format: 'uri',
                 title: "Quelle est la Météo de référence pour cette zone d'irrigation ?",
+                friendlyAttributeName: 'Météo de référence',
                 minimum: 1,
                 maximum: 1,
             },
@@ -79,7 +86,11 @@ export const IrrigationAreaTemplate: StellioTemplate = {
         },
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'object', title: 'Où se situe la zone dirrigation ?' },
+            value: {
+                schemaType: 'object',
+                title: 'Où se situe la zone dirrigation ?',
+                friendlyAttributeName: 'Géolocalisation',
+            },
         },
     },
     hasActiveAnomaly: {
@@ -87,7 +98,12 @@ export const IrrigationAreaTemplate: StellioTemplate = {
         value: false,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'boolean', title: 'Zone en anomalie' },
+            value: {
+                schemaType: 'boolean',
+                title: 'Zone en anomalie',
+                friendlyAttributeName: 'Zone en anomalie',
+                canSelfInit: true,
+            },
         },
     },
 };

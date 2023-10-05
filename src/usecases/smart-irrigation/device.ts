@@ -8,7 +8,7 @@ export const DeviceTemplate: StellioTemplate = {
         value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Nom du Device' },
+            value: { schemaType: 'string', title: 'Nom du Device', friendlyAttributeName: 'Nom' },
         },
     },
     description: {
@@ -16,7 +16,7 @@ export const DeviceTemplate: StellioTemplate = {
         value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Description du Device' },
+            value: { schemaType: 'string', title: 'Description du Device', friendlyAttributeName: 'Description' },
         },
     },
     lorasnr: {
@@ -26,7 +26,7 @@ export const DeviceTemplate: StellioTemplate = {
         observedAt: new Date().toISOString(),
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'Lora SNR', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'Lora SNR', friendlyAttributeName: 'Lora SNR', canSelfInit: true },
         },
     },
     rssi: {
@@ -36,7 +36,7 @@ export const DeviceTemplate: StellioTemplate = {
         observedAt: new Date().toISOString(),
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'RSSI', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'RSSI', friendlyAttributeName: 'RSSI', canSelfInit: true },
         },
     },
     batteryVoltage: {
@@ -45,7 +45,12 @@ export const DeviceTemplate: StellioTemplate = {
         unitCode: 'V',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'Niveau de batterie', canSelfInit: true },
+            value: {
+                schemaType: 'integer',
+                title: 'Niveau de batterie',
+                friendlyAttributeName: 'Niveau de batterie',
+                canSelfInit: true,
+            },
         },
     },
     internalTemperature: {
@@ -55,7 +60,11 @@ export const DeviceTemplate: StellioTemplate = {
         observedAt: new Date().toISOString(),
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'Temperature interne' },
+            value: {
+                schemaType: 'integer',
+                title: 'Temperature interne',
+                friendlyAttributeName: 'Temperature interne',
+            },
         },
     },
     internalHumidity: {
@@ -64,7 +73,7 @@ export const DeviceTemplate: StellioTemplate = {
         unitCode: 'P1',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'Humidité interne' },
+            value: { schemaType: 'integer', title: 'Humidité interne', friendlyAttributeName: 'Humidité interne' },
         },
     },
     zoneActivation: {
@@ -76,6 +85,7 @@ export const DeviceTemplate: StellioTemplate = {
             value: {
                 schemaType: 'array',
                 title: "Liste de zones d'activation",
+                friendlyAttributeName: "Zones d'activation",
                 minItems: 1,
                 items: {
                     schemaType: 'integer',
