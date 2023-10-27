@@ -69,6 +69,34 @@ export const RoomTemplate: StellioTemplate = {
             },
         },
     },
+    temperatureB: {
+        type: 'Property',
+        value: 0,
+        unitCode: 'CEL',
+        observedAt: new Date().toISOString(),
+        observedBy: {
+            type: 'Relationship',
+            object: 'urn:ngsi-ld:Device:Template',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    schemaType: 'string',
+                    format: 'uri',
+                    title: 'Relationship to a Device',
+                    minimum: 1,
+                    maximum: 1,
+                },
+            },
+        },
+        jsonSchema: {
+            type: 'Property',
+            value:  {
+                    schemaType: 'integer',
+                    title: 'Température',
+                    canSelfInit: true,
+                },
+        },
+    },
     humidity: {
         type: 'Property',
         value: 1,
