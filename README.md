@@ -1,7 +1,8 @@
 # How to use
 
-1. Clone repository
 1. If you don't have it, install node (https://github.com/nvm-sh/nvm)
+1. Clone repository
+1. Do `npm install`
 1. Do your changes to the blueprint in `/src/usecases/[USECASE_TYPE]`
 1. Then use this command `npx tsc` to transpile the code
 1. cd to `/dist/usecases/[USECASE_TYPE]`
