@@ -124,6 +124,24 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             },
         },
     },
+    soilProperties: {
+        type: 'Property',
+        value: {
+            "vM_FC": 0.27,
+            "vM_PWP": 0.12,
+            "vM_SAT": 0.37,
+            "Z": 350,
+            "SWCON": 0.5
+        },
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'object',
+                title: 'Propriétés du sol',
+                canSelfInit: true,
+            },
+        },
+    },
     jsonSchema: {
         type: 'Property',
         value: {
