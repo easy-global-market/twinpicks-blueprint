@@ -144,7 +144,7 @@ export const ManagedZoneTemplate: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'integer',
-                title: "Seuil de confort : proportion de quantité d'eau dans le sol au dessous de laquelle on n'essaye de ne pas descendre",
+                title: "Seuil de confort : proportion de quantité d'eau dans le sol au dessous de laquelle on essaie de ne pas descendre",
                 friendlyAttributeName: "Seuil de confort",
             },
         },
