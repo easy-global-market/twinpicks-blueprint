@@ -110,12 +110,43 @@ export const ManagedZoneTemplate: StellioTemplate = {
             },
         },
     },
-    hasActiveAnomay: {
+    criticalThreshold: {
         type: 'Property',
-        value: false,
+        value: 0.6,
+        unitCode: 'H93',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'boolean', title: 'Zone en anomalie', friendlyAttributeName: 'Zone en anomalie' },
+            value: {
+                schemaType: 'float',
+                title: "Seuil critique",
+                friendlyAttributeName: "Seuil critique : proportion de quantité d'eau dans le sol au dessous de laquelle on ne veut surtout pas descendre",
+            },
+        },
+    },
+    saturationThreshold: {
+        type: 'Property',
+        value: 1.0,
+        unitCode: 'H93',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'float',
+                title: "Seuil de saturation",
+                friendlyAttributeName: "Seuil de saturation : proportion de quantité d'eau dans le sol à ne pas dépasser",
+            },
+        },
+    },
+    comfortThreshold: {
+        type: 'Property',
+        value: 0.8,
+        unitCode: 'H93',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'float',
+                title: "Seuil de confort",
+                friendlyAttributeName: "Seuil de confort : proportion de quantité d'eau dans le sol au dessous de laquelle on n'essaye de ne pas descendre",
+            },
         },
     },
     jsonSchema: {

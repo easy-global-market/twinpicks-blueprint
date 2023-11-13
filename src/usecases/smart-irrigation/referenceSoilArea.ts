@@ -124,20 +124,93 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             },
         },
     },
-    soilProperties: {
+    volumetricMoistureFieldCapacity: {
         type: 'Property',
-        value: {
-            "vM_FC": 0.27,
-            "vM_PWP": 0.12,
-            "vM_SAT": 0.37,
-            "Z": 350,
-            "SWCON": 0.5
-        },
+        value: 0.27,
+        unitCode: 'H60',
         jsonSchema: {
             type: 'Property',
             value: {
-                schemaType: 'object',
-                title: 'Propriétés du sol',
+                schemaType: 'float',
+                title: "vM_FC",
+                friendlyAttributeName: "vM_FC : Valeur d'humidité volumetrique à capacité au champ",
+            },
+        },
+    },
+    volumetricMoisturePermanentWiltingPoint: {
+        type: 'Property',
+        value: 0.12,
+        unitCode: 'H60',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'float',
+                title: "vM_PWP",
+                friendlyAttributeName: "vM_PWP : Valeur d'humidité volumetrique au point de fletrissement",
+            },
+        },
+    },
+    volumetricMoistureSaturation: {
+        type: 'Property',
+        value: 0.37,
+        unitCode: 'H60',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'float',
+                title: "vM_SAT",
+                friendlyAttributeName: "vM_SAT : Valeur d'humidité volumetrique à saturation",
+            },
+        },
+    },
+    cropCoefficient: {
+        type: 'Property',
+        value: 1,
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                title: "Kc",
+                friendlyAttributeName: "Kc : Coefficient de culture",
+            },
+        },
+    },
+    runoffCurveNumber: {
+        type: 'Property',
+        value: 75,
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                title: "CN2",
+                friendlyAttributeName: "CN2 : Coefficient de ruissellement",
+                canSelfInit: true,
+            },
+        },
+    },
+    soilDepth: {
+        type: 'Property',
+        value: 350,
+        unitCode: 'MMT',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                title: "Z",
+                friendlyAttributeName: "Z : Profondeur du sol",
+            },
+        },
+    },
+    swcon: {
+        type: 'Property',
+        value: 0.5,
+        unitCode: 'H93',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'float',
+                title: "SWCON",
+                friendlyAttributeName: "SWCON : Quantité d'eau perdue par percolation en 1 jour par rapport à la quantité d'eau qui excède la capacité au champs",
                 canSelfInit: true,
             },
         },
