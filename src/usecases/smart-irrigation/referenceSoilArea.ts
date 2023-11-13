@@ -124,20 +124,93 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             },
         },
     },
-    soilProperties: {
+    volumetricMoistureFieldCapacity: {
         type: 'Property',
-        value: {
-            "vM_FC": 0.27,
-            "vM_PWP": 0.12,
-            "vM_SAT": 0.37,
-            "Z": 350,
-            "SWCON": 0.5
-        },
+        value: 0.27,
+        unitCode: 'H60',
         jsonSchema: {
             type: 'Property',
             value: {
-                schemaType: 'object',
-                title: 'Propriétés du sol',
+                schemaType: 'integer',
+                title: "vM_FC : Valeur d'humidité volumetrique à capacité au champ",
+                friendlyAttributeName: "Humidité volumetrique à capacité au champ",
+            },
+        },
+    },
+    volumetricMoisturePermanentWiltingPoint: {
+        type: 'Property',
+        value: 0.12,
+        unitCode: 'H60',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                title: "vM_PWP : Valeur d'humidité volumetrique au point de fletrissement",
+                friendlyAttributeName: "Humidité volumetrique au point de fletrissement",
+            },
+        },
+    },
+    volumetricMoistureSaturation: {
+        type: 'Property',
+        value: 0.37,
+        unitCode: 'H60',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                title: "vM_SAT : Valeur d'humidité volumetrique à saturation",
+                friendlyAttributeName: "Humidité volumetrique à saturation",
+            },
+        },
+    },
+    cropCoefficient: {
+        type: 'Property',
+        value: 1,
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                title: "Kc : Coefficient de culture",
+                friendlyAttributeName: "Coefficient de culture",
+            },
+        },
+    },
+    runoffCurveNumber: {
+        type: 'Property',
+        value: 75,
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                title: "CN2 : Coefficient de ruissellement",
+                friendlyAttributeName: "Coefficient de ruissellement",
+                canSelfInit: true,
+            },
+        },
+    },
+    soilDepth: {
+        type: 'Property',
+        value: 350,
+        unitCode: 'MMT',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                title: "Z : Profondeur du sol",
+                friendlyAttributeName: "Profondeur du sol",
+            },
+        },
+    },
+    swcon: {
+        type: 'Property',
+        value: 0.5,
+        unitCode: 'H93',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                title: "SWCON : Quantité d'eau perdue par percolation en 1 jour par rapport à la quantité d'eau qui excède la capacité au champs",
+                friendlyAttributeName: "SWCON",
                 canSelfInit: true,
             },
         },
@@ -148,7 +221,7 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             schemaType: 'ReferenceSoilArea',
             title: 'Sol de référence pour le capteur',
             minimum: 1,
-            required: ['name', 'location', 'soilTemperature', 'volumetricMoisture'],
+            required: ['name', 'location', 'soilTemperature', 'volumetricMoisture', 'volumetricMoistureFieldCapacity', 'volumetricMoisturePermanentWiltingPoint', 'volumetricMoistureSaturation', 'cropCoefficient', 'runoffCurveNumber', 'soilDepth', 'swcon'],
             description:
                 'Représentation de la zone de sol à proximité du capteur. Sert de référence pour les données des zones de gestion alentours',
         },

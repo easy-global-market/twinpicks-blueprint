@@ -110,12 +110,43 @@ export const ManagedZoneTemplate: StellioTemplate = {
             },
         },
     },
-    hasActiveAnomay: {
+    criticalThreshold: {
         type: 'Property',
-        value: false,
+        value: 0.6,
+        unitCode: 'H93',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'boolean', title: 'Zone en anomalie', friendlyAttributeName: 'Zone en anomalie' },
+            value: {
+                schemaType: 'integer',
+                title: "Seuil critique : proportion de quantité d'eau dans le sol au dessous de laquelle on ne veut surtout pas descendre",
+                friendlyAttributeName: "Seuil critique",
+            },
+        },
+    },
+    saturationThreshold: {
+        type: 'Property',
+        value: 1.0,
+        unitCode: 'H93',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                title: "Seuil de saturation : proportion de quantité d'eau dans le sol à ne pas dépasser",
+                friendlyAttributeName: "Seuil de saturation",
+            },
+        },
+    },
+    comfortThreshold: {
+        type: 'Property',
+        value: 0.8,
+        unitCode: 'H93',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                title: "Seuil de confort : proportion de quantité d'eau dans le sol au dessous de laquelle on n'essaye de ne pas descendre",
+                friendlyAttributeName: "Seuil de confort",
+            },
         },
     },
     jsonSchema: {
@@ -124,7 +155,7 @@ export const ManagedZoneTemplate: StellioTemplate = {
             schemaType: 'ManagedZone',
             title: 'Zone de gestion',
             minimum: 1,
-            required: ['name', 'hasReferenceSoilArea', 'location', 'belongsTo'],
+            required: ['name', 'hasReferenceSoilArea', 'location', 'belongsTo', 'criticalThreshold', 'saturationThreshold', 'comfortThreshold'],
             description:
                 "Représentation géographique la plus petite, généralement de la taille d'un bout de jardin, précisément délimitée par un polygone",
         },
