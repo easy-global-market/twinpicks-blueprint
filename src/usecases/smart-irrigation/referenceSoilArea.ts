@@ -133,7 +133,7 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             value: {
                 schemaType: 'integer',
                 title: "vM_FC : Valeur d'humidité volumetrique à capacité au champ",
-                friendlyAttributeName: "vM_FC",
+                friendlyAttributeName: "Humidité volumetrique à capacité au champ",
             },
         },
     },
@@ -146,7 +146,7 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             value: {
                 schemaType: 'integer',
                 title: "vM_PWP : Valeur d'humidité volumetrique au point de fletrissement",
-                friendlyAttributeName: "vM_PWP",
+                friendlyAttributeName: "Humidité volumetrique au point de fletrissement",
             },
         },
     },
@@ -159,7 +159,7 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             value: {
                 schemaType: 'integer',
                 title: "vM_SAT : Valeur d'humidité volumetrique à saturation",
-                friendlyAttributeName: "vM_SAT ",
+                friendlyAttributeName: "Humidité volumetrique à saturation",
             },
         },
     },
@@ -171,7 +171,7 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             value: {
                 schemaType: 'integer',
                 title: "Kc : Coefficient de culture",
-                friendlyAttributeName: "Kc",
+                friendlyAttributeName: "Coefficient de culture",
             },
         },
     },
@@ -183,7 +183,7 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             value: {
                 schemaType: 'integer',
                 title: "CN2 : Coefficient de ruissellement",
-                friendlyAttributeName: "CN2",
+                friendlyAttributeName: "Coefficient de ruissellement",
                 canSelfInit: true,
             },
         },
@@ -197,7 +197,7 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             value: {
                 schemaType: 'integer',
                 title: "Z : Profondeur du sol",
-                friendlyAttributeName: "Z",
+                friendlyAttributeName: "Profondeur du sol",
             },
         },
     },
