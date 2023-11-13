@@ -117,9 +117,9 @@ export const ManagedZoneTemplate: StellioTemplate = {
         jsonSchema: {
             type: 'Property',
             value: {
-                schemaType: 'float',
-                title: "Seuil critique",
-                friendlyAttributeName: "Seuil critique : proportion de quantité d'eau dans le sol au dessous de laquelle on ne veut surtout pas descendre",
+                schemaType: 'integer',
+                title: "Seuil critique : proportion de quantité d'eau dans le sol au dessous de laquelle on ne veut surtout pas descendre",
+                friendlyAttributeName: "Seuil critique",
             },
         },
     },
@@ -130,9 +130,9 @@ export const ManagedZoneTemplate: StellioTemplate = {
         jsonSchema: {
             type: 'Property',
             value: {
-                schemaType: 'float',
-                title: "Seuil de saturation",
-                friendlyAttributeName: "Seuil de saturation : proportion de quantité d'eau dans le sol à ne pas dépasser",
+                schemaType: 'integer',
+                title: "Seuil de saturation : proportion de quantité d'eau dans le sol à ne pas dépasser",
+                friendlyAttributeName: "Seuil de saturation",
             },
         },
     },
@@ -143,9 +143,9 @@ export const ManagedZoneTemplate: StellioTemplate = {
         jsonSchema: {
             type: 'Property',
             value: {
-                schemaType: 'float',
-                title: "Seuil de confort",
-                friendlyAttributeName: "Seuil de confort : proportion de quantité d'eau dans le sol au dessous de laquelle on n'essaye de ne pas descendre",
+                schemaType: 'integer',
+                title: "Seuil de confort : proportion de quantité d'eau dans le sol au dessous de laquelle on n'essaye de ne pas descendre",
+                friendlyAttributeName: "Seuil de confort",
             },
         },
     },
@@ -155,7 +155,7 @@ export const ManagedZoneTemplate: StellioTemplate = {
             schemaType: 'ManagedZone',
             title: 'Zone de gestion',
             minimum: 1,
-            required: ['name', 'hasReferenceSoilArea', 'location', 'belongsTo'],
+            required: ['name', 'hasReferenceSoilArea', 'location', 'belongsTo', 'criticalThreshold', 'saturationThreshold', 'comfortThreshold'],
             description:
                 "Représentation géographique la plus petite, généralement de la taille d'un bout de jardin, précisément délimitée par un polygone",
         },
