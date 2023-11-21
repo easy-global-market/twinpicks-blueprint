@@ -9,7 +9,7 @@ export const IrrigationAreaTemplate: StellioTemplate = {
             schemaType: 'IrrigationArea',
             title: "Zone d'irrigation",
             minimum: 1,
-            required: ['name', 'belongsTo', 'hasPart', 'location', 'hasActiveAnomaly', 'hasWeatherForecasted'],
+            required: ['name', 'belongsTo', 'hasPart', 'location', 'hasWeatherForecasted'],
             description:
                 'Représentation géographique de taille intermédiaire qui regroupe en générale plusieurs petites zones controllées (ou zones en gestion)',
         },
@@ -90,19 +90,6 @@ export const IrrigationAreaTemplate: StellioTemplate = {
                 schemaType: 'object',
                 title: 'Où se situe la zone dirrigation ?',
                 friendlyAttributeName: 'Géolocalisation',
-            },
-        },
-    },
-    hasActiveAnomaly: {
-        type: 'Property',
-        value: false,
-        jsonSchema: {
-            type: 'Property',
-            value: {
-                schemaType: 'boolean',
-                title: 'Zone en anomalie',
-                friendlyAttributeName: 'Zone en anomalie',
-                canSelfInit: true,
             },
         },
     },
