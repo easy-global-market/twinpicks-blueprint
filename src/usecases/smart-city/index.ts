@@ -1,6 +1,6 @@
-import { BuildingTemplate } from './building';
-import { DeviceTemplate } from './device';
-import { RoadTemplate } from './road';
+import { BuildingTemplate } from 'src/usecases/smart-city/building';
+import { DeviceTemplate } from 'src/usecases/smart-city/device';
+import { RoadTemplate } from 'src/usecases/smart-city/road';
 
 const fse = require('fs-extra');
 
