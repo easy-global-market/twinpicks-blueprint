@@ -22,7 +22,7 @@ export const RoomTemplate: StellioTemplate = {
             value: {
                 schemaType: 'string',
                 format: 'uri',
-                title: 'Relationship to a Building',
+                title: 'Relation vers un Bâtiment',
                 minimum: 1,
                 maximum: 1,
             },
@@ -49,7 +49,7 @@ export const RoomTemplate: StellioTemplate = {
                 value: {
                     schemaType: 'string',
                     format: 'uri',
-                    title: 'Relationship to a Device',
+                    title: 'Température observée par un capteur',
                     minimum: 1,
                     maximum: 1,
                 },
@@ -90,7 +90,7 @@ export const RoomTemplate: StellioTemplate = {
                 value: {
                     schemaType: 'string',
                     format: 'uri',
-                    title: 'Relationship to a Device',
+                    title: 'Humidité observée par un capteur',
                     minimum: 1,
                     maximum: 1,
                 },
