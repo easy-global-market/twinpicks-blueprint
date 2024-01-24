@@ -37,17 +37,6 @@ export const LotusSensor: StellioTemplate = {
             },
         },
     },
-    afeId: {
-        type: 'Property',
-        value: 'Placeholder',
-        jsonSchema: {
-            type: 'Property',
-            value: {
-                schemaType: 'string',
-                title: 'AFE ID',
-            },
-        },
-    },
     afeFirmwareVersion: {
         type: 'Property',
         value: 'Placeholder',
@@ -59,167 +48,95 @@ export const LotusSensor: StellioTemplate = {
             },
         },
     },
-    cnt1a: {
+    R11: {
         type: 'Property',
         value: 0.1,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'CNT', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'R', canSelfInit: true },
         },
     },
-    cnt1b: {
+    R12: {
         type: 'Property',
         value: 0.1,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'CNT', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'R', canSelfInit: true },
         },
     },
-    cnt1c: {
+    R13: {
         type: 'Property',
         value: 0.1,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'CNT', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'R', canSelfInit: true },
         },
     },
-    cnt1d: {
+    R14: {
         type: 'Property',
         value: 0.1,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'CNT', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'R', canSelfInit: true },
         },
     },
-    cnt1e: {
+    R21: {
         type: 'Property',
         value: 0.1,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'CNT', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'R', canSelfInit: true },
         },
     },
-    cnt1f: {
+    R22: {
         type: 'Property',
         value: 0.1,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'CNT', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'R', canSelfInit: true },
         },
     },
-    cnt1g: {
+    R23: {
         type: 'Property',
         value: 0.1,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'CNT', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'R', canSelfInit: true },
         },
     },
-    cnt1h: {
+    R24: {
         type: 'Property',
         value: 0.1,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'CNT', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'R', canSelfInit: true },
         },
     },
-    cnt1i: {
+    R31: {
         type: 'Property',
         value: 0.1,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'CNT', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'R', canSelfInit: true },
         },
     },
-    cnt1j: {
+    R32: {
         type: 'Property',
         value: 0.1,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'CNT', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'R', canSelfInit: true },
         },
     },
-    cnt2a: {
+    R34: {
         type: 'Property',
         value: 0.1,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'CNT', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'R', canSelfInit: true },
         },
     },
-    cnt2b: {
-        type: 'Property',
-        value: 0.1,
-        jsonSchema: {
-            type: 'Property',
-            value: { schemaType: 'integer', title: 'CNT', canSelfInit: true },
-        },
-    },
-    cnt2c: {
-        type: 'Property',
-        value: 0.1,
-        jsonSchema: {
-            type: 'Property',
-            value: { schemaType: 'integer', title: 'CNT', canSelfInit: true },
-        },
-    },
-    cnt2d: {
-        type: 'Property',
-        value: 0.1,
-        jsonSchema: {
-            type: 'Property',
-            value: { schemaType: 'integer', title: 'CNT', canSelfInit: true },
-        },
-    },
-    cnt2e: {
-        type: 'Property',
-        value: 0.1,
-        jsonSchema: {
-            type: 'Property',
-            value: { schemaType: 'integer', title: 'CNT', canSelfInit: true },
-        },
-    },
-    cnt2f: {
-        type: 'Property',
-        value: 0.1,
-        jsonSchema: {
-            type: 'Property',
-            value: { schemaType: 'integer', title: 'CNT', canSelfInit: true },
-        },
-    },
-    cnt2g: {
-        type: 'Property',
-        value: 0.1,
-        jsonSchema: {
-            type: 'Property',
-            value: { schemaType: 'integer', title: 'CNT', canSelfInit: true },
-        },
-    },
-    cnt2h: {
-        type: 'Property',
-        value: 0.1,
-        jsonSchema: {
-            type: 'Property',
-            value: { schemaType: 'integer', title: 'CNT', canSelfInit: true },
-        },
-    },
-    cnt2i: {
-        type: 'Property',
-        value: 0.1,
-        jsonSchema: {
-            type: 'Property',
-            value: { schemaType: 'integer', title: 'CNT', canSelfInit: true },
-        },
-    },
-    cnt2j: {
-        type: 'Property',
-        value: 0.1,
-        jsonSchema: {
-            type: 'Property',
-            value: { schemaType: 'integer', title: 'CNT', canSelfInit: true },
-        },
-    },
-    t1: {
+    T1: {
         type: 'Property',
         value: 0.1,
         jsonSchema: {
@@ -227,7 +144,7 @@ export const LotusSensor: StellioTemplate = {
             value: { schemaType: 'integer', title: 'T', canSelfInit: true },
         },
     },
-    t2: {
+    T2: {
         type: 'Property',
         value: 0.1,
         jsonSchema: {
@@ -235,28 +152,84 @@ export const LotusSensor: StellioTemplate = {
             value: { schemaType: 'integer', title: 'T', canSelfInit: true },
         },
     },
-    c1: {
+    C1: {
         type: 'Property',
         value: 0.1,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'T', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'C', canSelfInit: true },
         },
     },
-    c2: {
+    R_amplitude: {
         type: 'Property',
         value: 0.1,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'T', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'R_amplitude'},
         },
     },
-    c3: {
+    R_signal: {
         type: 'Property',
         value: 0.1,
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'T', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'R_signal',},
+        },
+    },
+    R_frequency: {
+        type: 'Property',
+        value: 0.1,
+        jsonSchema: {
+            type: 'Property',
+            value: { schemaType: 'integer', title: 'R_frequency'},
+        },
+    },
+    T_amplitude: {
+        type: 'Property',
+        value: 0.1,
+        jsonSchema: {
+            type: 'Property',
+            value: { schemaType: 'integer', title: 'T_amplitude'},
+        },
+    },
+    T_signal: {
+        type: 'Property',
+        value: 0.1,
+        jsonSchema: {
+            type: 'Property',
+            value: { schemaType: 'integer', title: 'T_signal'},
+        },
+    },
+    T_frequency: {
+        type: 'Property',
+        value: 0.1,
+        jsonSchema: {
+            type: 'Property',
+            value: { schemaType: 'integer', title: 'T_frequency'},
+        },
+    },
+    C_amplitude: {
+        type: 'Property',
+        value: 0.1,
+        jsonSchema: {
+            type: 'Property',
+            value: { schemaType: 'integer', title: 'C_amplitude'},
+        },
+    },
+    C_signal: {
+        type: 'Property',
+        value: 0.1,
+        jsonSchema: {
+            type: 'Property',
+            value: { schemaType: 'integer', title: 'C_signal'},
+        },
+    },
+    C_frequency: {
+        type: 'Property',
+        value: 0.1,
+        jsonSchema: {
+            type: 'Property',
+            value: { schemaType: 'integer', title: 'C_frequency'},
         },
     },
     jsonSchema: {
