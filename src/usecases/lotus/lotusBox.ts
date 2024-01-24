@@ -25,6 +25,39 @@ export const LotusBox: StellioTemplate = {
             },
         },
     },
+    appliId: {
+        type: 'Property',
+        value: 'Placeholder',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'string',
+                title: 'Application Identifier',
+            },
+        },
+    },
+    softwareVersion: {
+        type: 'Property',
+        value: 'Placeholder',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'string',
+                title: 'Software version',
+            },
+        },
+    },
+    acquisitionInterval: {
+        type: 'Property',
+        value: 'Placeholder',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'string',
+                title: 'Acquisition Interval',
+            },
+        },
+    },
     temperature: {
         type: 'Property',
         value: 10,
@@ -50,28 +83,6 @@ export const LotusBox: StellioTemplate = {
         jsonSchema: {
             type: 'Property',
             value: { schemaType: 'integer', title: 'Battery level', canSelfInit: true },
-        },
-    },
-    hardwareVersion: {
-        type: 'Property',
-        value: 'Placeholder',
-        jsonSchema: {
-            type: 'Property',
-            value: {
-                schemaType: 'string',
-                title: 'Hardware version',
-            },
-        },
-    },
-    firmwareVersion: {
-        type: 'Property',
-        value: 'Placeholder',
-        jsonSchema: {
-            type: 'Property',
-            value: {
-                schemaType: 'string',
-                title: 'Firmware version',
-            },
         },
     },
     hasSensor: {

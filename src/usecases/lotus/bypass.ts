@@ -25,6 +25,17 @@ export const Bypass: StellioTemplate = {
             },
         },
     },
+    cyclingDuration: {
+        type: 'Property',
+        value: 0,
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                title: 'Cycling Duration',
+            },
+        },
+    },
     jsonSchema: {
         type: 'Property',
         value: {
