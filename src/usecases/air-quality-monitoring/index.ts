@@ -1,9 +1,10 @@
 import { BuildingTemplate } from './building';
 import { RoomTemplate } from './room';
+import { DeviceTemplate } from './device';
 
 const fse = require('fs-extra');
 
-const blueprint = [BuildingTemplate, RoomTemplate];
+const blueprint = [BuildingTemplate, DeviceTemplate, RoomTemplate];
 const stringifiedBlueprint = JSON.stringify(blueprint);
 const FILE_NAME = 'blueprint.md';
 

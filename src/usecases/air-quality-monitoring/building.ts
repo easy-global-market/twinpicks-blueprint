@@ -14,6 +14,17 @@ export const BuildingTemplate: StellioTemplate = {
             },
         },
     },
+    description: {
+        type: 'Property',
+        value: 'Placeholder',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'string',
+                title: 'Description du bâtiment',
+            },
+        },
+    },
     location: {
         type: 'GeoProperty',
         value: {
