@@ -14,6 +14,17 @@ export const RoomTemplate: StellioTemplate = {
             },
         },
     },
+    description: {
+        type: 'Property',
+        value: 'Placeholder',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'string',
+                title: 'Description de la pièce',
+            },
+        },
+    },
     isContainedIn: {
         type: 'Relationship',
         object: 'urn:ngsi-ld:Building:Template',
@@ -22,91 +33,9 @@ export const RoomTemplate: StellioTemplate = {
             value: {
                 schemaType: 'string',
                 format: 'uri',
-                title: 'Relation vers un Bâtiment',
+                title: 'Bâtiment auquel appartient la pièce',
                 minimum: 1,
                 maximum: 1,
-            },
-        },
-    },
-    temperature: {
-        type: 'Property',
-        value: 0,
-        unitCode: 'CEL',
-        observedAt: new Date().toISOString(),
-        description: {
-            type: 'Property',
-            value: 'Placeholder',
-            jsonSchema: {
-                type: 'Property',
-                value: { schemaType: 'string', title: 'Description' },
-            },
-        },
-        observedBy: {
-            type: 'Relationship',
-            object: 'urn:ngsi-ld:Device:Template',
-            jsonSchema: {
-                type: 'Property',
-                value: {
-                    schemaType: 'string',
-                    format: 'uri',
-                    title: 'Température observée par un capteur',
-                    minimum: 1,
-                    maximum: 1,
-                },
-            },
-        },
-        jsonSchema: {
-            type: 'Property',
-            value: {
-                schemaType: 'array',
-                title: 'Jeux de données de température',
-                minItems: 1,
-                items: {
-                    schemaType: 'integer',
-                    title: 'Température',
-                    canSelfInit: true,
-                },
-            },
-        },
-    },
-    humidity: {
-        type: 'Property',
-        value: 1,
-        unitCode: 'P1',
-        observedAt: new Date().toISOString(),
-        description: {
-            type: 'Property',
-            value: 'Placeholder',
-            jsonSchema: {
-                type: 'Property',
-                value: { schemaType: 'string', title: 'Description' },
-            },
-        },
-        observedBy: {
-            type: 'Relationship',
-            object: 'urn:ngsi-ld:Device:Template',
-            jsonSchema: {
-                type: 'Property',
-                value: {
-                    schemaType: 'string',
-                    format: 'uri',
-                    title: 'Humidité observée par un capteur',
-                    minimum: 1,
-                    maximum: 1,
-                },
-            },
-        },
-        jsonSchema: {
-            type: 'Property',
-            value: {
-                schemaType: 'array',
-                title: "Jeux de données d'humidité",
-                minItems: 1,
-                items: {
-                    schemaType: 'integer',
-                    title: 'Humidité',
-                    canSelfInit: true,
-                },
             },
         },
     },
@@ -116,7 +45,7 @@ export const RoomTemplate: StellioTemplate = {
             schemaType: 'Room',
             title: 'Pièce',
             minimum: 1,
-            required: ['name', 'isContainedIn', 'temperature', 'humidity'],
+            required: ['name', 'isContainedIn'],
             description: 'Jumeau numérique de la pièce au sein du bâtiment, et où se situe le capteur',
         },
     },
