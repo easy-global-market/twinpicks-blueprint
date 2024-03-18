@@ -14,7 +14,7 @@ export const DeviceTemplate: StellioTemplate = {
             },
         },
     },
-    lorasnr: {
+    loraSNR: {
         type: 'Property',
         value: 1,
         unitCode: '2N',

@@ -19,7 +19,7 @@ export const DeviceTemplate: StellioTemplate = {
             value: { schemaType: 'string', title: 'Description du Device', friendlyAttributeName: 'Description' },
         },
     },
-    lorasnr: {
+    loraSNR: {
         type: 'Property',
         value: 0,
         unitCode: '2N',
