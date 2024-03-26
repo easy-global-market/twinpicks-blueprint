@@ -23,20 +23,6 @@ export const ManagedZoneTemplate: StellioTemplate = {
             },
         },
     },
-    waterConsumption: {
-        type: 'Property',
-        value: 1,
-        unitCode: 'L',
-        jsonSchema: {
-            type: 'Property',
-            value: {
-                schemaType: 'integer',
-                title: "Consommation d'eau de la Managed Zone",
-                friendlyAttributeName: "Consommation d'eau",
-                canSelfInit: true,
-            },
-        },
-    },
     belongsTo: {
         type: 'Relationship',
         object: 'urn:ngsi-ld:IrrigationArea:Template',
@@ -155,7 +141,7 @@ export const ManagedZoneTemplate: StellioTemplate = {
             schemaType: 'ManagedZone',
             title: 'Zone de gestion',
             minimum: 1,
-            required: ['name', 'hasReferenceSoilArea', 'location', 'belongsTo', 'criticalThreshold', 'saturationThreshold', 'comfortThreshold'],
+            required: ['name', 'hasReferenceSoilArea', 'location', 'surface', 'belongsTo', 'criticalThreshold', 'saturationThreshold', 'comfortThreshold'],
             description:
                 "Représentation géographique la plus petite, généralement de la taille d'un bout de jardin, précisément délimitée par un polygone",
         },

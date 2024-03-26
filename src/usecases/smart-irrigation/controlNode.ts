@@ -11,48 +11,6 @@ export const ControlNodeTemplate: StellioTemplate = {
             value: { schemaType: 'string', title: 'Nom du noeud de controle', friendlyAttributeName: 'Nom' },
         },
     },
-    observedState: {
-        type: 'Property',
-        value: 0,
-        unitCode: 'E50',
-        observedBy: {
-            type: 'Relationship',
-            object: 'urn:ngsi-ld:Device:Template',
-            jsonSchema: {
-                type: 'Property',
-                value: {
-                    schemaType: 'string',
-                    format: 'uri',
-                    title: 'Est observé par un Device (ou Spy)',
-                    minimum: 1,
-                    maximum: 1,
-                },
-            },
-        },
-        jsonSchema: {
-            type: 'Property',
-            value: {
-                schemaType: 'integer',
-                title: 'Etat observé',
-                friendlyAttributeName: 'Etat observé',
-                canSelfInit: true,
-            },
-        },
-    },
-    requestedState: {
-        type: 'Property',
-        value: 0,
-        unitCode: 'E50',
-        jsonSchema: {
-            type: 'Property',
-            value: {
-                schemaType: 'integer',
-                title: 'Etat demandé',
-                friendlyAttributeName: 'Etat demandé',
-                canSelfInit: true,
-            },
-        },
-    },
     location: {
         type: 'GeoProperty',
         value: {

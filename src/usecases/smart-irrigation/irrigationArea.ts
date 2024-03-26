@@ -31,6 +31,7 @@ export const IrrigationAreaTemplate: StellioTemplate = {
                 schemaType: 'integer',
                 title: "Niveau de zoom sur la zone d'irrigation depuis la carte",
                 friendlyAttributeName: 'Niveau de zoom',
+                canSelfInit: true,
             },
         },
     },
@@ -63,7 +64,7 @@ export const IrrigationAreaTemplate: StellioTemplate = {
             },
         },
     },
-    hasWeatherForecasted: {
+    hasWeatherInformation: {
         type: 'Relationship',
         object: 'urn:ngsi-ld:WeatherInformation:Template',
         jsonSchema: {
@@ -88,7 +89,7 @@ export const IrrigationAreaTemplate: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'object',
-                title: 'Où se situe la zone dirrigation ?',
+                title: 'Où se situe la zone d\'irrigation ?',
                 friendlyAttributeName: 'Géolocalisation',
             },
         },
