@@ -1,5 +1,4 @@
 import { ControlNodeTemplate } from './controlNode';
-import { DeviceTemplate } from './device';
 import { FieldTemplate } from './field';
 import { IrrigationAreaTemplate } from './irrigationArea';
 import { ManagedZoneTemplate } from './managedZone';
@@ -12,7 +11,6 @@ import { config } from '../../config';
 const blueprint = [
     FieldTemplate,
     IrrigationAreaTemplate,
-    DeviceTemplate,
     ControlNodeTemplate,
     ReferenceSoilAreaTemplate,
     ManagedZoneTemplate,
