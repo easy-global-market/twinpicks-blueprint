@@ -55,7 +55,7 @@ export const ManagedZoneTemplate: StellioTemplate = {
     },
     surface: {
         type: 'Property',
-        value: 'Placeholder',
+        value: '',
         unitCode: 'MTK',
         jsonSchema: {
             type: 'Property',
@@ -68,7 +68,7 @@ export const ManagedZoneTemplate: StellioTemplate = {
     },
     valveNumber: {
         type: 'Property',
-        value: 'Placeholder',
+        value: '',
         jsonSchema: {
             type: 'Property',
             value: {
