@@ -55,7 +55,7 @@ export const ManagedZoneTemplate: StellioTemplate = {
     },
     surface: {
         type: 'Property',
-        value: 1,
+        value: '',
         unitCode: 'MTK',
         jsonSchema: {
             type: 'Property',
@@ -63,6 +63,18 @@ export const ManagedZoneTemplate: StellioTemplate = {
                 schemaType: 'integer',
                 friendlyAttributeName: 'Surface de la zone',
                 title: 'Surface de la Zone de gestion',
+            },
+        },
+    },
+    valveNumber: {
+        type: 'Property',
+        value: '',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Numéro de vanne',
+                title: 'Numéro de voie de la vanne correspondant à cette zone de gestion',
             },
         },
     },
@@ -141,7 +153,7 @@ export const ManagedZoneTemplate: StellioTemplate = {
             schemaType: 'ManagedZone',
             title: 'Zone de gestion',
             minimum: 1,
-            required: ['name', 'hasReferenceSoilArea', 'location', 'surface', 'belongsTo', 'criticalThreshold', 'saturationThreshold', 'comfortThreshold'],
+            required: ['name', 'hasReferenceSoilArea', 'location', 'surface', 'valveNumber', 'belongsTo', 'criticalThreshold', 'saturationThreshold', 'comfortThreshold'],
             description:
                 "Représentation géographique la plus petite, généralement de la taille d'un bout de jardin, précisément délimitée par un polygone",
         },
