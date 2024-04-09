@@ -9,7 +9,7 @@ export const IrrigationAreaTemplate: StellioTemplate = {
             schemaType: 'IrrigationArea',
             title: "Zone d'irrigation",
             minimum: 1,
-            required: ['name', 'belongsTo', 'hasPart', 'location', 'hasWeatherForecasted'],
+            required: ['name', 'belongsTo', 'location', 'hasWeatherForecasted'],
             description:
                 'Représentation géographique de taille intermédiaire qui regroupe en générale plusieurs petites zones controllées (ou zones en gestion)',
         },
@@ -47,20 +47,6 @@ export const IrrigationAreaTemplate: StellioTemplate = {
                 friendlyAttributeName: 'Appartient à',
                 minimum: 1,
                 maximum: 1,
-            },
-        },
-    },
-    hasPart: {
-        type: 'Relationship',
-        object: 'urn:ngsi-ld:ManagedZone:Template',
-        jsonSchema: {
-            type: 'Property',
-            value: {
-                schemaType: 'string',
-                format: 'uri',
-                title: "Cette zone d'irrigation comprend quelle(s) zone(s) de gestion ?",
-                friendlyAttributeName: 'Contient',
-                minimum: 1,
             },
         },
     },
