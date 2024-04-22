@@ -1,6 +1,6 @@
 # How to use
 
-1. If you don't have it, install node (https://github.com/nvm-sh/nvm)
+1. If you don't have it, install node (https://github.com/nvm-sh/nvm or for windows https://github.com/coreybutler/nvm-windows)
 1. Clone repository
 1. Do `npm install`
 1. Do your changes to the blueprint in `/src/usecases/[USECASE_TYPE]`
