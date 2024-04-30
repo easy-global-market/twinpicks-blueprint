@@ -159,4 +159,14 @@ export interface JsonSchema {
      * - If "false", user will be forced to pick an existing entity
      */
     canEntityBeCreated?: boolean;
+    /**
+     * When a relationship can be towards more than only one type
+     * - Use this array of ids to accept more than one
+     * - The string id contained in "object" will be ignored
+     */
+    listOfAllowedRelationships?: string[];
+    /**
+     * Allows to set a date in the observedAt sub core property
+     */
+    canSetObservedAt?: boolean;
 }
