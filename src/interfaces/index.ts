@@ -10,10 +10,10 @@ interface EntityBaseProps {
 }
 
 interface StellioRelationship {
+    [key: string]: StellioProp | string | undefined | StellioRelationship;
     type: 'Relationship';
     object: string;
     datasetId?: string;
-    [key: string]: StellioProp | string | undefined;
 }
 
 type StellioProp<T = any> = {
