@@ -14,6 +14,14 @@ const template: StellioTemplate = {
             value: { schemaType: 'string', title: `Name of the ${entityTypeTitle}`, friendlyAttributeName: 'Name' },
         },
     },
+    imageSrc: {
+        type: 'Property',
+        value: 'Image',
+        jsonSchema: {
+            type: 'Property',
+            value: { schemaType: 'string', title: `Path to the image`, friendlyAttributeName: 'Image' },
+        },
+    },
     isCarriedBy: {
         type: 'Relationship',
         object: 'urn:ngsi-ld:Transporter:Template',
