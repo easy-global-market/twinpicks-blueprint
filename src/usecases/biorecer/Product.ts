@@ -22,6 +22,19 @@ const template: StellioTemplate = {
             value: { schemaType: 'string', title: `Path to the image`, friendlyAttributeName: 'Image' },
         },
     },
+    mass: {
+        type: 'Property',
+        value: 1,
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                title: `Amount of matter`,
+                friendlyAttributeName: 'Amount of matter',
+                canSetUnitCode: true,
+            },
+        },
+    },
     isCarriedBy: {
         type: 'Relationship',
         object: 'urn:ngsi-ld:Transporter:Template',
