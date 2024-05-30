@@ -169,4 +169,8 @@ export interface JsonSchema {
      * Allows to set a date in the observedAt sub core property
      */
     canSetObservedAt?: boolean;
+    /**
+     * Allows to set a unitCode
+     */
+    canSetUnitCode?: boolean;
 }
