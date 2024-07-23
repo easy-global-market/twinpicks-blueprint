@@ -1,10 +1,9 @@
-import { BuildingTemplate } from 'src/usecases/smart-city/building';
-import { DeviceTemplate } from 'src/usecases/smart-city/device';
-import { RoadTemplate } from 'src/usecases/smart-city/road';
+import { BuildingTemplate } from './building';
+import { RoadTemplate } from './road';
 
 const fse = require('fs-extra');
 
-const blueprint = [BuildingTemplate, DeviceTemplate, RoadTemplate];
+const blueprint = [BuildingTemplate, RoadTemplate];
 const stringifiedBlueprint = JSON.stringify(blueprint);
 const FILE_NAME = 'blueprint.md';
 

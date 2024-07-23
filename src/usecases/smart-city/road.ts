@@ -33,7 +33,7 @@ export const RoadTemplate: StellioTemplate = {
             title: 'Route',
             required: ['name', 'location'],
             description: 'Représentation graphique de la voie sur une carte',
-            minimum: 0,
+            minimum: 1,
         },
     },
 };
