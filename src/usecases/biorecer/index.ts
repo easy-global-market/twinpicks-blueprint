@@ -6,6 +6,7 @@ import standard from './Standard';
 import storage from './Storage';
 import transformation from './Transformation';
 import transporter from './Transporter';
+import travel from './Travel';
 
 import { generateBlueprintFile } from '../../utils';
 import { config } from '../../config';
@@ -16,6 +17,7 @@ const blueprint = [
     manufacturer,
     storage,
     transporter,
+    travel,
     transformation,
     standard,
     processType,

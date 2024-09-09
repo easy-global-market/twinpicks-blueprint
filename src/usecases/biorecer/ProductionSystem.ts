@@ -32,13 +32,45 @@ const template: StellioTemplate = {
     hasProcess: {
         type: 'Relationship',
         object: 'urn:ngsi-ld:Transformation:Template',
+        generates: {
+            type: 'Relationship',
+            object: 'urn:ngsi-ld:Product:Template',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    schemaType: 'string',
+                    format: 'uri',
+                    title: `The generated Product`,
+                    friendlyAttributeName: 'Generated product',
+                },
+            },
+        },
+        uses: {
+            type: 'Relationship',
+            object: 'urn:ngsi-ld:Product:Template',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    schemaType: 'string',
+                    format: 'uri',
+                    title: `The Product used`,
+                    friendlyAttributeName: 'Used product',
+                },
+            },
+        },
         jsonSchema: {
             type: 'Property',
             value: {
-                schemaType: 'string',
-                format: 'uri',
-                title: `This ${entityTypeTitle} uses which transformation process?`,
-                friendlyAttributeName: 'Transformation process',
+                schemaType: 'array',
+                friendlyAttributeName: 'Processes',
+                title: `What Transformation is used by this ${entityTypeTitle}?`,
+                minItems: 1,
+                items: {
+                    schemaType: 'string',
+                    format: 'uri',
+                    title: `Pick a Transformation`,
+                    friendlyAttributeName: 'Process',
+                },
             },
         },
     },
