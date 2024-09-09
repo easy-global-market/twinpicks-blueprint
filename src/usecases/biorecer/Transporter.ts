@@ -21,62 +21,27 @@ const template: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'string',
-                enum: ['By land', 'By air', 'By sea'],
+                enum: ['By truck', 'By canalization', 'By plane', 'By boat'],
                 title: `What's the transport mode for this ${entityTypeTitle}?`,
                 friendlyAttributeName: 'Transport mode',
             },
         },
     },
-    isCarrying: {
+    hasTravel: {
         type: 'Relationship',
-        object: 'urn:ngsi-ld:Product:Template',
-        from: {
-            type: 'Relationship',
-            object: 'urn:ngsi-ld:Storage:Template',
-            jsonSchema: {
-                type: 'Property',
-                value: {
-                    schemaType: 'string',
-                    format: 'uri',
-                    title: `What's its starting point?`,
-                    friendlyAttributeName: 'Starting point',
-                    listOfAllowedRelationships: [
-                        'urn:ngsi-ld:Storage:Template',
-                        'urn:ngsi-ld:ProductionSystem:Template',
-                    ],
-                },
-            },
-        },
-        to: {
-            type: 'Relationship',
-            object: 'urn:ngsi-ld:Storage:Template',
-            jsonSchema: {
-                type: 'Property',
-                value: {
-                    schemaType: 'string',
-                    format: 'uri',
-                    title: `What's its destination?`,
-                    friendlyAttributeName: 'Starting point',
-                    listOfAllowedRelationships: [
-                        'urn:ngsi-ld:Storage:Template',
-                        'urn:ngsi-ld:ProductionSystem:Template',
-                    ],
-                },
-            },
-        },
+        object: 'urn:ngsi-ld:Travel:Template',
         jsonSchema: {
             type: 'Property',
             value: {
                 schemaType: 'array',
-                title: `Products carried`,
-                friendlyAttributeName: 'Product carried',
+                title: `Travels`,
+                friendlyAttributeName: 'Travels',
                 minItems: 1,
                 items: {
                     schemaType: 'string',
                     format: 'uri',
-                    title: `This ${entityTypeTitle} is carrying which product?`,
-                    friendlyAttributeName: 'Product carried',
-                    canSetObservedAt: true,
+                    title: `Select this Transporter's Travels`,
+                    friendlyAttributeName: "Transporter's Travels",
                 },
             },
         },
