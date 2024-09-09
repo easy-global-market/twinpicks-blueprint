@@ -63,12 +63,12 @@ const template: StellioTemplate = {
             value: {
                 schemaType: 'array',
                 friendlyAttributeName: 'Processes',
-                title: `What Transformation is used?`,
+                title: `What Transformation is used by this ${entityTypeTitle}?`,
                 minItems: 1,
                 items: {
                     schemaType: 'string',
                     format: 'uri',
-                    title: `Set Process`,
+                    title: `Pick a Transformation`,
                     friendlyAttributeName: 'Process',
                 },
             },
