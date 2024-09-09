@@ -68,7 +68,7 @@ const template: StellioTemplate = {
             title: entityTypeTitle,
             minimum: 0,
             required: ['name'],
-            description: `The ${entityTypeTitle} of a product. It can be a truck, a boat, a plane...`,
+            description: `The ${entityTypeTitle} of a Transporter. Each Travel has a single Product subject`,
         },
     },
 };

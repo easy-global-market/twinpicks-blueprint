@@ -40,25 +40,6 @@ const template: StellioTemplate = {
             },
         },
     },
-    processes: {
-        type: 'Property',
-        value: 'Prop holding relationships to products generated and used during the process',
-        jsonSchema: {
-            type: 'Property',
-            value: {
-                schemaType: 'array',
-                friendlyAttributeName: 'Processes',
-                title: `Configure Generated and Used products`,
-                minItems: 1,
-                items: {
-                    schemaType: 'string',
-                    format: 'uri',
-                    title: `Set products of a Process`,
-                    friendlyAttributeName: 'Products of a Process',
-                },
-            },
-        },
-    },
     jsonSchema: {
         type: 'Property',
         value: {
