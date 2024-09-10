@@ -68,7 +68,7 @@ const template: StellioTemplate = {
             title: entityTypeTitle,
             minimum: 0,
             required: ['name'],
-            description: `The ${entityTypeTitle} of a Transporter. Each Travel has a single Product subject`,
+            description: `The ${entityTypeTitle} of a Transporter. A new Travel is created for each movement. Each Travel has a single Product subject`,
         },
     },
 };
