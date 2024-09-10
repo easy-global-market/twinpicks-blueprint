@@ -40,6 +40,24 @@ const template: StellioTemplate = {
             },
         },
     },
+    hasProcess: {
+        type: 'Relationship',
+        object: 'urn:ngsi-ld:Process:Template',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'array',
+                friendlyAttributeName: `Process`,
+                title: `What unit Process were done by this ${entityTypeTitle}?`,
+                minItems: 1,
+                items: {
+                    schemaType: 'string',
+                    format: 'uri',
+                    title: `Pick a Process`,
+                },
+            },
+        },
+    },
     jsonSchema: {
         type: 'Property',
         value: {
