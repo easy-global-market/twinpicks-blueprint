@@ -180,5 +180,5 @@ export interface JsonSchema {
     /**
      * Enforce a property permission to be edited (true by default)
      */
-    canBeEdited?: string;
+    canBeEdited?: boolean;
 }
