@@ -5,7 +5,7 @@ export const LorawanConfig: StellioTemplate = {
     type: 'Template',
     devEUI: {
         type: 'Property',
-        value: 'Placeholder',
+        value: 'Dev EUI',
         jsonSchema: {
             type: 'Property',
             value: {
@@ -38,7 +38,7 @@ export const LorawanConfig: StellioTemplate = {
     },
     appEUI: {
         type: 'Property',
-        value: 'Placeholder',
+        value: 'App EUI',
         jsonSchema: {
             type: 'Property',
             value: {
@@ -71,7 +71,7 @@ export const LorawanConfig: StellioTemplate = {
     },
     appKey: {
         type: 'Property',
-        value: 'Placeholder',
+        value: 'App Key',
         jsonSchema: {
             type: 'Property',
             value: {
