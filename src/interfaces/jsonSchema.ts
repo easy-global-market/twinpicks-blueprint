@@ -173,4 +173,12 @@ export interface JsonSchema {
      * Allows to set a unitCode
      */
     canSetUnitCode?: boolean;
+    /**
+     * The value of the designated property will be used to create the entity's unique identifier
+     */
+    identifier?: string;
+    /**
+     * Enforce a property permission to be edited (true by default)
+     */
+    canBeEdited?: boolean;
 }
