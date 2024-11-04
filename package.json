@@ -1,7 +1,7 @@
 {
     "name": "blueprints",
     "author": "junjou",
-    "version": "1.1.10",
+    "version": "1.1.11",
     "description": "blueprints for twinpicks",
     "scripts": {
         "tsc": "tsc",
