@@ -8,6 +8,7 @@ import transformation from './Transformation';
 import transporter from './Transporter';
 import travel from './Travel';
 import process from './Process';
+import criteria from './Criteria';
 
 import { generateBlueprintFile } from '../../utils';
 import { config } from '../../config';
@@ -23,6 +24,7 @@ const blueprint = [
     process,
     standard,
     processType,
+    criteria,
 ];
 const stringifiedBlueprint = JSON.stringify(blueprint);
 
