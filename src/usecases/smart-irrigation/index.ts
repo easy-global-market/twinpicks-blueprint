@@ -6,7 +6,6 @@ import { ReferenceSoilAreaTemplate } from './referenceSoilArea';
 import { WeatherInformationTemplate } from './weatherInformation';
 
 import { generateBlueprintFile } from '../../utils';
-import { config } from '../../config';
 
 const blueprint = [
     FieldTemplate,
@@ -16,10 +15,7 @@ const blueprint = [
     ManagedZoneTemplate,
     WeatherInformationTemplate,
 ];
-const stringifiedBlueprint = JSON.stringify(blueprint);
 
-const SPECIFIC_USECASE_PATH = __dirname.split('dist\\')[1];
-const from = `./${config.blueprintFileName}`;
-const to = `../../../src/${SPECIFIC_USECASE_PATH}/${config.blueprintFileName}`;
+const usecasePathName = __dirname.split(/dist[\\/]/)[1];
 
-generateBlueprintFile(stringifiedBlueprint, from, to);
+generateBlueprintFile(blueprint, usecasePathName);
