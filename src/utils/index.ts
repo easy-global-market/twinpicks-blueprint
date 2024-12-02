@@ -1,3 +1,4 @@
+import { StellioTemplate } from '../interfaces';
 import { config } from '../config';
 
 const fse = require('fs-extra');
@@ -22,7 +23,16 @@ const moveBlueprintFile = (from: any, to: any) => {
     });
 };
 
-const generateBlueprintFile = (stringifiedBlueprint: string, from: string, to: string) => {
+const generateBlueprintFile = (blueprint: StellioTemplate[], usecasePathName?: string) => {
+    if (!usecasePathName) {
+        return console.log('Error: usecase path name undefined');
+    }
+
+    const stringifiedBlueprint = JSON.stringify(blueprint);
+
+    const from = `./${config.blueprintFileName}`;
+    const to = `../../../src/${usecasePathName}/${config.blueprintFileName}`;
+
     fse.writeFile(config.blueprintFileName, getBlueprintFileContent(stringifiedBlueprint), function (err: any) {
         if (err) throw err;
         console.log('Blueprint Saved');
