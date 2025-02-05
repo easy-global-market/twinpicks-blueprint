@@ -1,9 +1,8 @@
-import ParkingArea from './parkingArea';
-import ParkingSpace from './parkingSpace';
+import ParkingSpot from './parkingSpot';
 
 import { generateBlueprintFile } from '../../utils';
 
-const blueprint = [ParkingSpace, ParkingArea];
+const blueprint = [ParkingSpot];
 
 const usecasePathName = __dirname.split(/dist[\\/]/)[1];
 
