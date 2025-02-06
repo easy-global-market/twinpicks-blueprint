@@ -67,6 +67,18 @@ const template: StellioTemplate = {
             },
         },
     },
+    isOccupied: {
+        type: 'Property',
+        value: false,
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'boolean',
+                canSelfInit: true,
+                friendlyAttributeName: "Statut d'occupation",
+            },
+        },
+    },
     jsonSchema: {
         type: 'Property',
         value: {
