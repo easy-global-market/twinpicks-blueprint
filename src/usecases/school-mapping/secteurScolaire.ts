@@ -17,7 +17,7 @@ export const SecteurScolaireTemplate: StellioTemplate = {
     location: {
         type: 'GeoProperty',
         value: {
-            type: 'MultiPolygon',
+            type: 'Polygon',
             coordinates: [],
         },
         jsonSchema: {
