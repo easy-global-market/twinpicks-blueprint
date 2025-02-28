@@ -1,43 +1,47 @@
-# How to use
+# How to create a new blueprint
 
 1. If you don't have it, install node (https://github.com/nvm-sh/nvm or for windows https://github.com/coreybutler/nvm-windows) and use version at least 16+
-1. Clone repository
+1. Clone repository `git clone https://github.com/easy-global-market/twinpicks-blueprint.git`
 1. Do `npm install`
-1. Do your changes to the blueprint in `/src/usecases/[USECASE_TYPE]`
-1. Then use this command `npx tsc` to transpile the code
+1. Create a new directory in `/src/usecases/[NEW_USECASE_TYPE]`
+    - Create a new file for each new defined entity type
+    - Create a file named `index.ts` where each file/entity are imported to generate the blueprint. You can copy/paste the content from another existing `index.ts` file as an example.
+1. Once ready, use this command `npx tsc` to transpile the code
 1. cd to `/dist/usecases/[USECASE_TYPE]`
 1. Use this command `node ./index.js` to generate the final blueprint
 1. Find the json output of final blueprint in `/src/usecases/[USECASE_TYPE]/blueprint.md` file
-1. Make a merge request with your changes.
-1. After it's approved and merged, create a corresponding UseCaseConfig entity which will hold the blueprint attribute
+1. Do a merge request with your changes.
 
+# How to make a blueprint available into Twin·Picks
+1. A context needs to be created with all the terms used in the blueprint. See https://github.com/easy-global-market/ngsild-api-data-models
+1. Create a UseCaseConfig entity which holds the blueprint JsonProperty
     ```js
     POST "/ngsi-ld/v1/entities"
     ```
-    With the following body:
+    With the following body (example from AirQuality):
     ```json
     {
-        "id": "urn:ngsi-ld:UseCaseConfig:[USECASE_TYPE]",
+        "id": "urn:ngsi-ld:UseCaseConfig:AirQuality",
         "type": "UseCaseConfig",
         "name": {
             "type": "Property",
-            "value": "[USECASE_TYPE_NAME]"
+            "value": "Air Quality"
         },
         "description": {
             "type": "Property",
-            "value": "[USECASE_TYPE_DESCRIPTION]"
+            "value": "An air quality use case pre-configuration with its context and blueprints"
+        },
+        "imageSource": {
+            "type": "Property",
+            "value": "airIcon"
+        },
+        "contextString": {
+            "type": "Property",
+            "value": "https://easy-global-market.github.io/ngsild-api-data-models/airQuality/jsonld-contexts/airQuality-compound.jsonld"
         },
         "blueprint": {
             "type": "JsonProperty",
             "json": "[COPY_PASTE_THE_JSON_OUTPUT_HERE]"
-        },
-        "contextString": {
-            "type": "Property",
-            "value": "[LINK_OF_THE_USECASE_TYPE]"
-        },
-        "imageSource": {
-            "type": "Property",
-            "value": "cityIcon"
         },
         "specificAccessPolicy": {
             "type": "Property",
@@ -46,17 +50,4 @@
     }
     ```
 
-1. If you just need to update the blueprint, don't forget to commit your changes and update the UseCaseConfig entity:
-    ```js
-    PATCH "/ngsi-ld/v1/entities/urn:ngsi-ld:UseCaseConfig:[USECASE_TYPE]"
-    ```
-    With the following body:
-    ```json
-    {
-        "blueprint": {
-            "type": "JsonProperty",
-            "json": "[COPY_PASTE_THE_JSON_OUTPUT_HERE]"
-        }
-    }
-
-1. That's it! Twin Picks' users will be able to create a new use case based on this Blueprint. 
+1. That's it! Twin·Picks' users will be able to create a new use case based on this Blueprint. 
