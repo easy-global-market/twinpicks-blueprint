@@ -10,7 +10,7 @@ export const AirQualityObservedTemplate: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'string',
-                title: 'Nom de l\'entité',
+                title: "Nom de l'entité",
             },
         },
     },
@@ -21,7 +21,7 @@ export const AirQualityObservedTemplate: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'string',
-                title: 'Description de l\'entité',
+                title: "Description de l'entité",
             },
         },
     },
@@ -43,9 +43,10 @@ export const AirQualityObservedTemplate: StellioTemplate = {
         type: 'Property',
         value: {
             schemaType: 'AirQualityObserved',
-            title: 'Qualité de l\'air extérieur',
+            title: "Qualité de l'air extérieur",
+            minimum: 0,
             required: ['name', 'location'],
-            description: "Jumeau numérique de l\'observation de la qualité de l'air extérieur",
+            description: "Jumeau numérique de l'observation de la qualité de l'air extérieur",
         },
     },
 };
