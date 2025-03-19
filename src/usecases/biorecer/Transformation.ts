@@ -40,20 +40,36 @@ const template: StellioTemplate = {
             },
         },
     },
-    hasProcess: {
+    generatesOutputProduct: {
         type: 'Relationship',
-        object: 'urn:ngsi-ld:Process:Template',
+        object: 'urn:ngsi-ld:Product:Template',
         jsonSchema: {
             type: 'Property',
             value: {
                 schemaType: 'array',
-                friendlyAttributeName: `Process`,
-                title: `What unit Process were done by this ${entityTypeTitle}?`,
-                minItems: 1,
+                friendlyAttributeName: 'Generated Products',
+                title: `What Products were generated as output by this ${entityTypeTitle}?`,
                 items: {
                     schemaType: 'string',
                     format: 'uri',
-                    title: `Pick a Process`,
+                    title: `Select a Product`,
+                },
+            },
+        },
+    },
+    usesInputProduct: {
+        type: 'Relationship',
+        object: 'urn:ngsi-ld:Product:Template',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'array',
+                friendlyAttributeName: 'Used Products',
+                title: `What Products were used as input by this ${entityTypeTitle}?`,
+                items: {
+                    schemaType: 'string',
+                    format: 'uri',
+                    title: `Select a Product`,
                 },
             },
         },
