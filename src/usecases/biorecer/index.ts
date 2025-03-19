@@ -7,7 +7,6 @@ import storage from './Storage';
 import transformation from './Transformation';
 import transporter from './Transporter';
 import travel from './Travel';
-import process from './Process';
 import criteria from './Criteria';
 
 import { generateBlueprintFile } from '../../utils';
@@ -20,7 +19,6 @@ const blueprint = [
     transporter,
     travel,
     transformation,
-    process,
     standard,
     processType,
     criteria,
