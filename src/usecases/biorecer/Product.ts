@@ -14,6 +14,19 @@ const template: StellioTemplate = {
             value: { schemaType: 'string', title: `Name of the ${entityTypeTitle}`, friendlyAttributeName: 'Name' },
         },
     },
+    typeOfProduct: {
+        type: 'Property',
+        value: 'Placeholder',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'string',
+                enum: ['Main Product', 'Residue or by-product'],
+                title: `What is the type of the product?`,
+                friendlyAttributeName: 'Type of product',
+            },
+        },
+    },
     imageSrc: {
         type: 'Property',
         value: 'Image',
@@ -55,7 +68,7 @@ const template: StellioTemplate = {
             schemaType: entityType,
             title: entityTypeTitle,
             minimum: 1,
-            required: ['name'],
+            required: ['name', 'typeOfProduct'],
             description: `This is a product. It can be anything, a raw material, a chemical, an object...`,
         },
     },
