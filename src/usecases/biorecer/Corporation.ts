@@ -1,7 +1,8 @@
 import { StellioTemplate } from 'src/interfaces';
+import { entityType as entityTypeKpi } from './KeyPerformanceIndicator';
 
-const entityType = 'Manufacturer';
-const entityTypeTitle = 'Manufacturer';
+const entityType = 'Corporation';
+const entityTypeTitle = 'Corporation';
 
 const template: StellioTemplate = {
     id: `urn:ngsi-ld:${entityType}:Template`,
@@ -42,16 +43,20 @@ const template: StellioTemplate = {
             },
         },
     },
-    hasTransporter: {
+    hasKpi: {
         type: 'Relationship',
-        object: 'urn:ngsi-ld:Transporter:Template',
+        object: `urn:ngsi-ld:${entityTypeKpi}:Template`,
         jsonSchema: {
             type: 'Property',
             value: {
-                schemaType: 'string',
-                format: 'uri',
-                title: `This ${entityTypeTitle} owns which Transporter(s)?`,
-                friendlyAttributeName: 'Transporter(s) owned',
+                schemaType: 'array',
+                friendlyAttributeName: 'Key Performance Indicators',
+                title: `KPI(s) for the ${entityTypeTitle}`,
+                items: {
+                    schemaType: 'string',
+                    format: 'uri',
+                    title: `Select a KPI`,
+                },
             },
         },
     },

@@ -1,4 +1,4 @@
-import manufacturer from './Manufacturer';
+import corporation from './Corporation';
 import processType from './ProcessType';
 import product from './Product';
 import productionSystem from './ProductionSystem';
@@ -8,19 +8,21 @@ import transformation from './Transformation';
 import transporter from './Transporter';
 import travel from './Travel';
 import criteria from './Criteria';
+import keyPerformanceIndicator from './KeyPerformanceIndicator';
 
 import { generateBlueprintFile } from '../../utils';
 
 const blueprint = [
     product,
     productionSystem,
-    manufacturer,
+    corporation,
     storage,
     transporter,
     travel,
     transformation,
     standard,
     processType,
+    keyPerformanceIndicator,
     criteria,
 ];
 

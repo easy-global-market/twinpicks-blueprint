@@ -1,7 +1,7 @@
 import { StellioTemplate } from 'src/interfaces';
 
-const entityType = 'Transporter';
-const entityTypeTitle = 'Transporter';
+export const entityType = 'KeyPerformanceIndicator';
+const entityTypeTitle = 'Key Performance Indicator';
 
 const template: StellioTemplate = {
     id: `urn:ngsi-ld:${entityType}:Template`,
@@ -14,35 +14,27 @@ const template: StellioTemplate = {
             value: { schemaType: 'string', title: `Name of the ${entityTypeTitle}`, friendlyAttributeName: 'Name' },
         },
     },
-    transportMode: {
+    description: {
         type: 'Property',
         value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
             value: {
                 schemaType: 'string',
-                enum: ['By truck', 'By plane', 'By boat'],
-                title: `What's the transport mode for this ${entityTypeTitle}?`,
-                friendlyAttributeName: 'Transport mode',
+                title: `Description of the ${entityTypeTitle}`,
+                friendlyAttributeName: 'Description',
             },
         },
     },
-    hasTravel: {
-        type: 'Relationship',
-        object: 'urn:ngsi-ld:Travel:Template',
+    kpiValue: {
+        type: 'Property',
+        value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
             value: {
-                schemaType: 'array',
-                title: `Travels`,
-                friendlyAttributeName: 'Travels',
-                minItems: 1,
-                items: {
-                    schemaType: 'string',
-                    format: 'uri',
-                    title: `Select this Transporter's Travels`,
-                    friendlyAttributeName: "Transporter's Travels",
-                },
+                schemaType: 'string',
+                title: `Value of the KPI. It can be of any type`,
+                friendlyAttributeName: 'KPI value',
             },
         },
     },
@@ -53,7 +45,7 @@ const template: StellioTemplate = {
             title: entityTypeTitle,
             minimum: 0,
             required: ['name'],
-            description: `The ${entityTypeTitle} of a product. It can be a truck, a boat, a plane...`,
+            description: `This is used as a norm or model to be used for evaluation.`,
         },
     },
 };
