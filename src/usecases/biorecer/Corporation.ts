@@ -60,6 +60,19 @@ const template: StellioTemplate = {
             },
         },
     },
+    hasTransporter: {
+        type: 'Relationship',
+        object: 'urn:ngsi-ld:Transporter:Template',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'string',
+                format: 'uri',
+                title: `Does this ${entityTypeTitle} owns Transporter(s)?`,
+                friendlyAttributeName: 'Transporter(s) owned',
+            },
+        },
+    },
     jsonSchema: {
         type: 'Property',
         value: {
