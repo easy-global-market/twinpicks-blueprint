@@ -1,3 +1,3 @@
 export const config = {
-    blueprintFileName: 'blueprint.md',
+    blueprintFileName: 'blueprint.json',
 };

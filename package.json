@@ -1,7 +1,7 @@
 {
     "name": "blueprints",
     "author": "junjou",
-    "version": "1.1.18",
+    "version": "1.1.19",
     "description": "blueprints for twinpicks",
     "scripts": {
         "tsc": "tsc",
@@ -9,6 +9,7 @@
         "qai": "npx tsc && cd ./dist/usecases/air-quality-monitoring && node index.js && cd ../../..",
         "irrig": "npx tsc && cd ./dist/usecases/smart-irrigation && node index.js && cd ../../..",
         "biorecer": "npx tsc && cd ./dist/usecases/biorecer && node index.js && cd ../../..",
+        "biorecerUpdateBlueprint": "npx tsc && node --env-file=.env ./dist/utils/updateUseCaseConfig.js --directoryName=biorecer",
         "lotus": "npx tsc && cd ./dist/usecases/lotus && node index.js && cd ../../.."
     },
     "devDependencies": {
@@ -19,6 +20,7 @@
         "typescript": "^5.1.6"
     },
     "dependencies": {
+        "axios": "^1.8.4",
         "fs-extra": "^11.1.1",
         "geojson": "^0.5.0"
     }

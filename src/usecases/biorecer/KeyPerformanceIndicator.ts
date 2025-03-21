@@ -45,7 +45,7 @@ const template: StellioTemplate = {
             title: entityTypeTitle,
             minimum: 0,
             required: ['name'],
-            description: `This is used as a norm or model to be used for evaluation.`,
+            description: `A KPI is a type of performance measurement`,
         },
     },
 };
