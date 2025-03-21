@@ -64,7 +64,7 @@ const updateUseCaseConfig = async (realmConfig?: EnvConfig) => {
                 {
                     blueprint: {
                         type: 'JsonProperty',
-                        json: data,
+                        json: JSON.parse(data),
                     },
                 },
                 {
@@ -72,8 +72,8 @@ const updateUseCaseConfig = async (realmConfig?: EnvConfig) => {
                 }
             );
 
-            if (response.data.statusCode === 204) {
-                console.log('Use case config update successful');
+            if (response.status === 204) {
+                console.log(`Use case config ${realmConfig.useCaseConfigId} updated successfully`);
             }
         } catch (error) {
             console.log('Error - Could not update use case config');
@@ -85,7 +85,5 @@ const updateUseCaseConfig = async (realmConfig?: EnvConfig) => {
 };
 
 const parsed = JSON.parse(process.env.BLUEPRINT_UPDATE_REALM_CONFIG ?? '');
-
-console.log(parsed);
 
 updateUseCaseConfig(parsed);
