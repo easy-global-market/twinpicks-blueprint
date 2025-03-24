@@ -9,6 +9,7 @@ import transporter from './Transporter';
 import travel from './Travel';
 import criteria from './Criteria';
 import keyPerformanceIndicator from './KeyPerformanceIndicator';
+import KeyPerformanceIndicatorModel from './KeyPerformanceIndicatorModel';
 
 import { generateBlueprintFile } from '../../utils';
 
@@ -22,6 +23,7 @@ const blueprint = [
     transformation,
     standard,
     processType,
+    KeyPerformanceIndicatorModel,
     keyPerformanceIndicator,
     criteria,
 ];
