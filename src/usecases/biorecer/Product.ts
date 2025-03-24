@@ -1,4 +1,5 @@
 import { StellioTemplate } from 'src/interfaces';
+import { entityType as KpiEntityType } from './KeyPerformanceIndicator';
 
 const entityType = 'Product';
 const entityTypeTitle = 'Product';
@@ -42,9 +43,9 @@ const template: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'integer',
-                title: `Amount of matter`,
-                friendlyAttributeName: 'Amount of matter',
-                canSetUnitCode: true,
+                unitCode: 'KGM',
+                title: `Specify the total amount or total weight (kg) of the product you generate`,
+                friendlyAttributeName: 'Total amount',
             },
         },
     },
@@ -59,6 +60,136 @@ const template: StellioTemplate = {
                 title: `What's the last known storage location of this ${entityTypeTitle}?`,
                 friendlyAttributeName: 'Last known storage location',
                 listOfAllowedRelationships: ['urn:ngsi-ld:Storage:Template', 'urn:ngsi-ld:ProductionSystem:Template'],
+            },
+        },
+    },
+    hasKpi: {
+        type: 'Relationship',
+        object: `urn:ngsi-ld:${KpiEntityType}:Template`,
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'string',
+                format: 'uri',
+                title: `Key performance indicator (or Circularity Indicator) of this ${entityTypeTitle}?`,
+                friendlyAttributeName: 'Key performance indicator',
+            },
+        },
+    },
+    unavoidableResidueShare: {
+        type: 'Property',
+        value: 50,
+        unitCode: 'P1',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Unavoidable Residue Share',
+                title: '(If residue) Specify the percentage (%) of the total dry mass of the residue or by-product that is considered as unavoidable',
+            },
+        },
+    },
+    sustainableRemovalShare: {
+        type: 'Property',
+        value: 50,
+        unitCode: 'P1',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Sustainable Removal Share',
+                title: '(If residue) Please provide the percentage (%) of the sustainable removal rate for residues regarding your activity',
+            },
+        },
+    },
+    massOfResidueForFineChemicals: {
+        type: 'Property',
+        value: 1,
+        unitCode: 'KGM',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Mass of residue for fine chemicals',
+                title: '(If residue) Please provide the total dry mass (kg) of generated residue used as feedstock for pharmaceuticals or fine chemicals',
+            },
+        },
+    },
+    massOfResidueForFood: {
+        type: 'Property',
+        value: 1,
+        unitCode: 'KGM',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Mass Of Residue For Food',
+                title: '(If residue) Please provide the total dry mass (kg) of generated residue used for food or feed',
+            },
+        },
+    },
+    massOfResidueForBioplastics: {
+        type: 'Property',
+        value: 1,
+        unitCode: 'KGM',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Mass Of Residue For Bioplastics',
+                title: '(If residue) Please provide the total dry mass (kg) of generated residue used for bioplastics or polymers',
+            },
+        },
+    },
+    massOfResidueForBulkChemicals: {
+        type: 'Property',
+        value: 1,
+        unitCode: 'KGM',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Mass Of Residue For Bulk Chemicals',
+                title: '(If residue) Please provide the total dry mass (kg) of generated residue used for bulk chemicals or materials',
+            },
+        },
+    },
+    massOfResidueForEnergy: {
+        type: 'Property',
+        value: 1,
+        unitCode: 'KGM',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Mass Of Residue For Energy',
+                title: '(If residue) Please provide the total dry mass (kg) of generated residue used for energy, heat or fuel',
+            },
+        },
+    },
+    massOfLeftOnFieldResidue: {
+        type: 'Property',
+        value: 1,
+        unitCode: 'KGM',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Mass Of Left On Field Residue',
+                title: '(If residue) Please provide the total dry mass (kg) of generated residue left on field',
+            },
+        },
+    },
+    massOfLostResidue: {
+        type: 'Property',
+        value: 1,
+        unitCode: 'KGM',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Mass Of Lost Residue',
+                title: '(If residue) Please provide the total dry mass (kg) of generated residue being landfilled, burnt, lost, etc.',
             },
         },
     },

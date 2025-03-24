@@ -1,5 +1,4 @@
 import { StellioTemplate } from 'src/interfaces';
-import { entityType as entityTypeKpi } from './KeyPerformanceIndicator';
 
 const entityType = 'Corporation';
 const entityTypeTitle = 'Corporation';
@@ -43,20 +42,29 @@ const template: StellioTemplate = {
             },
         },
     },
-    hasKpi: {
-        type: 'Relationship',
-        object: `urn:ngsi-ld:${entityTypeKpi}:Template`,
+    certifiedRenewableShare: {
+        type: 'Property',
+        value: 50,
+        unitCode: 'P1',
         jsonSchema: {
             type: 'Property',
             value: {
-                schemaType: 'array',
-                friendlyAttributeName: 'Key Performance Indicators',
-                title: `KPI(s) for the ${entityTypeTitle}`,
-                items: {
-                    schemaType: 'string',
-                    format: 'uri',
-                    title: `Select a KPI`,
-                },
+                schemaType: 'integer',
+                friendlyAttributeName: 'Certified Renewable Share',
+                title: 'What percentage (%) of your total land, production outputs, or activities is certified under a recognized sustainable renewability certification scheme?',
+            },
+        },
+    },
+    roleName: {
+        type: 'Property',
+        value: 'placeholder',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'string',
+                enum: ['Primary Producer', 'Processor', 'Manufacturer', 'Waste Manager'],
+                friendlyAttributeName: 'Role name',
+                title: 'What is your role in the supply chain for the product you are assessing?',
             },
         },
     },
