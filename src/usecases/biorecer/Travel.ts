@@ -15,8 +15,6 @@ const template: StellioTemplate = {
         },
     },
     subject: {
-        type: 'Relationship',
-        object: 'urn:ngsi-ld:Product:Template',
         from: {
             type: 'Relationship',
             object: 'urn:ngsi-ld:Storage:Template',
@@ -43,7 +41,7 @@ const template: StellioTemplate = {
                     schemaType: 'string',
                     format: 'uri',
                     title: `What's its destination?`,
-                    friendlyAttributeName: 'Starting point',
+                    friendlyAttributeName: 'Destination',
                     listOfAllowedRelationships: [
                         'urn:ngsi-ld:Storage:Template',
                         'urn:ngsi-ld:ProductionSystem:Template',
@@ -51,13 +49,19 @@ const template: StellioTemplate = {
                 },
             },
         },
+        type: 'Relationship',
+        object: 'urn:ngsi-ld:Product:Template',
         jsonSchema: {
             type: 'Property',
             value: {
-                schemaType: 'string',
-                format: 'uri',
-                title: `Which Product is the subject of this Travel?`,
-                friendlyAttributeName: 'Product carried',
+                schemaType: 'array',
+                title: `Which Products are subjects of this Travel?`,
+                friendlyAttributeName: 'Products carried',
+                items: {
+                    schemaType: 'string',
+                    format: 'uri',
+                    title: `Product carried`,
+                },
             },
         },
     },
