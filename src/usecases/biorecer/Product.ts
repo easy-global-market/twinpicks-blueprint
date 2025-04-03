@@ -22,7 +22,7 @@ const template: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'string',
-                enum: ['Main Product', 'Residue or by-product'],
+                enum: ['Main Product', 'Residue or by-product', 'Raw material'],
                 title: `What is the type of the product?`,
                 friendlyAttributeName: 'Type of product',
             },
