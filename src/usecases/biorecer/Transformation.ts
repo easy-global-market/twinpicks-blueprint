@@ -74,6 +74,45 @@ const template: StellioTemplate = {
             },
         },
     },
+    energyRequirements: {
+        type: 'Property',
+        value: 1,
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                title: `Energy requirements of a full cycle`,
+                friendlyAttributeName: 'Energy requirements',
+                canSetUnitCode: true,
+            },
+        },
+    },
+    waterRequirements: {
+        type: 'Property',
+        value: 1,
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                title: `Water requirements of a full cycle`,
+                friendlyAttributeName: 'Water requirements',
+                canSetUnitCode: true,
+            },
+        },
+    },
+    chemicalRequirements: {
+        type: 'Property',
+        value: 1,
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                title: `Chemical requirements of a full cycle`,
+                friendlyAttributeName: 'Chemical requirements',
+                canSetUnitCode: true,
+            },
+        },
+    },
     jsonSchema: {
         type: 'Property',
         value: {

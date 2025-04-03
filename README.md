@@ -9,8 +9,8 @@
 1. Once ready, use this command `npx tsc` to transpile the code
 1. cd to `/dist/usecases/[USECASE_TYPE]`
 1. Use this command `node ./index.js` to generate the final blueprint
-1. Find the json output of final blueprint in `/src/usecases/[USECASE_TYPE]/blueprint.md` file
-1. Do a merge request with all your changes including the generated blueprint.md file.
+1. Find the json output of final blueprint in `/src/usecases/[USECASE_TYPE]/blueprint.json` file
+1. Do a merge request with all your changes including the generated blueprint.json file.
 
 # How to make a blueprint available into Twin·Picks
 1. A context needs to be created with all the terms used in the blueprint. See https://github.com/easy-global-market/ngsild-api-data-models
@@ -50,4 +50,4 @@
     }
     ```
 
-1. That's it! Twin·Picks' users will be able to create a new use case based on this Blueprint. 
+1. That's it! Twin·Picks' users will be able to instantiate a new use case and create entities based on this Blueprint. 
