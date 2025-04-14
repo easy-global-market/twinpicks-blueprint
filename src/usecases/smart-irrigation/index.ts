@@ -1,4 +1,3 @@
-import { ControlNodeTemplate } from './controlNode';
 import { FieldTemplate } from './field';
 import { IrrigationAreaTemplate } from './irrigationArea';
 import { ManagedZoneTemplate } from './managedZone';
@@ -10,7 +9,6 @@ import { generateBlueprintFile } from '../../utils';
 const blueprint = [
     FieldTemplate,
     IrrigationAreaTemplate,
-    ControlNodeTemplate,
     ReferenceSoilAreaTemplate,
     ManagedZoneTemplate,
     WeatherInformationTemplate,

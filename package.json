@@ -10,7 +10,9 @@
         "irrig": "npx tsc && cd ./dist/usecases/smart-irrigation && node index.js && cd ../../..",
         "biorecer": "npx tsc && cd ./dist/usecases/biorecer && node index.js && cd ../../..",
         "biorecerUpdateBlueprint": "npx tsc && node --env-file=.env ./dist/utils/updateUseCaseConfig.js --directoryName=biorecer",
-        "lotus": "npx tsc && cd ./dist/usecases/lotus && node index.js && cd ../../.."
+        "lotus": "npx tsc && cd ./dist/usecases/lotus && node index.js && cd ../../..",
+        "irrigation": "npx tsc && cd ./dist/usecases/smart-irrigation && node index.js && cd ../../..",
+        "irrigationUpdateBlueprint": "npx tsc && node --env-file=.env ./dist/utils/updateUseCaseConfig.js --directoryName=smart-irrigation"
     },
     "devDependencies": {
         "@types/geojson": "^7946.0.10",
