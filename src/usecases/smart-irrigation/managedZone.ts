@@ -38,21 +38,6 @@ export const ManagedZoneTemplate: StellioTemplate = {
             },
         },
     },
-    controlledBy: {
-        type: 'Relationship',
-        object: 'urn:ngsi-ld:ControlNode:Template',
-        jsonSchema: {
-            type: 'Property',
-            value: {
-                schemaType: 'string',
-                format: 'uri',
-                title: 'Noeud de controle de la Zone de gestion',
-                friendlyAttributeName: 'Controllée par',
-                minimum: 0,
-                maximum: 1,
-            },
-        },
-    },
     surface: {
         type: 'Property',
         value: '',
@@ -116,6 +101,7 @@ export const ManagedZoneTemplate: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'integer',
+                canSelfInit: true,
                 title: "Seuil critique : proportion de quantité d'eau dans le sol au dessous de laquelle on ne veut surtout pas descendre",
                 friendlyAttributeName: 'Seuil critique',
             },
@@ -129,6 +115,7 @@ export const ManagedZoneTemplate: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'integer',
+                canSelfInit: true,
                 title: "Seuil de saturation : proportion de quantité d'eau dans le sol à ne pas dépasser",
                 friendlyAttributeName: 'Seuil de saturation',
             },
@@ -142,6 +129,7 @@ export const ManagedZoneTemplate: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'integer',
+                canSelfInit: true,
                 title: "Seuil de confort : proportion de quantité d'eau dans le sol au dessous de laquelle on essaie de ne pas descendre",
                 friendlyAttributeName: 'Seuil de confort',
             },
