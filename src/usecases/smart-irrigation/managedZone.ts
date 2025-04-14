@@ -38,21 +38,6 @@ export const ManagedZoneTemplate: StellioTemplate = {
             },
         },
     },
-    controlledBy: {
-        type: 'Relationship',
-        object: 'urn:ngsi-ld:ControlNode:Template',
-        jsonSchema: {
-            type: 'Property',
-            value: {
-                schemaType: 'string',
-                format: 'uri',
-                title: 'Noeud de controle de la Zone de gestion',
-                friendlyAttributeName: 'Controllée par',
-                minimum: 0,
-                maximum: 1,
-            },
-        },
-    },
     surface: {
         type: 'Property',
         value: '',
