@@ -3,6 +3,7 @@ import axios, { isAxiosError, RawAxiosRequestHeaders } from 'axios';
 const fse = require('fs-extra');
 
 interface EnvConfig {
+    keycloakBaseUrl: string;
     gatewayServer: string;
     clientId: string;
     clientSecret: string;
@@ -24,7 +25,7 @@ const getKeycloakToken = async (realmConfig?: EnvConfig) => {
 
     try {
         const keycloakResponse = await axios.post(
-            `https://sso.eglobalmark.com/auth/realms/${realmConfig.realm}/protocol/openid-connect/token`,
+            `${realmConfig.keycloakBaseUrl}/auth/realms/${realmConfig.realm}/protocol/openid-connect/token`,
             params.toString(),
             {
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
