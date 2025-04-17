@@ -35,6 +35,18 @@ export const IrrigationAreaTemplate: StellioTemplate = {
             },
         },
     },
+    waterConsumption: {
+        type: 'Property',
+        value: 0,
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: "Consommation d'eau",
+                canSelfInit: true,
+            },
+        },
+    },
     belongsTo: {
         type: 'Relationship',
         object: 'urn:ngsi-ld:Field:Template',
@@ -75,7 +87,7 @@ export const IrrigationAreaTemplate: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'object',
-                title: 'Où se situe la zone d\'irrigation ?',
+                title: "Où se situe la zone d'irrigation ?",
                 friendlyAttributeName: 'Géolocalisation',
             },
         },
