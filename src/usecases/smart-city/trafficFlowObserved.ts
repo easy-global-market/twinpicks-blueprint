@@ -1,9 +1,9 @@
 import { StellioTemplate } from 'src/interfaces';
 
-export const RoadTemplate: StellioTemplate = {
-    id: 'urn:ngsi-ld:Road:Template',
+export const TrafficFlowObservedTemplate: StellioTemplate = {
+    id: 'urn:ngsi-ld:TrafficFlowObserved:Template',
     type: 'Template',
-    name: {
+    title: {
         type: 'Property',
         value: 'Placeholder',
         jsonSchema: {
@@ -11,28 +11,26 @@ export const RoadTemplate: StellioTemplate = {
             value: { schemaType: 'string', title: 'Nom' },
         },
     },
-    description: {
+    temporalResolution: {
         type: 'Property',
         value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Description' },
+            value: { schemaType: 'string', title: 'Résolution temporelle' },
         },
     },
-    length: {
-        type: 'Property',
-        value: 'Placeholder',
+    refRoad: {
+        type: 'Relationship',
+        object: 'urn:ngsi-ld:Road:Template',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'Longueur' },
-        },
-    },
-    azimuth: {
-        type: 'Property',
-        value: 'Placeholder',
-        jsonSchema: {
-            type: 'Property',
-            value: { schemaType: 'integer', title: 'Azimuth' },
+            value: {
+                schemaType: 'string',
+                format: 'uri',
+                title: 'Route dans laquelle le trafic est observé',
+                minimum: 1,
+                maximum: 1,
+            },
         },
     },
     location: {
@@ -53,10 +51,10 @@ export const RoadTemplate: StellioTemplate = {
     jsonSchema: {
         type: 'Property',
         value: {
-            schemaType: 'Road',
-            title: 'Route',
-            required: ['name', 'description', 'length', 'azimuth', 'location'],
-            description: 'Représentation graphique de la voie sur une carte',
+            schemaType: 'TrafficFlowObserved',
+            title: 'Traffic automobile observé',
+            required: ['title', 'temporalResolution', 'refRoad', 'location'],
+            description: 'Station de mesure du trafic automobile',
             minimum: 1,
         },
     },

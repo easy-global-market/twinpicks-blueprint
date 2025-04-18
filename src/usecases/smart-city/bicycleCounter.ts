@@ -1,53 +1,47 @@
 import { StellioTemplate } from 'src/interfaces';
 
-export const BuildingTemplate: StellioTemplate = {
-    id: 'urn:ngsi-ld:Building:Template',
+export const BicycleCounterTemplate: StellioTemplate = {
+    id: 'urn:ngsi-ld:BicycleCounter:Template',
     type: 'Template',
     name: {
         type: 'Property',
         value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: {
-                schemaType: 'string',
-                title: 'Nom du bâtiment',
-            },
+            value: { schemaType: 'string', title: 'Nom du compteur' },
         },
     },
-    description: {
+    direction: {
         type: 'Property',
         value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: {
-                schemaType: 'string',
-                title: 'Description du bâtiment',
-                friendlyAttributeName: 'Description',
-            },
+            value: { schemaType: 'string', title: 'Direction' },
         },
     },
     location: {
         type: 'GeoProperty',
         value: {
-            type: 'Point',
+            type: 'LineString',
             coordinates: [],
         },
         jsonSchema: {
             type: 'Property',
             value: {
                 schemaType: 'object',
-                title: 'Où se situe le bâtiment',
+                title: 'Dessiner et suivre la voie sur la carte',
+                friendlyAttributeName: 'Géolocalisation',
             },
         },
     },
     jsonSchema: {
         type: 'Property',
         value: {
-            schemaType: 'Building',
-            title: 'Bâtiment',
-            required: ['name', 'location'],
+            schemaType: 'BicycleCounter',
+            title: 'Compteur de vélos',
+            required: ['name', 'direction', 'location'],
+            description: 'Station de comptage de vélos',
             minimum: 1,
-            description: "Jumeau numérique du bâtiment d'où proviennent les données",
         },
     },
 };
