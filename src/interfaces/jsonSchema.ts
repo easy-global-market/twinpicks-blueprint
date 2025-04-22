@@ -63,12 +63,12 @@ export interface JsonSchema {
     items?: JsonSchema;
     /**
      * At the entity level: has no effects
-     * At the property level: must be used in combination with `schemaType: 'array'`. Allows to limit a specific number of items.
+     * At the property level: can be used in combination with `schemaType: 'array'`. Allows to limit a specific number of items.
      */
     maxItems?: number;
     /**
      * At the entity level: has no effects
-     * At the property level: must be used in combination with `schemaType: 'array'`. Allows to force a specific number of items.
+     * At the property level: can be used in combination with `schemaType: 'array'`. Allows to force a specific number of items.
      */
     minItems?: number;
 
@@ -76,7 +76,7 @@ export interface JsonSchema {
     // Object Validation
     /////////////////////////////////////////////////
     /**
-     * At the entity level: input fields of properties referenced in the array will be have to be filled to create the entity
+     * At the entity level: input fields of properties referenced in the array will have to be filled to create the entity
      * At the property level: has no effects
      */
     required?: string[];
@@ -90,7 +90,7 @@ export interface JsonSchema {
     // Twin Picks Specificities
     /////////////////////////////////////////////////
     /**
-     * At the entity level: mandatory, used to set the entity type of the entity defined by the schema
+     * At the entity level: must be used to set the entity type of the entity defined by the schema
      * At the property level: mandatory, used to help Twin Picks know what to expect
      *  Can be: "string", or "integer" for simple property values
      *  Can be: "array" for multiproperty attributes; "object" for Geo properties
