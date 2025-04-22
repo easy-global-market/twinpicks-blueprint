@@ -1,38 +1,30 @@
 import { StellioTemplate } from 'src/interfaces';
 
-export const RoadTemplate: StellioTemplate = {
-    id: 'urn:ngsi-ld:Road:Template',
+export const AirQualityObservedTemplate: StellioTemplate = {
+    id: 'urn:ngsi-ld:AirQualityObserved:Template',
     type: 'Template',
     name: {
         type: 'Property',
         value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Nom' },
+            value: { schemaType: 'string', title: 'Nom de la station' },
         },
     },
-    description: {
+    title: {
         type: 'Property',
         value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'string', title: 'Description' },
+            value: { schemaType: 'string', title: 'Nom complet de la station' },
         },
     },
-    length: {
+    temporalResolution: {
         type: 'Property',
         value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'Longueur' },
-        },
-    },
-    azimuth: {
-        type: 'Property',
-        value: 'Placeholder',
-        jsonSchema: {
-            type: 'Property',
-            value: { schemaType: 'integer', title: 'Azimuth' },
+            value: { schemaType: 'string', title: 'Résolution temporelle' },
         },
     },
     location: {
@@ -53,10 +45,10 @@ export const RoadTemplate: StellioTemplate = {
     jsonSchema: {
         type: 'Property',
         value: {
-            schemaType: 'Road',
-            title: 'Route',
-            required: ['name', 'description', 'length', 'azimuth', 'location'],
-            description: 'Représentation graphique de la voie sur une carte',
+            schemaType: 'AirQualityObserved',
+            title: "Qualité de l'air",
+            required: ['name', 'title', 'temporalResolution', 'location'],
+            description: "Station de mesure de la qualité de l'air",
             minimum: 1,
         },
     },
