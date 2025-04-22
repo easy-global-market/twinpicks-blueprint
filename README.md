@@ -51,3 +51,12 @@
     ```
 
 1. That's it! Twin·Picks' users will be able to instantiate a new use case and create entities based on this Blueprint. 
+1. Optional: add a `.env` file to simplify the process (see .env.example for variables definition). Then adapt the commands below depending on the use case directory name:
+    - For 'smart-irrigation' blueprint generation:
+        ```sh
+        npx tsc && cd ./dist/usecases/smart-irrigation && node index.js && cd ../../..
+        ```
+    - For 'smart-irrigation' UseCaseConfig entity update:
+        ```sh
+        npx tsc && node --env-file=.env ./dist/utils/updateUseCaseConfig.js --directoryName=smart-irrigation
+        ```
