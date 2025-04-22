@@ -3,12 +3,20 @@ import { StellioTemplate } from 'src/interfaces';
 export const AirQualityObservedTemplate: StellioTemplate = {
     id: 'urn:ngsi-ld:AirQualityObserved:Template',
     type: 'Template',
-    title: {
+    name: {
         type: 'Property',
         value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
             value: { schemaType: 'string', title: 'Nom de la station' },
+        },
+    },
+    title: {
+        type: 'Property',
+        value: 'Placeholder',
+        jsonSchema: {
+            type: 'Property',
+            value: { schemaType: 'string', title: 'Nom complet de la station' },
         },
     },
     temporalResolution: {
@@ -39,7 +47,7 @@ export const AirQualityObservedTemplate: StellioTemplate = {
         value: {
             schemaType: 'AirQualityObserved',
             title: "Qualité de l'air",
-            required: ['title', 'temporalResolution', 'location'],
+            required: ['name', 'title', 'temporalResolution', 'location'],
             description: "Station de mesure de la qualité de l'air",
             minimum: 1,
         },

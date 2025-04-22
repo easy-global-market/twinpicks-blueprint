@@ -3,12 +3,20 @@ import { StellioTemplate } from 'src/interfaces';
 export const BicycleFlowObservedTemplate: StellioTemplate = {
     id: 'urn:ngsi-ld:BicycleFlowObserved:Template',
     type: 'Template',
-    title: {
+    name: {
         type: 'Property',
         value: 'Placeholder',
         jsonSchema: {
             type: 'Property',
             value: { schemaType: 'string', title: 'Nom' },
+        },
+    },
+    title: {
+        type: 'Property',
+        value: 'Placeholder',
+        jsonSchema: {
+            type: 'Property',
+            value: { schemaType: 'string', title: 'Nom complet' },
         },
     },
     temporalResolution: {
@@ -53,7 +61,7 @@ export const BicycleFlowObservedTemplate: StellioTemplate = {
         value: {
             schemaType: 'BicycleFlowObserved',
             title: 'Trafic vélo',
-            required: ['title', 'temporalResolution', 'refRoad', 'location'],
+            required: ['name', 'title', 'temporalResolution', 'refRoad', 'location'],
             description: 'Station de mesure du trafic vélo',
             minimum: 1,
         },
