@@ -2,183 +2,147 @@
  * This JsonSchema interface use this gist as a base:
  * https://gist.github.com/michiel/f3883b9d0554779a78b6d1c8d79b4a66
  *
- * It has been slightly modified to match twin picks needs
+ * It has been modified to match Twin Picks needs
  *
  */
 export interface JsonSchema {
-    $ref?: string;
     /////////////////////////////////////////////////
     // Schema Metadata
     /////////////////////////////////////////////////
     /**
-     * This is important because it tells refs where
-     * the root of the document is located
-     */
-    id?: string;
-    /**
-     * It is recommended that the meta-schema is
-     * included in the root of any JSON Schema
-     */
-    $schema?: JsonSchema;
-    /**
-     * Title of the schema
+     * At the entity level: is used to show a friendly title for the entity instead of a NGSI-LD type
+     * At the property level: is used as label for the property input
      */
     title?: string;
     /**
-     * Schema description
+     * At the entity level: is used to show a friendly description of the entity and its purpose
+     * At the property level: has no effects
      */
     description?: string;
-    /**
-     * Default json for the object represented by
-     * this schema
-     */
-    default?: any;
 
     /////////////////////////////////////////////////
     // Number Validation
     /////////////////////////////////////////////////
     /**
-     * The value must be a multiple of the number
-     * (e.g. 10 is a multiple of 5)
+     * At the entity level: is used to limit to a specific number of entities before provisioning is allowed
+     * At the property level: is used to limit to a maximum number of relationships before entity can be created
      */
-    multipleOf?: number;
     maximum?: number;
     /**
-     * If true maximum must be > value, >= otherwise
+     * At the entity level: is used to force a minimum number of entities before provisioning is allowed
+     * At the property level: is used to force a minimum number of relationships before entity can be created
      */
-    exclusiveMaximum?: boolean;
     minimum?: number;
-    /**
-     * If true minimum must be < value, <= otherwise
-     */
-    exclusiveMinimum?: boolean;
 
     /////////////////////////////////////////////////
     // String Validation
     /////////////////////////////////////////////////
+    /**
+     * At the entity level: has no effects
+     * At the property level: limit max number of chars
+     */
     maxLength?: number;
+    /**
+     * At the entity level: has no effects
+     * At the property level: force a minimum number of chars
+     */
     minLength?: number;
     /**
-     * This is a regex string that the value must
-     * conform to
+     * At the entity level: has no effects
+     * At the property level: in combination with schemaType: 'string', a regex string that the value must conform to
      */
     pattern?: string;
 
     /////////////////////////////////////////////////
     // Array Validation
     /////////////////////////////////////////////////
-    additionalItems?: boolean | JsonSchema;
+    /**
+     * At the entity level: has no effects
+     * At the property level: must be used in combination with `schemaType: 'array'`. Allows to define the schema for each item of the array.
+     */
     items?: JsonSchema;
+    /**
+     * At the entity level: has no effects
+     * At the property level: can be used in combination with `schemaType: 'array'`. Allows to limit a specific number of items.
+     */
     maxItems?: number;
+    /**
+     * At the entity level: has no effects
+     * At the property level: can be used in combination with `schemaType: 'array'`. Allows to force a specific number of items.
+     */
     minItems?: number;
-    uniqueItems?: boolean;
 
     /////////////////////////////////////////////////
     // Object Validation
     /////////////////////////////////////////////////
-    maxProperties?: number;
-    minProperties?: number;
+    /**
+     * At the entity level: input fields of properties referenced in the array will have to be filled to create the entity
+     * At the property level: has no effects
+     */
     required?: string[];
-    additionalProperties?: boolean | JsonSchema;
     /**
-     * Holds simple JSON Schema definitions for
-     * referencing from elsewhere.
+     * At the entity level: has no effects
+     * At the property level: restrict the property possible values
      */
-    definitions?: { [key: string]: JsonSchema };
-    /**
-     * The keys that can exist on the object with the
-     * json schema that should validate their value
-     */
-    properties?: { [property: string]: JsonSchema };
-    /**
-     * The key of this object is a regex for which
-     * properties the schema applies to
-     */
-    patternProperties?: { [pattern: string]: JsonSchema };
-    /**
-     * If the key is present as a property then the
-     * string of properties must also be present.
-     * If the value is a JSON Schema then it must
-     * also be valid for the object if the key is
-     * present.
-     */
-    dependencies?: { [key: string]: JsonSchema | string[] };
-
-    /////////////////////////////////////////////////
-    // Generic
-    /////////////////////////////////////////////////
-    /**
-     * Enumerates the values that this schema can be
-     * e.g.
-     * {"type": "string",
-     *  "enum": ["red", "green", "blue"]}
-     */
-    enum?: any[];
-    /**
-     * The basic type of this schema, can be one of
-     * [string, number, object, array, boolean, null]
-     * or an array of the acceptable types
-     */
-    type?: string | string[];
-
-    /////////////////////////////////////////////////
-    // Combining Schemas
-    /////////////////////////////////////////////////
-    allOf?: JsonSchema[];
-    anyOf?: JsonSchema[];
-    oneOf?: JsonSchema[];
-    /**
-     * The entity being validated must not match this schema
-     */
-    not?: JsonSchema;
+    enum?: string[] | number[];
 
     /////////////////////////////////////////////////
     // Twin Picks Specificities
     /////////////////////////////////////////////////
     /**
-     * Used by twin picks only to not mess with the \@type of NGSI-LD
+     * At the entity level: must be used to set the entity type of the entity defined by the schema
+     * At the property level: mandatory, used to help Twin Picks know what to expect
+     *  Can be: "string", or "integer" for simple property values
+     *  Can be: "array" for multiproperty attributes; "object" for Geo properties
      */
     schemaType: string;
     /**
-     * Show a different attribute name than raw NGSI-LD
+     * At the entity level: has no effects
+     * At the property level: show a different attribute name than raw NGSI-LD
      */
     friendlyAttributeName?: string;
     /**
-     * If true, the prop won't appear in the
-     * guided provisioning form, but Twinpicks will still
-     * create the property with init values
-     * If false or undefined, the prop will have
-     * To be set manually on Twinpicks
+     * At the entity level: has no effects
+     * At the property level: if true, the prop won't appear in the
+     *  guided provisioning form, but Twin Picks will still
+     *  create the property with init values
+     *  If false or undefined, the prop will have
+     *  To be set manually on Twin Picks
      */
     canSelfInit?: boolean;
     /**
-     * Decides if an entity can be created in TwinPicks
-     * - Put this at the root schema level
-     * - Does not have any effect at the property level
-     * - Default "undefined" value type is considered as "true"
-     * - If "false", user will be forced to pick an existing entity
+     * At the entity level: Decides if an entity can be created in Twin Picks
+     *  Default "undefined" value type is considered as "true"
+     *  If "false", user will be forced to pick an existing entity
+     * At the property level: has no effects
      */
     canEntityBeCreated?: boolean;
     /**
-     * When a relationship can be towards more than only one type
-     * - Use this array of ids to accept more than one
-     * - The string id contained in "object" will be ignored
+     * At the entity level: has no effects
+     * At the property level:
+     *  When a relationship can be towards more than only one type
+     *  Use this array of ids to accept more than one
+     *  The string id contained in "object" will be ignored
      */
     listOfAllowedRelationships?: string[];
     /**
-     * Allows to set a date in the observedAt sub core property
+     * At the entity level: has no effects
+     * At the property level: allows to set a date in the observedAt sub core property
      */
     canSetObservedAt?: boolean;
     /**
-     * Allows to set a unitCode
+     * At the entity level: has no effects
+     * At the property level: allows to set a unitCode
      */
     canSetUnitCode?: boolean;
     /**
-     * The value of the designated property will be used to create the entity's unique identifier
+     * At the entity level: The value of the designated property will be used to create the entity's unique identifier
+     * At the property level: has no effects
      */
     identifier?: string;
     /**
-     * Enforce a property permission to be edited (true by default)
+     * At the entity level: has no effects
+     * At the property level: enforce a property permission to be edited (true by default)
      */
     canBeEdited?: boolean;
 }
