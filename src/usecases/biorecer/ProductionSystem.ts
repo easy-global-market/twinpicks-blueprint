@@ -39,9 +39,16 @@ const template: StellioTemplate = {
                 friendlyAttributeName: 'Transformations used',
                 title: `What Transformation is used by this ${entityTypeTitle}?`,
                 items: {
-                    schemaType: 'string',
-                    format: 'uri',
-                    title: `Pick a Transformation`,
+                    type: 'Relationship',
+                    object: 'urn:ngsi-ld:Transformation:Template',
+                    jsonSchema: {
+                        type: 'Property',
+                        value: {
+                            schemaType: 'string',
+                            format: `uri`,
+                            title: `Select a Transformation`,
+                        },
+                    },
                 },
             },
         },

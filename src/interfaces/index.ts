@@ -56,11 +56,11 @@ type NgsildPossibleValue =
     | number
     | undefined;
 
-type StellioTemplateProp = StellioProp & {
+export type StellioTemplateProp = StellioProp & {
     jsonSchema: StellioProp<JsonSchema>;
 };
 
-type StellioTemplateRelationship = StellioRelationship & {
+export type StellioTemplateRelationship = StellioRelationship & {
     jsonSchema: StellioProp<JsonSchema>;
 };
 

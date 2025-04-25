@@ -58,9 +58,16 @@ const template: StellioTemplate = {
                 title: `Which Products are subjects of this Travel?`,
                 friendlyAttributeName: 'Products carried',
                 items: {
-                    schemaType: 'string',
-                    format: 'uri',
-                    title: `Product carried`,
+                    type: 'Relationship',
+                    object: 'urn:ngsi-ld:Product:Template',
+                    jsonSchema: {
+                        type: 'Property',
+                        value: {
+                            schemaType: 'string',
+                            format: `uri`,
+                            title: `Select a Product`,
+                        },
+                    },
                 },
             },
         },

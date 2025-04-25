@@ -38,10 +38,16 @@ const template: StellioTemplate = {
                 friendlyAttributeName: 'Travels',
                 minItems: 1,
                 items: {
-                    schemaType: 'string',
-                    format: 'uri',
-                    title: `Select this Transporter's Travels`,
-                    friendlyAttributeName: "Transporter's Travels",
+                    type: 'Relationship',
+                    object: 'urn:ngsi-ld:Travel:Template',
+                    jsonSchema: {
+                        type: 'Property',
+                        value: {
+                            schemaType: 'string',
+                            format: `uri`,
+                            title: `Select a Travel`,
+                        },
+                    },
                 },
             },
         },

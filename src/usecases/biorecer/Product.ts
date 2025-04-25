@@ -39,11 +39,11 @@ const template: StellioTemplate = {
     mass: {
         type: 'Property',
         value: 1,
+        unitCode: 'KGM',
         jsonSchema: {
             type: 'Property',
             value: {
                 schemaType: 'integer',
-                unitCode: 'KGM',
                 title: `Specify the total amount or total weight (kg) of the product you generate`,
                 friendlyAttributeName: 'Total amount',
             },
