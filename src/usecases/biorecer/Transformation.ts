@@ -50,9 +50,16 @@ const template: StellioTemplate = {
                 friendlyAttributeName: 'Generated Products',
                 title: `What Products were generated as output by this ${entityTypeTitle}?`,
                 items: {
-                    schemaType: 'string',
-                    format: 'uri',
-                    title: `Select a Product`,
+                    type: 'Relationship',
+                    object: 'urn:ngsi-ld:Product:Template',
+                    jsonSchema: {
+                        type: 'Property',
+                        value: {
+                            schemaType: 'string',
+                            format: `uri`,
+                            title: `Select a Product`,
+                        },
+                    },
                 },
             },
         },
@@ -67,23 +74,81 @@ const template: StellioTemplate = {
                 friendlyAttributeName: 'Used Products',
                 title: `What Products were used as input by this ${entityTypeTitle}?`,
                 items: {
-                    schemaType: 'string',
-                    format: 'uri',
-                    title: `Select a Product`,
+                    type: 'Relationship',
+                    object: 'urn:ngsi-ld:Product:Template',
+                    jsonSchema: {
+                        type: 'Property',
+                        value: {
+                            schemaType: 'string',
+                            format: `uri`,
+                            title: `Select a Product`,
+                        },
+                    },
                 },
             },
         },
     },
     energyRequirements: {
+        name: {
+            type: 'Property',
+            value: 'Placeholder',
+            jsonSchema: {
+                type: 'Property',
+                value: { schemaType: 'string', title: `Energy name` },
+            },
+        },
         type: 'Property',
         value: 1,
         jsonSchema: {
             type: 'Property',
             value: {
-                schemaType: 'integer',
-                title: `Energy requirements of a full cycle`,
+                schemaType: 'array',
                 friendlyAttributeName: 'Energy requirements',
-                canSetUnitCode: true,
+                title: `Energy requirements of a full cycle`,
+                items: {
+                    type: 'Property',
+                    value: 1,
+                    jsonSchema: {
+                        type: 'Property',
+                        value: {
+                            schemaType: 'integer',
+                            title: `Energy requirement`,
+                            canSetUnitCode: true,
+                        },
+                    },
+                },
+            },
+        },
+    },
+    chemicalRequirements: {
+        name: {
+            type: 'Property',
+            value: 'Placeholder',
+            jsonSchema: {
+                type: 'Property',
+                value: { schemaType: 'string', title: `Chemical name` },
+            },
+        },
+        type: 'Property',
+        value: 1,
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'array',
+                friendlyAttributeName: 'Chemical requirements',
+                title: `Chemical requirements of a full cycle`,
+                items: {
+                    type: 'Property',
+                    value: 1,
+                    jsonSchema: {
+                        type: 'Property',
+                        value: {
+                            schemaType: 'integer',
+                            title: `Chemical requirement`,
+                            canSetUnitCode: true,
+                        },
+                    },
+                },
             },
         },
     },
@@ -96,19 +161,6 @@ const template: StellioTemplate = {
                 schemaType: 'integer',
                 title: `Water requirements of a full cycle`,
                 friendlyAttributeName: 'Water requirements',
-                canSetUnitCode: true,
-            },
-        },
-    },
-    chemicalRequirements: {
-        type: 'Property',
-        value: 1,
-        jsonSchema: {
-            type: 'Property',
-            value: {
-                schemaType: 'integer',
-                title: `Chemical requirements of a full cycle`,
-                friendlyAttributeName: 'Chemical requirements',
                 canSetUnitCode: true,
             },
         },

@@ -1,3 +1,5 @@
+import { StellioTemplateProp, StellioTemplateRelationship } from 'src/interfaces';
+
 /**
  * This JsonSchema interface use this gist as a base:
  * https://gist.github.com/michiel/f3883b9d0554779a78b6d1c8d79b4a66
@@ -60,7 +62,7 @@ export interface JsonSchema {
      * At the entity level: has no effects
      * At the property level: must be used in combination with `schemaType: 'array'`. Allows to define the schema for each item of the array.
      */
-    items?: JsonSchema;
+    items?: StellioTemplateProp | StellioTemplateRelationship;
     /**
      * At the entity level: has no effects
      * At the property level: can be used in combination with `schemaType: 'array'`. Allows to limit a specific number of items.
