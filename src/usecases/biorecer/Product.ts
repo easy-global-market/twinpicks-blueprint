@@ -44,7 +44,7 @@ const template: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'integer',
-                title: `Specify the total amount or total weight (kg) of the product you generate`,
+                title: `Specify the total amount or total weight (kg) in dry mass of the product`,
                 friendlyAttributeName: 'Total amount',
             },
         },
@@ -73,6 +73,19 @@ const template: StellioTemplate = {
                 format: 'uri',
                 title: `Key performance indicator (or Circularity Indicator) of this ${entityTypeTitle}?`,
                 friendlyAttributeName: 'Key performance indicator',
+            },
+        },
+    },
+    reusedFraction: {
+        type: 'Property',
+        value: 2,
+        unitCode: 'P1',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Reused Fraction',
+                title: '(If residue) Specify the percentage (%) of the total dry mass of the residue or by-product that is reused',
             },
         },
     },
