@@ -102,6 +102,19 @@ const template: StellioTemplate = {
             },
         },
     },
+    unavoidableContentOfByProduct: {
+        type: 'Property',
+        value: 50,
+        unitCode: 'P1',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Unavoidable Content',
+                title: '(If Processor or Manufacturer) Specify the percentage (%) of the total dry mass of by-product that is considered as unavoidable',
+            },
+        },
+    },
     sustainableRemovalShare: {
         type: 'Property',
         value: 50,

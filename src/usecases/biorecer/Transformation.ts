@@ -65,6 +65,19 @@ const template: StellioTemplate = {
         },
     },
     usesInputProduct: {
+        byProductCompositionShare: {
+            type: 'Property',
+            value: 50,
+            unitCode: 'P1',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    schemaType: 'integer',
+                    friendlyAttributeName: 'Sustainable Removal Share',
+                    title: '(If by-product of a Processor or Manufacturer) Please provide the feedstock composition of the by-product (% of total dry mass)',
+                },
+            },
+        },
         type: 'Relationship',
         object: 'urn:ngsi-ld:Product:Template',
         jsonSchema: {
