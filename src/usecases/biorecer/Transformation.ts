@@ -74,7 +74,7 @@ const template: StellioTemplate = {
                 value: {
                     schemaType: 'integer',
                     friendlyAttributeName: 'Sustainable Removal Share',
-                    title: '(If by-product of a Processor or Manufacturer) Please provide the feedstock composition of the by-product (% of total dry mass)',
+                    title: '(If Processor or Manufacturer) Please provide the feedstock composition of the (by-)product (% of total dry mass)',
                 },
             },
         },
