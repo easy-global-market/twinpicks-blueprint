@@ -85,7 +85,7 @@ const template: StellioTemplate = {
             value: {
                 schemaType: 'integer',
                 friendlyAttributeName: 'Reused Fraction',
-                title: '(If residue) Specify the percentage (%) of the total dry mass of the residue or by-product that is reused',
+                title: '(If Processor or Manufacturer) Specify the percentage (%) of the total dry mass of the residue or by-product that is reused',
             },
         },
     },
@@ -216,6 +216,351 @@ const template: StellioTemplate = {
                 schemaType: 'integer',
                 friendlyAttributeName: 'Mass Of Lost Residue',
                 title: '(If residue) Please provide the total dry mass (kg) of generated residue being landfilled, burnt, lost, etc.',
+            },
+        },
+    },
+    sewageSludgeProducedSentForValorisation: {
+        relatedCiQuestion: {
+            type: 'Property',
+            value: 'Waste Managers Q5',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
+        },
+        type: 'Property',
+        value: 1,
+        unitCode: 'KGM',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Sewage Sludge Produced Sent For Valorisation',
+                title: '(If Sewage Sludge) Specify the total amount or total weight of Sewage Sludge produced  by the wastewater treatment process(es) (disclosed and undisclosed) that is sent for valorisation i.e. anaerobic digestion (in kg of dry mass)',
+            },
+        },
+    },
+    sewageSludgeProducedNotSentForValorisation: {
+        relatedCiQuestion: {
+            type: 'Property',
+            value: 'Waste Managers Q6',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
+        },
+        type: 'Property',
+        value: 1,
+        unitCode: 'KGM',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Sewage Sludge Produced Not Sent For Valorisation',
+                title: '(If Sewage Sludge) Specify the total amount or total weight of Sewage Sludge produced by the wastewater treatment process(es) (disclosed and undisclosed) that is NOT sent for valorisation i.e. landfill (in kg of dry mass)',
+            },
+        },
+    },
+    sewageAmountOfCodRemoved: {
+        relatedCiQuestion: {
+            type: 'Property',
+            value: 'Waste Managers Q7',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
+        },
+        type: 'Property',
+        value: 1,
+        unitCode: 'KGM',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Total weight of COD removed',
+                title: '(If Sewage Sludge) Specify the total amount or total weight of COD removed by the wastewater treatment process(es) that produced the total (disclosed and undisclosed) mass of sewage sludge (in kg of dry mass)',
+            },
+        },
+    },
+    sewageVolumeTreated: {
+        relatedCiQuestion: {
+            type: 'Property',
+            value: 'Waste Managers Q8',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
+        },
+        type: 'Property',
+        value: 1,
+        unitCode: 'KGM',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Total volume of wastewater treated',
+                title: '(If Sewage Sludge) Specify the total amount or total volume of wastewater treated by the wastewater treatment process(es) that produced the total (disclosed and undisclosed) mass of sewage sludge (in kg of dry mass)',
+            },
+        },
+    },
+    afpwOrganicMassFraction: {
+        relatedCiQuestion: {
+            type: 'Property',
+            value: 'Waste Managers Q9',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
+        },
+        type: 'Property',
+        value: 1,
+        unitCode: 'P1',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Organic mass fraction',
+                title: '(If Agro-food Processing Waste) What is the organic mass fraction of this waste stream from the processed food biomass (in %)?',
+            },
+        },
+    },
+    afpwCertifiedOrganicMassFraction: {
+        relatedCiQuestion: {
+            type: 'Property',
+            value: 'Waste Managers Q10',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
+        },
+        type: 'Property',
+        value: 1,
+        unitCode: 'P1',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Certified Organic mass fraction',
+                title: '(If Agro-food Processing Waste) What fraction of the organic mass fraction provided in the previous question is certified as renewable (in %)?',
+            },
+        },
+    },
+    afpwFractionFromBatchChanges: {
+        relatedCiQuestion: {
+            type: 'Property',
+            value: 'Waste Managers Q11',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
+        },
+        type: 'Property',
+        value: 1,
+        unitCode: 'P1',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Fraction from batch changes',
+                title: '(If Agro-food Processing Waste) What fraction of the waste is from batch changes and/or productions ends (in %)?',
+            },
+        },
+    },
+    afoetwSentForValorisation: {
+        relatedCiQuestion: {
+            type: 'Property',
+            value: 'Waste Managers Q12',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
+        },
+        type: 'Property',
+        value: 1,
+        unitCode: 'KGM',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Onsite Effluent sent for valorisation',
+                title: '(If Agro-food Onsite Effluent Treatment Waste) Specify the total amount or total weight of Onsite Effluent Treatment Waste produced (disclosed and undisclosed) that is sent for valorisation i.e. anaerobic digestion (in kg of dry mass)?',
+            },
+        },
+    },
+    afoetwNotSentForValorisation: {
+        relatedCiQuestion: {
+            type: 'Property',
+            value: 'Waste Managers Q13',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
+        },
+        type: 'Property',
+        value: 1,
+        unitCode: 'KGM',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Onsite Effluent not sent for valorisation',
+                title: '(If Agro-food Onsite Effluent Treatment Waste) Specify the total amount or total weight of Onsite Effluent Treatment Waste produced (disclosed and undisclosed) that is NOT sent for valorisation i.e. landfill (in kg of dry mass)',
+            },
+        },
+    },
+    afoetwMassOfBodRemoved: {
+        relatedCiQuestion: {
+            type: 'Property',
+            value: 'Waste Managers Q14',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
+        },
+        type: 'Property',
+        value: 1,
+        unitCode: 'KGM',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Mass of BOD removed by Onsite Effluent',
+                title: '(If Agro-food Onsite Effluent Treatment Waste) What mass of BOD removed by the Onsite Effluent Treatment process?',
+            },
+        },
+    },
+    ofmswBiodegradableFraction: {
+        relatedCiQuestion: {
+            type: 'Property',
+            value: 'Waste Managers Q15',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
+        },
+        type: 'Property',
+        value: 1,
+        unitCode: 'P1',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'Biodegradable fraction of the OFMSW',
+                title: '(If OFMSW) What is the organic, biodegradable fraction of the OFMSW (in %)?',
+            },
+        },
+    },
+    ofmswSentForValorisation: {
+        relatedCiQuestion: {
+            type: 'Property',
+            value: 'Waste Managers Q16',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
+        },
+        type: 'Property',
+        value: 1,
+        unitCode: 'KGM',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'OFMSW sent for valorisation',
+                title: '(If OFMSW) Specify the total amount or total weight of OFMSW produced (disclosed and undisclosed) that is sent for valorisation i.e. anaerobic digestion (in kg of dry mass)?',
+            },
+        },
+    },
+    ofmswNotSentForValorisation: {
+        relatedCiQuestion: {
+            type: 'Property',
+            value: 'Waste Managers Q17',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
+        },
+        type: 'Property',
+        value: 1,
+        unitCode: 'KGM',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'OFMSW not sent for valorisation',
+                title: '(If OFMSW) Specify the total amount or total weight of OFMSW produced (disclosed and undisclosed) that is NOT sent for valorisation i.e. landfill (in kg of dry mass)',
+            },
+        },
+    },
+    ofmswProductionRate: {
+        relatedCiQuestion: {
+            type: 'Property',
+            value: 'Waste Managers Q18',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
+        },
+        type: 'Property',
+        value: 1,
+        unitCode: 'KGM',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'OFMSW production rate',
+                title: '(If OFMSW) Specify the production rate of the disclosed and undisclosed OFMSW by the respective treatment plant(s) (in kg/capita.year)',
+            },
+        },
+    },
+    ofmswProductionTarget: {
+        relatedCiQuestion: {
+            type: 'Property',
+            value: 'Waste Managers Q19',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
+        },
+        type: 'Property',
+        value: 1,
+        unitCode: 'KGM',
+        jsonSchema: {
+            type: 'Property',
+            value: {
+                schemaType: 'integer',
+                friendlyAttributeName: 'OFMSW production target',
+                title: '(If OFMSW) Specify the OFMSW production target of the region (in kg/capita.year)',
             },
         },
     },
