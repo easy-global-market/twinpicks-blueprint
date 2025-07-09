@@ -223,6 +223,12 @@ const template: StellioTemplate = {
         relatedCiQuestion: {
             type: 'Property',
             value: 'Waste Managers Q5',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
         },
         type: 'Property',
         value: 1,
@@ -240,6 +246,12 @@ const template: StellioTemplate = {
         relatedCiQuestion: {
             type: 'Property',
             value: 'Waste Managers Q6',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
         },
         type: 'Property',
         value: 1,
@@ -257,6 +269,12 @@ const template: StellioTemplate = {
         relatedCiQuestion: {
             type: 'Property',
             value: 'Waste Managers Q7',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
         },
         type: 'Property',
         value: 1,
@@ -274,6 +292,12 @@ const template: StellioTemplate = {
         relatedCiQuestion: {
             type: 'Property',
             value: 'Waste Managers Q8',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
         },
         type: 'Property',
         value: 1,
@@ -291,6 +315,12 @@ const template: StellioTemplate = {
         relatedCiQuestion: {
             type: 'Property',
             value: 'Waste Managers Q9',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
         },
         type: 'Property',
         value: 1,
@@ -308,6 +338,12 @@ const template: StellioTemplate = {
         relatedCiQuestion: {
             type: 'Property',
             value: 'Waste Managers Q10',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
         },
         type: 'Property',
         value: 1,
@@ -325,6 +361,12 @@ const template: StellioTemplate = {
         relatedCiQuestion: {
             type: 'Property',
             value: 'Waste Managers Q11',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
         },
         type: 'Property',
         value: 1,
@@ -342,6 +384,12 @@ const template: StellioTemplate = {
         relatedCiQuestion: {
             type: 'Property',
             value: 'Waste Managers Q12',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
         },
         type: 'Property',
         value: 1,
@@ -359,6 +407,12 @@ const template: StellioTemplate = {
         relatedCiQuestion: {
             type: 'Property',
             value: 'Waste Managers Q13',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
         },
         type: 'Property',
         value: 1,
@@ -376,6 +430,12 @@ const template: StellioTemplate = {
         relatedCiQuestion: {
             type: 'Property',
             value: 'Waste Managers Q14',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
         },
         type: 'Property',
         value: 1,
@@ -393,6 +453,12 @@ const template: StellioTemplate = {
         relatedCiQuestion: {
             type: 'Property',
             value: 'Waste Managers Q15',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
         },
         type: 'Property',
         value: 1,
@@ -410,6 +476,12 @@ const template: StellioTemplate = {
         relatedCiQuestion: {
             type: 'Property',
             value: 'Waste Managers Q16',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
         },
         type: 'Property',
         value: 1,
@@ -427,6 +499,12 @@ const template: StellioTemplate = {
         relatedCiQuestion: {
             type: 'Property',
             value: 'Waste Managers Q17',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
         },
         type: 'Property',
         value: 1,
@@ -444,6 +522,12 @@ const template: StellioTemplate = {
         relatedCiQuestion: {
             type: 'Property',
             value: 'Waste Managers Q18',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
         },
         type: 'Property',
         value: 1,
@@ -461,6 +545,12 @@ const template: StellioTemplate = {
         relatedCiQuestion: {
             type: 'Property',
             value: 'Waste Managers Q19',
+            jsonSchema: {
+                type: 'Property',
+                value: {
+                    canSelfInit: true,
+                },
+            },
         },
         type: 'Property',
         value: 1,
