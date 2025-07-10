@@ -55,7 +55,7 @@ const template: StellioTemplate = {
     pressure: {
         type: 'Property',
         value: 50,
-        unitCode: 'PAL',
+        unitCode: 'A97',
         jsonSchema: {
             type: 'Property',
             value: { schemaType: 'integer', title: 'Pression', canSelfInit: true },
@@ -69,7 +69,7 @@ const template: StellioTemplate = {
             value: {
                 schemaType: 'string',
                 format: 'uri',
-                title: `Sélectionner les tables faisant partie de cette ${entityType}`,
+                title: `Sélectionner les tables faisant partie de cette ${entityTypeTitle}`,
                 friendlyAttributeName: 'Tables',
             },
         },
@@ -81,7 +81,7 @@ const template: StellioTemplate = {
             title: entityTypeTitle,
             minimum: 1,
             required: ['name', 'location'],
-            description: `Représentation digitale d'une serre`,
+            description: `Représentation numérique d'une serre`,
         },
     },
 };

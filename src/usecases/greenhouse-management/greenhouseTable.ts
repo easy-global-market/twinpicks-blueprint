@@ -51,7 +51,7 @@ const template: StellioTemplate = {
             title: entityTypeTitle,
             minimum: 1,
             required: ['name', 'location'],
-            description: `Représentation digitale d'une table sous serre`,
+            description: `Représentation numérique d'une table sous serre`,
         },
     },
 };
