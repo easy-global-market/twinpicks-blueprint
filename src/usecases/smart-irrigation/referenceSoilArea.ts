@@ -39,7 +39,7 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             value: {
                 schemaType: 'integer',
                 title: "vM_FC : Valeur d'humidité volumetrique à capacité au champ",
-                friendlyAttributeName: "Humidité volumetrique à capacité au champ",
+                friendlyAttributeName: 'Humidité volumetrique à capacité au champ',
                 canSelfInit: true,
             },
         },
@@ -53,7 +53,7 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             value: {
                 schemaType: 'integer',
                 title: "vM_PWP : Valeur d'humidité volumetrique au point de fletrissement",
-                friendlyAttributeName: "Humidité volumetrique au point de fletrissement",
+                friendlyAttributeName: 'Humidité volumetrique au point de fletrissement',
                 canSelfInit: true,
             },
         },
@@ -67,7 +67,7 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             value: {
                 schemaType: 'integer',
                 title: "vM_SAT : Valeur d'humidité volumetrique à saturation",
-                friendlyAttributeName: "Humidité volumetrique à saturation",
+                friendlyAttributeName: 'Humidité volumetrique à saturation',
                 canSelfInit: true,
             },
         },
@@ -79,8 +79,8 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'integer',
-                title: "Kc : Coefficient de culture",
-                friendlyAttributeName: "Coefficient de culture",
+                title: 'Kc : Coefficient de culture',
+                friendlyAttributeName: 'Coefficient de culture',
                 canSelfInit: true,
             },
         },
@@ -92,8 +92,8 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'integer',
-                title: "CN2 : Coefficient de ruissellement",
-                friendlyAttributeName: "Coefficient de ruissellement",
+                title: 'CN2 : Coefficient de ruissellement',
+                friendlyAttributeName: 'Coefficient de ruissellement',
                 canSelfInit: true,
             },
         },
@@ -106,8 +106,8 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'integer',
-                title: "Z : Profondeur du sol",
-                friendlyAttributeName: "Profondeur du sol",
+                title: 'Z : Profondeur du sol',
+                friendlyAttributeName: 'Profondeur du sol',
                 canSelfInit: true,
             },
         },
@@ -121,7 +121,7 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             value: {
                 schemaType: 'integer',
                 title: "SWCON : Quantité d'eau perdue par percolation en 1 jour par rapport à la quantité d'eau qui excède la capacité au champs",
-                friendlyAttributeName: "SWCON",
+                friendlyAttributeName: 'SWCON',
                 canSelfInit: true,
             },
         },
@@ -132,7 +132,17 @@ export const ReferenceSoilAreaTemplate: StellioTemplate = {
             schemaType: 'ReferenceSoilArea',
             title: 'Sol de référence pour le capteur',
             minimum: 1,
-            required: ['name', 'location', 'soilTemperature', 'volumetricMoisture', 'volumetricMoistureFieldCapacity', 'volumetricMoisturePermanentWiltingPoint', 'volumetricMoistureSaturation', 'cropCoefficient', 'runoffCurveNumber', 'soilDepth', 'swcon'],
+            required: [
+                'name',
+                'location',
+                'volumetricMoistureFieldCapacity',
+                'volumetricMoisturePermanentWiltingPoint',
+                'volumetricMoistureSaturation',
+                'cropCoefficient',
+                'runoffCurveNumber',
+                'soilDepth',
+                'swcon',
+            ],
             description:
                 'Représentation de la zone de sol à proximité du capteur. Sert de référence pour les données des zones de gestion alentours',
         },
