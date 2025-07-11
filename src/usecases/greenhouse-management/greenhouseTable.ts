@@ -18,30 +18,33 @@ const template: StellioTemplate = {
             },
         },
     },
-    soilTemperature: {
-        type: 'Property',
-        value: 20,
-        unitCode: 'CEL',
+    isContainedIn: {
+        type: 'Relationship',
+        object: 'urn:ngsi-ld:Building:Template',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'Température du sol', canSelfInit: true },
+            value: {
+                schemaType: 'string',
+                format: 'uri',
+                title: 'Bâtiment auquel appartient la table',
+                minimum: 1,
+                maximum: 1,
+            },
         },
     },
-    volumetricMoisture: {
-        type: 'Property',
-        value: 50,
-        unitCode: 'P1',
+    hasReferenceSoilArea: {
+        type: 'Relationship',
+        object: 'urn:ngsi-ld:ReferenceSoilArea:Template',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'Humidité volumétrique', canSelfInit: true },
-        },
-    },
-    soilElectricalConductivity: {
-        type: 'Property',
-        value: 50,
-        jsonSchema: {
-            type: 'Property',
-            value: { schemaType: 'integer', title: 'Conductivité électrique du sol', canSelfInit: true },
+            value: {
+                schemaType: 'string',
+                format: 'uri',
+                title: 'Sélectionner le sol de référence autour du capteur',
+                friendlyAttributeName: 'Zone de sol de référence',
+                minimum: 1,
+                maximum: 1,
+            },
         },
     },
     jsonSchema: {
@@ -50,7 +53,7 @@ const template: StellioTemplate = {
             schemaType: entityType,
             title: entityTypeTitle,
             minimum: 1,
-            required: ['name', 'location'],
+            required: ['name', 'location', 'isContainedIn'],
             description: `Représentation numérique d'une table sous serre`,
         },
     },

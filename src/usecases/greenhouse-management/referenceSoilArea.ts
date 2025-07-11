@@ -1,8 +1,6 @@
 import { StellioTemplate } from 'src/interfaces';
-import { entityType as greenhouseTableType } from './greenhouseTable';
 
-const entityType = 'Greenhouse';
-const entityTypeTitle = 'Serre';
+export const entityType = 'ReferenceSoilArea';
 
 const template: StellioTemplate = {
     id: `urn:ngsi-ld:${entityType}:Template`,
@@ -14,7 +12,7 @@ const template: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'string',
-                title: `Nom de la ${entityTypeTitle}`,
+                title: 'Nom du sol de référence juste autour du capteur',
                 friendlyAttributeName: 'Nom',
             },
         },
@@ -29,27 +27,27 @@ const template: StellioTemplate = {
             type: 'Property',
             value: {
                 schemaType: 'object',
-                title: `Pointer le centre de la ${entityTypeTitle}`,
-                friendlyAttributeName: 'Localisation',
+                title: 'Où se situe le capteur et sol de référence ?',
+                friendlyAttributeName: 'Géolocalisation',
             },
         },
     },
-    temperature: {
+    soilTemperature: {
         type: 'Property',
         value: 20,
         unitCode: 'CEL',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'Température', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'Température du sol', canSelfInit: true },
         },
     },
-    humidity: {
+    volumetricMoisture: {
         type: 'Property',
         value: 50,
         unitCode: 'P1',
         jsonSchema: {
             type: 'Property',
-            value: { schemaType: 'integer', title: 'Humidité', canSelfInit: true },
+            value: { schemaType: 'integer', title: 'Humidité volumétrique', canSelfInit: true },
         },
     },
     pressure: {
@@ -61,27 +59,28 @@ const template: StellioTemplate = {
             value: { schemaType: 'integer', title: 'Pression', canSelfInit: true },
         },
     },
-    hasGreenHouseTable: {
-        type: 'Relationship',
-        object: `urn:ngsi-ld:${greenhouseTableType}:Template`,
+    soilDepth: {
+        type: 'Property',
+        value: 350,
+        unitCode: 'MMT',
         jsonSchema: {
             type: 'Property',
             value: {
-                schemaType: 'string',
-                format: 'uri',
-                title: `Sélectionner les tables faisant partie de cette ${entityTypeTitle}`,
-                friendlyAttributeName: 'Tables',
+                schemaType: 'integer',
+                title: 'Z : Profondeur du sol',
+                friendlyAttributeName: 'Profondeur du sol',
+                canSelfInit: true,
             },
         },
     },
     jsonSchema: {
         type: 'Property',
         value: {
-            schemaType: entityType,
-            title: entityTypeTitle,
+            schemaType: 'ReferenceSoilArea',
+            title: 'Sol de référence pour le capteur',
             minimum: 1,
             required: ['name', 'location'],
-            description: `Représentation numérique d'une serre`,
+            description: 'Représentation de la zone de sol à proximité du capteur dans une table.',
         },
     },
 };

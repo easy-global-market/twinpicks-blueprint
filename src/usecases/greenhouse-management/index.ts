@@ -1,9 +1,9 @@
-import Greenhouse from './greenhouse';
+import Building from './building';
 import GreenouseTable from './greenhouseTable';
 
 import { generateBlueprintFile } from '../../utils';
 
-const blueprint = [GreenouseTable, Greenhouse];
+const blueprint = [Building, GreenouseTable];
 
 const usecasePathName = __dirname.split(/dist[\\/]/)[1];
 
