@@ -1,13 +1,14 @@
 {
     "name": "blueprints",
     "author": "junjou",
-    "version": "1.2.4",
+    "version": "1.2.6",
     "description": "blueprints for twinpicks",
     "scripts": {
         "tsc": "tsc",
         "commit": "git cz && npm version patch",
         "qai": "npx tsc && cd ./dist/usecases/air-quality-monitoring && node index.js && cd ../../..",
         "irrig": "npx tsc && cd ./dist/usecases/smart-irrigation && node index.js && cd ../../..",
+        "greenhouse": "npx tsc && cd ./dist/usecases/greenhouse-management && node index.js && cd ../../..",
         "biorecer": "npx tsc && cd ./dist/usecases/biorecer && node index.js && cd ../../..",
         "biorecerUpdateBlueprint": "npx tsc && node --env-file=.env ./dist/utils/updateUseCaseConfig.js --directoryName=biorecer",
         "lotus": "npx tsc && cd ./dist/usecases/lotus && node index.js && cd ../../..",
