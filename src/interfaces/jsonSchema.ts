@@ -147,4 +147,9 @@ export interface JsonSchema {
      * At the property level: enforce a property permission to be edited (true by default)
      */
     canBeEdited?: boolean;
+    /**
+     * At the entity level: has no effects
+     * At the property level: used to order input fields in Twin Picks from top to bottom (1, 2 , 3, ...)
+     */
+    order?: number;
 }
