@@ -84,7 +84,7 @@ export interface JsonSchema {
     required?: string[];
     /**
      * At the entity level: has no effects
-     * At the property level: restrict the property possible values
+     * At the property level: restrict the property possible string values
      */
     enum?: string[] | number[];
 
@@ -93,9 +93,10 @@ export interface JsonSchema {
     /////////////////////////////////////////////////
     /**
      * At the entity level: must be used to set the entity type of the entity defined by the schema
-     * At the property level: mandatory, used to help Twin Picks know what to expect
+     * At the property level: mandatory, used to help Twin Picks know what to expect and display a relevant input to the user
      *  Can be: "string", or "integer" for simple property values
      *  Can be: "array" for multiproperty attributes; "object" for Geo properties
+     *  Can be: "date" for a date picking input
      */
     schemaType: string;
     /**
