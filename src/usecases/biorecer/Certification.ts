@@ -31,27 +31,27 @@ const template: StellioTemplate = {
             },
         },
     },
-    startDate: {
+    validityStartDate: {
         type: 'Property',
         value: '2025-08-11T13:17:25.242Z',
         jsonSchema: {
             type: 'Property',
             value: {
                 schemaType: 'date',
-                title: `Start date of the ${entityTypeTitle}?`,
+                title: `Validity start date of the ${entityTypeTitle}?`,
                 friendlyAttributeName: 'Start date',
                 order: 2,
             },
         },
     },
-    endDate: {
+    validityEndDate: {
         type: 'Property',
         value: '2025-08-12T13:17:25.242Z',
         jsonSchema: {
             type: 'Property',
             value: {
                 schemaType: 'date',
-                title: `End date of the ${entityTypeTitle}?`,
+                title: `Validity end date of the ${entityTypeTitle}?`,
                 friendlyAttributeName: 'End date',
                 order: 3,
             },
@@ -103,7 +103,7 @@ const template: StellioTemplate = {
             schemaType: entityType,
             title: entityTypeTitle,
             minimum: 0,
-            required: ['name', 'startDate', 'endDate', 'subjectProduct'],
+            required: ['name', 'validityStartDates', 'validityEndDates', 'subjectProduct'],
             description: `Store here the relevant ${entityTypeTitle} information for your products`,
         },
     },
