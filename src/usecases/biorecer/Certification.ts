@@ -68,6 +68,7 @@ const template: StellioTemplate = {
                 title: `Subject products of this ${entityTypeTitle}`,
                 friendlyAttributeName: 'Subject products',
                 order: 4,
+                minimum: 1,
             },
         },
     },
