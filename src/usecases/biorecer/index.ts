@@ -8,6 +8,7 @@ import transformation from './Transformation';
 import transporter from './Transporter';
 import travel from './Travel';
 import criteria from './Criteria';
+import certification from './Certification';
 
 import { generateBlueprintFile } from '../../utils';
 
@@ -19,6 +20,7 @@ const blueprint = [
     transporter,
     travel,
     transformation,
+    certification,
     standard,
     processType,
     criteria,
