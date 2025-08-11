@@ -63,12 +63,23 @@ const template: StellioTemplate = {
         jsonSchema: {
             type: 'Property',
             value: {
-                schemaType: 'string',
-                format: 'uri',
+                schemaType: 'array',
                 title: `Subject products of this ${entityTypeTitle}`,
                 friendlyAttributeName: 'Subject products',
                 order: 4,
-                minimum: 1,
+                items: {
+                    type: 'Relationship',
+                    object: 'urn:ngsi-ld:Product:Template',
+                    jsonSchema: {
+                        type: 'Property',
+                        value: {
+                            schemaType: 'string',
+                            format: 'uri',
+                            title: 'Select a product',
+                            minimum: 1,
+                        },
+                    },
+                },
             },
         },
     },
