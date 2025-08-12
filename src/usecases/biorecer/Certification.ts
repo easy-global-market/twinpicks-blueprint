@@ -115,7 +115,7 @@ const template: StellioTemplate = {
             schemaType: entityType,
             title: entityTypeTitle,
             minimum: 0,
-            required: ['name', 'validityStartDates', 'validityEndDates', 'subjectProduct'],
+            required: ['name', 'validityStartDate', 'validityEndDate', 'subjectProduct'],
             description: `Store here the relevant ${entityTypeTitle} information for your products`,
         },
     },
