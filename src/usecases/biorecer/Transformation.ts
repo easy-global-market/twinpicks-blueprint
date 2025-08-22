@@ -184,7 +184,7 @@ const template: StellioTemplate = {
             schemaType: entityType,
             title: entityTypeTitle,
             minimum: 0,
-            required: ['name'],
+            required: ['name', 'byProductCompositionShare'],
             description: `This represents a process which takes products as inputs and gives other products as output.`,
         },
     },
