@@ -35,10 +35,22 @@ const template: StellioTemplate = {
         jsonSchema: {
             type: 'Property',
             value: {
-                schemaType: 'string',
-                format: 'uri',
+                schemaType: 'array',
                 title: `This ${entityTypeTitle} owns which production system(s)?`,
                 friendlyAttributeName: 'Production system(s) owned',
+                minItems: 1,
+                items: {
+                    type: 'Relationship',
+                    object: 'urn:ngsi-ld:ProductionSystem:Template',
+                    jsonSchema: {
+                        type: 'Property',
+                        value: {
+                            schemaType: 'string',
+                            format: `uri`,
+                            title: `Select a production system`,
+                        },
+                    },
+                },
             },
         },
     },
